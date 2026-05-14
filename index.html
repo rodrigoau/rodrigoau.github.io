@@ -4,377 +4,321 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rodrigo Ayala | SDET & Automation Engineer</title>
-  <meta name="description" content="Portfolio de Rodrigo Ayala, Software Developer Engineer in Test con más de 12 años en automatización, DevOps y calidad de software.">
-  <meta name="keywords" content="Rodrigo Ayala, SDET, Automation Engineer, QA, DevOps, Selenium, Cypress, Java, Python, Node.js, TypeScript">
+  <title>Rodrigo Ayala - SDET & Automation Engineer | Experto en Testing Frontend E2E, UI y Backend</title>
+  <meta name="description" content="Rodrigo Ayala, ingeniero SDET con 12+ años de experiencia en automatización de pruebas, testing frontend E2E, UI y backend. Especialista en Selenium, Cypress, Playwright y DevOps.">
+  <meta name="keywords" content="Rodrigo Ayala, SDET, Automation Engineer, QA, Testing Frontend E2E, UI Testing, Backend Testing, Selenium, Cypress, Playwright, DevOps, CI/CD">
+  <meta name="author" content="Rodrigo Ayala">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f7f8fb;
-      color: #111827;
+      background-color: #fafafa;
+      color: #374151;
     }
-    .tool-logo {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
+    .tool-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .brand-shadow {
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    .tool-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-900">
-  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#hero" class="text-lg font-bold tracking-tight text-slate-900">Rodrigo Ayala</a>
-      <nav class="hidden gap-8 text-sm font-medium text-slate-600 md:flex">
-        <a href="#about" class="transition hover:text-slate-900">Sobre mí</a>
-        <a href="#skills" class="transition hover:text-slate-900">Herramientas</a>
-        <a href="#experience" class="transition hover:text-slate-900">Experiencia</a>
-        <a href="#education" class="transition hover:text-slate-900">Educación</a>
-        <a href="#contact" class="rounded-full border border-slate-300 bg-slate-100 px-4 py-2 transition hover:border-slate-400 hover:bg-slate-200">Contacto</a>
+<body class="min-h-screen bg-gray-50 text-gray-800">
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="text-xl font-semibold text-gray-900">Rodrigo Ayala</a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+        <a href="#about" class="hover:text-gray-900 transition">Sobre mí</a>
+        <a href="#skills" class="hover:text-gray-900 transition">Herramientas</a>
+        <a href="#experience" class="hover:text-gray-900 transition">Experiencia</a>
+        <a href="#contact" class="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">Contacto</a>
       </nav>
-      <button id="menuBtn" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 md:hidden">☰</button>
+      <button id="menuBtn" class="md:hidden p-2 rounded-md border border-gray-300 bg-white text-gray-700">☰</button>
     </div>
-    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-6 pb-6 text-sm text-slate-600 md:hidden">
-      <a href="#about" class="block py-3 hover:text-slate-900">Sobre mí</a>
-      <a href="#skills" class="block py-3 hover:text-slate-900">Herramientas</a>
-      <a href="#experience" class="block py-3 hover:text-slate-900">Experiencia</a>
-      <a href="#education" class="block py-3 hover:text-slate-900">Educación</a>
-      <a href="#contact" class="block rounded-full border border-slate-300 bg-slate-100 px-4 py-2 text-center hover:border-slate-400 hover:bg-slate-200">Contacto</a>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-4 space-y-4 text-sm text-gray-600">
+      <a href="#about" class="block hover:text-gray-900">Sobre mí</a>
+      <a href="#skills" class="block hover:text-gray-900">Herramientas</a>
+      <a href="#experience" class="block hover:text-gray-900">Experiencia</a>
+      <a href="#contact" class="block bg-gray-900 text-white px-4 py-2 rounded-full text-center">Contacto</a>
     </div>
   </header>
 
-  <main class="space-y-24">
-    <section id="hero" class="relative overflow-hidden bg-white">
-      <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-sky-100 to-transparent"></div>
-      <div class="relative mx-auto flex max-w-7xl flex-col gap-12 px-6 py-20 lg:flex-row lg:items-center lg:justify-between">
-        <div class="max-w-2xl">
-          <span class="inline-flex rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">SDET & Automation Engineer</span>
-          <h1 class="mt-8 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">Automatizo la calidad y acelero entregas en software crítico.</h1>
-          <p class="mt-6 text-lg leading-8 text-slate-600">Más de 12 años liderando soluciones de pruebas, DevOps y pipelines de CI/CD para lograr software confiable, escalable y rápido.</p>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">LinkedIn</a>
-            <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400">GitHub</a>
-          </div>
-        </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:w-[480px]">
-          <div class="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 brand-shadow">
-            <h2 class="text-lg font-semibold text-slate-900">Sobre Rodrigo</h2>
-            <p class="mt-4 text-slate-600">Ingeniero de software con experiencia en automatización, pruebas de integración, herramientas cloud y despliegue continuo.</p>
-            <div class="mt-6 grid gap-4">
-              <div class="flex items-center justify-between rounded-3xl bg-white px-4 py-3 text-sm text-slate-700 shadow-sm shadow-slate-200/80">
-                <span>Experiencia</span>
-                <strong>12+ años</strong>
-              </div>
-              <div class="flex items-center justify-between rounded-3xl bg-white px-4 py-3 text-sm text-slate-700 shadow-sm shadow-slate-200/80">
-                <span>Ubicación</span>
-                <strong>Zapopan, México</strong>
-              </div>
-              <div class="flex items-center justify-between rounded-3xl bg-white px-4 py-3 text-sm text-slate-700 shadow-sm shadow-slate-200/80">
-                <span>Título</span>
-                <strong>Ingeniería en Software</strong>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 brand-shadow">
-            <h2 class="text-lg font-semibold text-slate-900">Mi enfoque</h2>
-            <ul class="mt-6 space-y-4 text-slate-600">
-              <li class="flex gap-3"><span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">✓</span>Frameworks robustos de automatización</li>
-              <li class="flex gap-3"><span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">✓</span>Pruebas end-to-end y de APIs con diseño escalable</li>
-              <li class="flex gap-3"><span class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">✓</span>CI/CD, pipelines y calidad en cada entrega</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="mx-auto max-w-7xl px-6">
-      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-        <div>
-          <p class="text-sm uppercase tracking-[0.28em] text-sky-600">Herramientas</p>
-          <h2 class="mt-4 text-3xl font-bold text-slate-950 sm:text-4xl">Logos de todas las tecnologías líderes que uso</h2>
-          <p class="mt-4 text-slate-600">Confianza en herramientas modernas para pruebas, automatización, infraestructura como código y despliegue continuo.</p>
-        </div>
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm shadow-slate-200/80">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/java/007396" alt="Java" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Java</p>
-                  <p class="text-sm text-slate-500">Java</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/selenium/43b02a" alt="Selenium" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Selenium</p>
-                  <p class="text-sm text-slate-500">Automatización web</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/python/3776ab" alt="Python" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Python</p>
-                  <p class="text-sm text-slate-500">Scripts y pruebas</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/n8n/ff4f00" alt="n8n" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">n8n</p>
-                  <p class="text-sm text-slate-500">Automatización de flujos</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">C</div>
-                <div>
-                  <p class="font-semibold text-slate-900">Claude</p>
-                  <p class="text-sm text-slate-500">IA colaborativa</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Docker</p>
-                  <p class="text-sm text-slate-500">Contenedores</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/playwright/000000" alt="Playwright" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Playwright</p>
-                  <p class="text-sm text-slate-500">Pruebas E2E</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/cypress/17202c" alt="Cypress" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Cypress</p>
-                  <p class="text-sm text-slate-500">Testing UI</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/appium/4dc0b5" alt="Appium" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Appium</p>
-                  <p class="text-sm text-slate-500">Movilidad</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/terraform/7b42bc" alt="Terraform" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Terraform</p>
-                  <p class="text-sm text-slate-500">Infraestructura</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/amazonaws/ff9900" alt="AWS" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">AWS</p>
-                  <p class="text-sm text-slate-500">Cloud</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/jenkins/d24939" alt="Jenkins" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Jenkins</p>
-                  <p class="text-sm text-slate-500">CI/CD</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">RA</div>
-                <div>
-                  <p class="font-semibold text-slate-900">REST Assured</p>
-                  <p class="text-sm text-slate-500">API testing</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/gitlab/fc6d26" alt="GitLab" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">GitLab</p>
-                  <p class="text-sm text-slate-500">Repositorios</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">GitHub</p>
-                  <p class="text-sm text-slate-500">Control de versiones</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/githubactions/2088ff" alt="GitHub Actions" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">GitHub Actions</p>
-                  <p class="text-sm text-slate-500">Automatización</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/git/f05032" alt="Git" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Git</p>
-                  <p class="text-sm text-slate-500">Versionamiento</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/nodedotjs/43853d" alt="Node.js" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">Node.js</p>
-                  <p class="text-sm text-slate-500">Backend</p>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-slate-50 p-4">
-              <div class="flex items-center gap-4">
-                <img src="https://cdn.simpleicons.org/typescript/3178c6" alt="TypeScript" class="tool-logo">
-                <div>
-                  <p class="font-semibold text-slate-900">TypeScript</p>
-                  <p class="text-sm text-slate-500">Desarrollo web</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="mx-auto max-w-7xl px-6">
-      <div class="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-sm shadow-slate-200/80">
-        <div class="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+  <main class="space-y-20">
+    <section id="hero" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p class="text-sm uppercase tracking-[0.28em] text-sky-600">Experiencia</p>
-            <h2 class="mt-4 text-3xl font-bold text-slate-950 sm:text-4xl">Trayectoria profesional</h2>
-            <p class="mt-4 text-slate-600">He colaborado con equipos globales en proyectos de automatización, QA y entregas continuas bajo metodologías ágiles.</p>
-          </div>
-          <div class="rounded-3xl bg-slate-50 p-6">
-            <p class="text-sm uppercase tracking-[0.22em] text-slate-500">Puesto actual</p>
-            <p class="mt-3 text-lg font-semibold text-slate-900">QA Automation Engineer</p>
-            <p class="mt-2 text-slate-600">Blueriver</p>
-          </div>
-        </div>
-        <div class="space-y-6">
-          <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p class="font-semibold text-slate-900">Blueriver</p>
-                <p class="text-sm text-slate-500">QA Automation Engineer</p>
-              </div>
-              <span class="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Sep. 2023 - Actualidad</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Experto en Testing Frontend E2E, UI y Backend
+            </h1>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+              Ingeniero SDET con más de 12 años liderando automatización de pruebas, asegurando calidad en aplicaciones web y móviles con tecnologías modernas como Selenium, Cypress y Playwright.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition">Ver LinkedIn</a>
+              <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="border border-gray-300 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:border-gray-400 transition">Ver GitHub</a>
             </div>
-            <p class="mt-4 text-slate-600">Diseño y ejecución de frameworks de pruebas, automatización de regresión y despliegue de pipelines de calidad.</p>
-          </article>
-          <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p class="font-semibold text-slate-900">Wizeline</p>
-                <p class="text-sm text-slate-500">Lead Automation Engineer</p>
-              </div>
-              <span class="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Apr. 2022 - Mar. 2024</span>
-            </div>
-            <p class="mt-4 text-slate-600">Lideré mejoras en procesos de QA y la adopción de tecnologías de automatización de pruebas escalables.</p>
-          </article>
-          <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p class="font-semibold text-slate-900">Cognizant / TCS</p>
-                <p class="text-sm text-slate-500">Lead Automation Engineer</p>
-              </div>
-              <span class="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">2018 - 2022</span>
-            </div>
-            <p class="mt-4 text-slate-600">Coordiné equipos de QA y construí arquitecturas de pruebas automatizadas para proyectos corporativos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="mx-auto max-w-7xl px-6">
-      <div class="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-sm shadow-slate-200/80">
-        <p class="text-sm uppercase tracking-[0.28em] text-sky-600">Educación</p>
-        <h2 class="mt-4 text-3xl font-bold text-slate-950 sm:text-4xl">Formación académica</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2">
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-sm uppercase tracking-[0.22em] text-slate-500">2009 - 2014</p>
-            <p class="mt-3 text-lg font-semibold text-slate-900">Ingeniería en Software</p>
-            <p class="mt-2 text-slate-600">TECMilenio University</p>
           </div>
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-sm uppercase tracking-[0.22em] text-slate-500">Certificaciones</p>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-              <li>Pruebas de software y automatización</li>
-              <li>DevOps y CI/CD</li>
-              <li>Infraestructura como código</li>
-            </ul>
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-6 rounded-2xl">
+              <h3 class="font-semibold text-gray-900">Perfil Profesional</h3>
+              <p class="mt-2 text-gray-600">Especialista en testing automatizado para frontend E2E, interfaces de usuario y sistemas backend, con enfoque en DevOps y CI/CD.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-2xl">
+              <h3 class="font-semibold text-gray-900">Experiencia Senior</h3>
+              <ul class="mt-2 space-y-1 text-gray-600">
+                <li>• Testing Frontend E2E con Cypress y Playwright</li>
+                <li>• Automatización UI con Selenium y Appium</li>
+                <li>• Pruebas Backend y APIs con REST Assured</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="mx-auto max-w-7xl px-6 pb-20">
-      <div class="rounded-[2rem] border border-slate-200 bg-slate-950/95 p-10 text-white shadow-sm shadow-slate-300/10">
-        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <section id="about" class="py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold text-gray-900">Sobre mí</h2>
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+            Como ingeniero SDET senior, me especializo en el desarrollo y ejecución de estrategias de testing automatizado para aplicaciones frontend y backend. Mi experiencia abarca desde pruebas E2E en interfaces de usuario hasta validación de APIs y servicios backend, asegurando entregas de alta calidad en entornos ágiles.
+          </p>
+          <div class="mt-8 grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-6 rounded-2xl">
+              <h4 class="font-semibold text-gray-900">Frontend Testing</h4>
+              <p class="mt-2 text-gray-600">Experiencia avanzada en testing E2E y UI con herramientas como Cypress, Playwright y Selenium para aplicaciones web modernas.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-2xl">
+              <h4 class="font-semibold text-gray-900">Backend Testing</h4>
+              <p class="mt-2 text-gray-600">Especialización en pruebas de APIs, servicios y bases de datos con REST Assured, Postman y frameworks personalizados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Herramientas y Tecnologías</h2>
+          <p class="mt-4 text-lg text-gray-600">Stack tecnológico para testing frontend E2E, UI y backend</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/java/007396" alt="Java" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Java</h3>
+                <p class="text-sm text-gray-600">Lenguaje principal para frameworks de testing</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/selenium/43b02a" alt="Selenium" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Selenium</h3>
+                <p class="text-sm text-gray-600">Automatización web y UI testing</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/python/3776ab" alt="Python" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Python</h3>
+                <p class="text-sm text-gray-600">Scripts de testing y automatización</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/cypress/17202c" alt="Cypress" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Cypress</h3>
+                <p class="text-sm text-gray-600">Testing E2E moderno para frontend</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/playwright/000000" alt="Playwright" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Playwright</h3>
+                <p class="text-sm text-gray-600">Automatización cross-browser E2E</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/appium/4dc0b5" alt="Appium" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Appium</h3>
+                <p class="text-sm text-gray-600">Testing móvil y UI automation</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">RA</div>
+              <div>
+                <h3 class="font-semibold text-gray-900">REST Assured</h3>
+                <p class="text-sm text-gray-600">Testing de APIs REST y backend</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Docker</h3>
+                <p class="text-sm text-gray-600">Contenedores para testing environments</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/jenkins/d24939" alt="Jenkins" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Jenkins</h3>
+                <p class="text-sm text-gray-600">CI/CD pipelines para testing automatizado</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/terraform/7b42bc" alt="Terraform" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Terraform</h3>
+                <p class="text-sm text-gray-600">Infraestructura como código para testing</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/amazonaws/ff9900" alt="AWS" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">AWS</h3>
+                <p class="text-sm text-gray-600">Cloud services para deployments</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">GitHub</h3>
+                <p class="text-sm text-gray-600">Control de versiones y CI/CD</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/githubactions/2088ff" alt="GitHub Actions" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">GitHub Actions</h3>
+                <p class="text-sm text-gray-600">Automatización de workflows de testing</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/git/f05032" alt="Git" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Git</h3>
+                <p class="text-sm text-gray-600">Sistema de control de versiones</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/nodedotjs/43853d" alt="Node.js" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">Node.js</h3>
+                <p class="text-sm text-gray-600">Runtime para herramientas de testing</p>
+              </div>
+            </div>
+          </div>
+          <div class="tool-card bg-white p-6 rounded-2xl border border-gray-200">
+            <div class="flex items-center space-x-4">
+              <img src="https://cdn.simpleicons.org/typescript/3178c6" alt="TypeScript" class="w-12 h-12">
+              <div>
+                <h3 class="font-semibold text-gray-900">TypeScript</h3>
+                <p class="text-sm text-gray-600">Desarrollo de frameworks de testing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Experiencia Profesional</h2>
+          <p class="mt-4 text-lg text-gray-600">Trayectoria en testing frontend E2E, UI y backend</p>
+        </div>
+        <div class="space-y-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">QA Automation Engineer</h3>
+                <p class="text-gray-600">Blueriver</p>
+              </div>
+              <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Sep 2023 - Presente</span>
+            </div>
+            <p class="text-gray-600">Liderando automatización de pruebas E2E para aplicaciones frontend, implementando frameworks con Cypress y Playwright, y optimizando pipelines de CI/CD para testing backend.</p>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Lead Automation Engineer</h3>
+                <p class="text-gray-600">Wizeline</p>
+              </div>
+              <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Abr 2022 - Mar 2024</span>
+            </div>
+            <p class="text-gray-600">Dirigiendo equipos en testing UI automatizado con Selenium y Appium, desarrollando estrategias de testing backend con REST Assured, y mentorizando en mejores prácticas de QA.</p>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Lead Automation Engineer</h3>
+                <p class="text-gray-600">Cognizant / TCS</p>
+              </div>
+              <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">2018 - 2022</span>
+            </div>
+            <p class="text-gray-600">Construyendo frameworks de testing E2E para aplicaciones enterprise, implementando testing backend automatizado, y coordinando equipos de QA en entornos ágiles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-sky-300">Contacto</p>
-            <h2 class="mt-4 text-3xl font-bold">Hablemos sobre tu próximo proyecto</h2>
-            <p class="mt-4 text-slate-300">Disponible para colaborar en automatización, calidad, DevOps e infraestructura bajo demanda.</p>
+            <h2 class="text-3xl font-bold">Hablemos de tu proyecto</h2>
+            <p class="mt-4 text-lg text-gray-300">Disponible para colaboraciones en testing frontend E2E, automatización UI y validación backend.</p>
           </div>
           <div class="space-y-4">
-            <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="block rounded-3xl border border-slate-700 bg-white px-6 py-4 text-center text-sm font-semibold text-slate-950 transition hover:border-sky-300">Ver LinkedIn</a>
-            <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="block rounded-3xl border border-slate-700 bg-slate-800 px-6 py-4 text-center text-sm font-semibold text-white transition hover:border-slate-500">Ver GitHub</a>
+            <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="block bg-blue-600 text-white px-8 py-4 rounded-full text-center font-medium hover:bg-blue-700 transition">Conectar en LinkedIn</a>
+            <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="block border border-gray-600 bg-gray-800 text-white px-8 py-4 rounded-full text-center font-medium hover:border-gray-500 transition">Ver proyectos en GitHub</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-200 bg-slate-50 py-8 text-sm text-slate-500">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 text-center md:flex-row md:items-center md:justify-between">
-      <p>© 2026 Rodrigo Ayala. Todos los derechos reservados.</p>
-      <div class="flex flex-wrap justify-center gap-4 text-slate-600">
-        <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="transition hover:text-slate-900">LinkedIn</a>
-        <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="transition hover:text-slate-900">GitHub</a>
-      </div>
+  <footer class="bg-gray-50 py-8 border-t border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 text-center text-gray-600">
+      <p>&copy; 2026 Rodrigo Ayala. Todos los derechos reservados.</p>
     </div>
   </footer>
 
