@@ -1,305 +1,1274 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Meta Tags for 2026 -->
-  <title>Rodrigo Ayala | Senior SDET, DevOps & AI Automation Engineer</title>
-  <meta name="description" content="Portfolio of Rodrigo Ayala, a Senior SDET and DevOps Engineer with 15+ years of experience. Specialist in AI-driven test automation, E2E Frontend, UI, Backend, and Cloud infrastructure.">
-  <meta name="keywords" content="Rodrigo Ayala, Senior SDET, Automation Engineer, DevOps, E2E Testing, Cypress, Playwright, Selenium, AI Testing, Cursor, Kubernetes, CI/CD, UVM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rodrigo Ayala | Senior Mobile &amp; Web QA Engineer / SDET</title>
+  <meta name="description" content="Rodrigo Ayala, Senior Mobile & Web QA Engineer / SDET with 13+ years of experience building automation frameworks for native iOS, Android, web and APIs with Appium, Selenium, Playwright, Cypress, Cucumber BDD, RestAssured, JMeter and CI/CD.">
   <meta name="author" content="Rodrigo Ayala">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="Rodrigo Ayala - Senior SDET & Automation Engineer">
-  <meta property="og:description" content="15+ years of experience building modern web, mobile, and API automation frameworks.">
-  <meta property="og:type" content="website">
-  
-  <!-- Modern Typography -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://rodrigoau.github.io/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://rodrigoau.github.io/">
+  <meta property="og:title" content="Rodrigo Ayala | Senior Mobile & Web QA Engineer / SDET">
+  <meta property="og:description" content="13+ years building automation frameworks for native iOS, Android, web and APIs. Appium, Playwright, Cucumber BDD, RestAssured, JMeter, GitLab CI/CD.">
+  <meta property="profile:first_name" content="Rodrigo">
+  <meta property="profile:last_name" content="Ayala">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 33l9 9 19-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rodrigo Ayala",
+    "jobTitle": "Senior Mobile & Web QA Engineer / SDET",
+    "url": "https://rodrigoau.github.io/",
+    "email": "mailto:rodrigoau91@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Guadalajara", "addressCountry": "MX" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad del Valle de México" },
+    "knowsLanguage": ["es", "en"],
+    "knowsAbout": ["Test Automation", "Appium", "Selenium", "Playwright", "Cypress", "Cucumber", "BDD", "RestAssured", "JMeter", "CI/CD", "GitLab CI/CD", "Mobile Testing", "API Testing"],
+    "sameAs": ["https://www.linkedin.com/in/rodrigoayalau/", "https://github.com/rodrigoau"]
+  }
+  </script>
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              500: '#14b8a6', // Teal
-              600: '#0d9488',
-              900: '#134e4a',
-            },
-            accent: {
-              500: '#6366f1', // Indigo
-              600: '#4f46e5',
-            }
-          }
-        }
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* storage unavailable: follow system preference */ }
+    })();
+  </script>
+
+  <style>
+    /* ---------- Design tokens ---------- */
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-2: #f1f3f9;
+      --text: #0f172a;
+      --muted: #4b5568;
+      --border: #e3e7ef;
+      --accent: #4f46e5;
+      --accent-strong: #4338ca;
+      --accent-soft: #eef0ff;
+      --teal: #0f766e;
+      --teal-soft: #e6f7f5;
+      --pass: #15803d;
+      --shadow: 0 1px 2px rgb(15 23 42 / .04), 0 8px 24px -12px rgb(15 23 42 / .12);
+      --shadow-lg: 0 24px 48px -20px rgb(15 23 42 / .25);
+      --term-bg: #0f1530;
+      --term-text: #dbe1f5;
+      --term-muted: #7d88ad;
+
+      --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      --radius: 18px;
+      --radius-sm: 10px;
+      --container: 1120px;
+      --gutter: clamp(16px, 4vw, 32px);
+      --header-h: 64px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0b1020;
+        --surface: #121933;
+        --surface-2: #19224a;
+        --text: #e7eaf4;
+        --muted: #a2abc6;
+        --border: #263056;
+        --accent: #8b93ff;
+        --accent-strong: #a5abff;
+        --accent-soft: #1d2457;
+        --teal: #2dd4bf;
+        --teal-soft: #11303a;
+        --pass: #4ade80;
+        --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .5);
+        --shadow-lg: 0 24px 48px -20px rgb(0 0 0 / .7);
+        --term-bg: #080c1a;
       }
     }
-  </script>
-  
-  <style>
-    body {
-      background-color: #f8fafc;
+
+    :root[data-theme="dark"] {
+      --bg: #0b1020;
+      --surface: #121933;
+      --surface-2: #19224a;
+      --text: #e7eaf4;
+      --muted: #a2abc6;
+      --border: #263056;
+      --accent: #8b93ff;
+      --accent-strong: #a5abff;
+      --accent-soft: #1d2457;
+      --teal: #2dd4bf;
+      --teal-soft: #11303a;
+      --pass: #4ade80;
+      --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .5);
+      --shadow-lg: 0 24px 48px -20px rgb(0 0 0 / .7);
+      --term-bg: #080c1a;
     }
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.75);
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 16px);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
+    p { margin: 0; }
+    ul { margin: 0; padding: 0; }
+    a { color: inherit; }
+    img, svg { display: block; max-width: 100%; }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0);
+      white-space: nowrap; border: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px; top: -100px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s ease;
     }
-    .bento-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    .site-header.is-scrolled { border-bottom-color: var(--border); }
+
+    .header-inner {
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .bento-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
-      border-color: #e2e8f0;
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-mark {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--teal));
+      display: grid; place-items: center;
+      color: #fff;
+    }
+    .brand span { color: var(--accent); }
+
+    .nav { display: flex; align-items: center; gap: 4px; }
+    .nav-list { display: flex; list-style: none; gap: 2px; }
+    .nav-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: .925rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s ease, background-color .15s ease;
+    }
+    .nav-list a:hover,
+    .nav-list a[aria-current="true"] { color: var(--text); background: var(--surface-2); }
+
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: inline-grid; place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: background-color .15s ease, border-color .15s ease;
+    }
+    .icon-btn:hover { background: var(--surface-2); }
+    .icon-btn svg { width: 20px; height: 20px; }
+
+    .theme-toggle .icon-sun { display: none; }
+    :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+      :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+    }
+
+    .menu-btn { display: none; }
+
+    @media (max-width: 860px) {
+      .menu-btn { display: inline-grid; }
+      .nav-list {
+        position: absolute;
+        top: var(--header-h);
+        left: 0; right: 0;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px var(--gutter) 20px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      .js .nav-list[data-open="false"] { display: none; }
+      .nav-list a { padding: 12px; font-size: 1rem; }
+    }
+
+    /* ---------- Buttons & chips ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 24px -10px var(--accent); }
+    :root[data-theme="dark"] .btn-primary { color: #0b1020; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { color: #0b1020; } }
+    .btn-primary:hover { background: var(--accent-strong); }
+    .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--muted); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .chip {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding-block: clamp(64px, 10vw, 112px); }
+
+    .section-head { max-width: 680px; margin-bottom: clamp(32px, 5vw, 56px); }
+    .section-head h2 {
+      margin-top: 10px;
+      font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+      font-weight: 800;
+    }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding-top: clamp(40px, 8vw, 88px); padding-bottom: clamp(24px, 4vw, 48px); isolation: isolate; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto auto;
+      width: min(640px, 90vw);
+      aspect-ratio: 1;
+      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(40px, 6vw, 64px);
+      align-items: center;
+    }
+    @media (min-width: 960px) {
+      .hero-grid { grid-template-columns: 1.15fr .85fr; }
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 0 currentColor;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); }
+      70% { box-shadow: 0 0 0 8px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-size: clamp(2.4rem, 1.4rem + 4.5vw, 4.25rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
     }
     .gradient-text {
-      background: linear-gradient(135deg, #4f46e5 0%, #14b8a6 100%);
+      background: linear-gradient(120deg, var(--accent) 10%, var(--teal) 90%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
-    .bg-blob {
+    .hero-role {
+      margin-top: 18px;
+      font-size: clamp(1.1rem, 1rem + .5vw, 1.3rem);
+      font-weight: 700;
+    }
+    .hero-lead {
+      margin-top: 14px;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: clamp(1rem, .95rem + .3vw, 1.125rem);
+    }
+    .hero-meta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      list-style: none;
+      color: var(--muted);
+      font-size: .925rem;
+      font-weight: 500;
+    }
+    .hero-meta li { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta svg { width: 16px; height: 16px; color: var(--teal); }
+    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 480px) {
+      .hero-actions .btn { flex: 1 1 100%; }
+    }
+
+    /* Terminal illustration */
+    .terminal {
+      background: var(--term-bg);
+      color: var(--term-text);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgb(255 255 255 / .06);
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: clamp(.75rem, .7rem + .2vw, .85rem);
+      line-height: 1.75;
+    }
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgb(255 255 255 / .06);
+      color: var(--term-muted);
+      font-size: .78rem;
+    }
+    .terminal-bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a4266; }
+    .terminal-bar i:nth-child(1) { background: #ff5f57; }
+    .terminal-bar i:nth-child(2) { background: #febc2e; }
+    .terminal-bar i:nth-child(3) { background: #28c840; }
+    .terminal-bar span { margin-left: 8px; }
+    .terminal pre {
+      margin: 0;
+      padding: 18px 20px 20px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .t-kw { color: #a5abff; font-weight: 600; }
+    .t-step { color: #7ee2d5; }
+    .t-str { color: #ffd38a; }
+    .t-muted { color: var(--term-muted); }
+    .t-pass { color: #4ade80; font-weight: 600; }
+
+    .js .terminal .line { opacity: 0; }
+    .js .terminal.is-played .line { animation: lineIn .35s ease forwards; animation-delay: calc(var(--i) * 140ms); }
+    @keyframes lineIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+    /* ---------- Stats ---------- */
+    .stats {
+      margin-top: clamp(48px, 8vw, 80px);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      list-style: none;
+    }
+    @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .stat { padding: 22px 20px; }
+    .stat-value {
+      display: block;
+      font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--accent);
+    }
+    .stat-label { display: block; margin-top: 6px; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; gap: 24px; }
+    @media (min-width: 900px) { .about-grid { grid-template-columns: 1.2fr .8fr; gap: 40px; } }
+    .about-text p { color: var(--muted); font-size: 1.05rem; }
+    .about-text p + p { margin-top: 16px; }
+    .about-text strong { color: var(--text); }
+    .highlights { padding: 24px; list-style: none; display: grid; gap: 16px; align-content: start; }
+    .highlights li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; font-size: .95rem; }
+    .highlights svg { width: 22px; height: 22px; color: var(--pass); margin-top: 2px; }
+
+    /* ---------- Expertise ---------- */
+    .expertise-grid { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .expertise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .feature {
+      padding: 28px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .feature:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: var(--shadow-lg); }
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .feature:nth-child(even) .feature-icon { background: var(--teal-soft); color: var(--teal); }
+    .feature-icon svg { width: 24px; height: 24px; }
+    .feature h3 { font-size: 1.15rem; font-weight: 700; }
+    .feature p { margin-top: 10px; color: var(--muted); font-size: .95rem; }
+    .feature .chips { margin-top: 18px; }
+
+    /* ---------- Experience ---------- */
+    .experience-section { background: var(--surface); border-block: 1px solid var(--border); }
+
+    .timeline { list-style: none; position: relative; display: grid; gap: 28px; }
+    .timeline::before {
+      content: "";
       position: absolute;
-      filter: blur(80px);
-      z-index: -1;
-      opacity: 0.4;
+      left: 7px; top: 12px; bottom: 12px;
+      width: 2px;
+      background: linear-gradient(var(--accent), var(--teal), var(--border));
+      border-radius: 2px;
+    }
+    .job { position: relative; padding-left: 40px; }
+    .job::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 8px;
+      width: 16px; height: 16px;
       border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--accent);
+    }
+    .job-card { padding: clamp(20px, 3vw, 32px); background: var(--bg); }
+    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
+    .job-title { font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); font-weight: 800; }
+    .job-company { margin-top: 4px; color: var(--accent); font-weight: 700; }
+    .job-date {
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .job-summary { margin-top: 14px; color: var(--muted); }
+
+    .job-bullets { margin-top: 14px; padding-left: 0; list-style: none; display: grid; gap: 8px; }
+    .job-bullets li { position: relative; padding-left: 22px; font-size: .95rem; }
+    .job-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 4px; top: .62em;
+      width: 7px; height: 7px;
+      border-radius: 2px;
+      background: var(--teal);
+      transform: rotate(45deg);
+    }
+
+    .job-areas { margin-top: 20px; display: grid; gap: 14px; }
+    @media (min-width: 760px) { .job-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .area { padding: 20px; background: var(--surface); }
+    .area h4 { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .area h4 svg { width: 18px; height: 18px; color: var(--accent); }
+    .area .job-bullets { margin-top: 10px; }
+    .area .job-bullets li { font-size: .9rem; }
+
+    .job-stack { margin-top: 20px; }
+    .job-stack .chip { background: var(--surface); font-size: .78rem; }
+
+    /* Progressive disclosure for long entries */
+    .more { margin-top: 16px; }
+    .more summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--accent);
+      list-style: none;
+      padding: 6px 0;
+    }
+    .more summary::-webkit-details-marker { display: none; }
+    .more summary svg { width: 16px; height: 16px; transition: transform .2s ease; }
+    .more[open] summary svg { transform: rotate(180deg); }
+    .more .when-open { display: none; }
+    .more[open] .when-open { display: inline; }
+    .more[open] .when-closed { display: none; }
+
+    /* ---------- Skills ---------- */
+    .skills-grid { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .skill-group { padding: 22px; }
+    .skill-group h3 {
+      font-size: .8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* ---------- Education ---------- */
+    .edu-grid { display: grid; gap: 16px; }
+    @media (min-width: 760px) { .edu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .edu { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+    .edu h3 { font-size: 1.05rem; font-weight: 700; }
+    .edu p { color: var(--muted); font-size: .92rem; }
+    .badge {
+      align-self: flex-start;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+    .badge.progress { background: var(--accent-soft); color: var(--accent); }
+
+    .languages { margin-top: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+    .languages strong { font-size: .95rem; }
+    .languages span { color: var(--muted); font-size: .95rem; }
+
+    /* ---------- Contact ---------- */
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding: clamp(32px, 6vw, 72px);
+      border-radius: calc(var(--radius) + 10px);
+      background: var(--term-bg);
+      color: #eef1fb;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -60% -20%;
+      height: 120%;
+      background: radial-gradient(ellipse at center, rgb(99 102 241 / .45), transparent 60%);
+      z-index: -1;
+    }
+    .contact-card h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); font-weight: 800; }
+    .contact-card p { margin: 16px auto 0; max-width: 56ch; color: #b9c1dc; font-size: 1.05rem; }
+    .contact-actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .contact-card .btn-primary { background: #8b93ff; color: #0b1020; box-shadow: none; }
+    .contact-card .btn-primary:hover { background: #a5abff; }
+    .contact-card .btn-ghost { background: rgb(255 255 255 / .06); color: #eef1fb; border-color: rgb(255 255 255 / .16); }
+    .contact-card .btn-ghost:hover { border-color: rgb(255 255 255 / .4); }
+    .contact-card :focus-visible { outline-color: #a5abff; }
+
+    @media (max-width: 480px) {
+      .contact-actions .btn { flex: 1 1 100%; }
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer { padding-block: 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { text-decoration: none; font-weight: 600; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ---------- Scroll reveal (progressive enhancement) ---------- */
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      .js .reveal, .js .terminal .line { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      .site-header, .hero::before, .terminal, .contact-actions, .more summary { display: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+      .more:not([open]) > :not(summary) { display: block; }
+      body { background: #fff; color: #000; }
     }
   </style>
 </head>
 
-<body class="min-h-screen text-slate-800 antialiased relative overflow-x-hidden">
-  
-  <!-- Background Blobs -->
-  <div class="bg-blob bg-accent-500/20 w-96 h-96 top-0 left-[-10%]"></div>
-  <div class="bg-blob bg-brand-500/20 w-[30rem] h-[30rem] top-[20%] right-[-10%]"></div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
-  <header class="fixed top-0 w-full z-50 glass-nav border-b border-slate-200/50">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
-      <a href="#hero" class="text-xl font-bold tracking-tight text-slate-900 group">
-        Rodrigo<span class="text-accent-600">Ayala</span>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></g></symbol>
+    <symbol id="i-browser" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></g></symbol>
+    <symbol id="i-api" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></g></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></g></symbol>
+    <symbol id="i-pipeline" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></g></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></g></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></g></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Rodrigo Ayala, back to top">
+        <span class="brand-mark" aria-hidden="true"><svg width="18" height="18"><use href="#i-check"/></svg></span>
+        Rodrigo<span>Ayala</span>
       </a>
-      <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-        <a href="#about" class="hover:text-accent-600 transition-colors">About</a>
-        <a href="#expertise" class="hover:text-accent-600 transition-colors">Expertise</a>
-        <a href="#skills" class="hover:text-accent-600 transition-colors">Tech Stack</a>
-        <a href="#contact" class="hover:text-accent-600 transition-colors">Contact</a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list" id="nav-list" data-open="false">
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="icon-btn theme-toggle" type="button" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-controls="nav-list" aria-expanded="false" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </nav>
-      <button id="menuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-      </button>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 px-6 py-4 space-y-4 text-sm font-medium text-slate-600 shadow-lg">
-      <a href="#about" class="block hover:text-accent-600">About</a>
-      <a href="#expertise" class="block hover:text-accent-600">Expertise</a>
-      <a href="#skills" class="block hover:text-accent-600">Tech Stack</a>
-      <a href="#contact" class="block hover:text-accent-600">Contact</a>
     </div>
   </header>
 
-  <main class="pt-32 pb-20 space-y-32">
-    
-    <!-- Hero Section -->
-    <section id="hero" class="relative">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-sm font-bold tracking-wide mb-6">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
-            </span>
-            Available for New Opportunities
-          </div>
-          
-          <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-            Engineering Quality through <br class="hidden md:block" />
-            <span class="gradient-text">Intelligent Automation</span>
-          </h1>
-          
-          <p class="mt-6 text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl">
-            Senior SDET & DevOps Engineer with <span class="font-bold text-slate-900">15+ years</span> of experience building robust web, mobile, and API automation frameworks. Integrating cutting-edge AI workflows to redefine software reliability.
-          </p>
-          
-          <div class="mt-8">
-            <div class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/20">
-              🎓 B.S. in Artificial Intelligence & Data Science Engineering
-              <span class="text-slate-400">|</span> U.V.M.
+  <main id="main">
+
+    <!-- ================= Hero ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to new opportunities</p>
+            <h1 id="hero-title">Hi, I'm Rodrigo.<br><span class="gradient-text">I make releases boring.</span></h1>
+            <p class="hero-role">Senior Mobile &amp; Web QA Engineer / SDET · iOS, Android &amp; Web</p>
+            <p class="hero-lead">
+              13+ years building automation frameworks from the ground up for native mobile apps, web and APIs.
+              Appium on real devices, Cucumber BDD, RestAssured, JMeter and CI/CD pipelines that run on every build.
+            </p>
+            <ul class="hero-meta">
+              <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Guadalajara, Mexico</li>
+              <li><svg aria-hidden="true"><use href="#i-globe"/></svg>Spanish &amp; English</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <svg aria-hidden="true"><use href="#i-mail"/></svg>Get in touch
+              </a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
             </div>
           </div>
 
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="flex items-center gap-2 bg-accent-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-accent-700 hover:shadow-lg hover:shadow-accent-500/30 transition-all">
-              Connect on LinkedIn
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <figure class="terminal" id="terminal" aria-label="Example Cucumber scenario run with all steps passing" style="margin:0">
+            <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>checkout.feature</span></div>
+<pre aria-hidden="true"><span class="line" style="--i:0"><span class="t-kw">Feature:</span> Mobile checkout resilience</span>
+<span class="line" style="--i:1"></span>
+<span class="line" style="--i:2">  <span class="t-kw">Scenario:</span> Cart survives an incoming call</span>
+<span class="line" style="--i:3">    <span class="t-step">Given</span> the user is on the <span class="t-str">"Payment"</span> screen</span>
+<span class="line" style="--i:4">    <span class="t-step">When</span> an incoming call interrupts the app</span>
+<span class="line" style="--i:5">    <span class="t-step">And</span> the app is resumed from background</span>
+<span class="line" style="--i:6">    <span class="t-step">Then</span> the cart items are preserved</span>
+<span class="line" style="--i:7"></span>
+<span class="line" style="--i:8"><span class="t-muted">$ run --platform ios,android --parallel</span></span>
+<span class="line" style="--i:9"><span class="t-pass">✓</span> iOS · real device       <span class="t-pass">4/4 passed</span></span>
+<span class="line" style="--i:10"><span class="t-pass">✓</span> Android · emulator     <span class="t-pass">4/4 passed</span></span>
+<span class="line" style="--i:11"><span class="t-muted">Quality gate:</span> <span class="t-pass">PROMOTE ▸</span></span></pre>
+          </figure>
+        </div>
+
+        <ul class="stats" aria-label="Career highlights">
+          <li class="card stat reveal"><span class="stat-value">13+</span><span class="stat-label">years in QA &amp; test automation</span></li>
+          <li class="card stat reveal"><span class="stat-value">90%</span><span class="stat-label">UI coverage of critical journeys, suites under 5 min</span></li>
+          <li class="card stat reveal"><span class="stat-value">60%</span><span class="stat-label">faster pipelines with parallel runners &amp; sharding</span></li>
+          <li class="card stat reveal"><span class="stat-value">~30%</span><span class="stat-label">less script maintenance with AI agents</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= About ================= -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">01 · About</span>
+          <h2 id="about-title">Quality from test strategy to release</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a <strong>Senior SDET</strong> specialized in mobile quality: <strong>Appium</strong> on real devices and
+              emulators/simulators, <strong>BDD with Cucumber/Gherkin</strong>, and test pipelines in <strong>GitLab CI/CD</strong>
+              that run on every build. I also validate the backend that mobile apps depend on with
+              <strong>RestAssured</strong> API automation and <strong>JMeter</strong> load and stress testing.
+            </p>
+            <p>
+              I've led multicultural QA teams across the <strong>US, India and Mexico</strong>, setting test strategy, coding
+              standards and release quality gates. I go beyond the happy path with negative, boundary, interruption and
+              failure-mode testing.
+            </p>
+            <p>
+              I use AI agents (<strong>Cursor, Claude</strong>) to generate test scenarios, analyze failures and find coverage
+              gaps, and every generated change is reviewed before merge.
+            </p>
+          </div>
+          <ul class="card highlights reveal" aria-label="What I bring">
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Frameworks built from scratch in Java, TypeScript and Python</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Native iOS &amp; Android on real devices, BrowserStack and Sauce Labs</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Quality gates that block builds with failing critical scenarios</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Team leadership, mentoring and PR reviews against a quality checklist</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>AI-assisted testing with human review of every change</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Expertise ================= -->
+    <section id="expertise" aria-labelledby="expertise-title" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">02 · Expertise</span>
+          <h2 id="expertise-title">What I do best</h2>
+          <p>End-to-end coverage across the stack, from the device in your hand to the services behind it.</p>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-phone"/></svg></div>
+            <h3>Mobile automation</h3>
+            <p>Appium frameworks for native iOS and Android with shared step definitions. I also cover the risky edge cases: revoked permissions, backgrounding, calls, push notifications, offline mode and token expiry.</p>
+            <ul class="chips"><li class="chip">Appium</li><li class="chip">TestNG</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li></ul>
+          </article>
+
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-browser"/></svg></div>
+            <h3>Web automation &amp; BDD</h3>
+            <p>Cucumber/Gherkin scenarios that product, dev and QA agree on. I migrated Selenium suites to Playwright BDD and run them cross-browser in the cloud.</p>
+            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Selenium</li><li class="chip">Cypress</li><li class="chip">Cucumber</li></ul>
+          </article>
+
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-api"/></svg></div>
+            <h3>API &amp; integration</h3>
+            <p>RestAssured validation of status codes, payloads, schemas and contracts. Negative and boundary tests, Kafka event flows, and payment, OAuth/SSO and booking integrations.</p>
+            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Postman</li><li class="chip">pytest</li><li class="chip">Kafka</li></ul>
+          </article>
+
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-gauge"/></svg></div>
+            <h3>Performance testing</h3>
+            <p>JMeter load, stress and capacity tests that benchmark throughput and response times under peak conditions, monitored with Grafana, Prometheus and Datadog.</p>
+            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Grafana</li><li class="chip">Prometheus</li><li class="chip">Datadog</li></ul>
+          </article>
+
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-pipeline"/></svg></div>
+            <h3>CI/CD &amp; release quality</h3>
+            <p>Pipelines with smoke, regression, API and performance stages on every merge request and on nightly schedules. Allure reports, entry/exit criteria and production smoke tests.</p>
+            <ul class="chips"><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">Jenkins</li><li class="chip">Allure</li></ul>
+          </article>
+
+          <article class="card feature reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-spark"/></svg></div>
+            <h3>AI-assisted testing</h3>
+            <p>Cursor agents and Claude generate Playwright BDD tests from requirements, analyze failure logs and refactor framework code. Every change gets a human review before merge.</p>
+            <ul class="chips"><li class="chip">Cursor</li><li class="chip">Claude</li><li class="chip">n8n</li><li class="chip">UiPath</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Experience ================= -->
+    <section id="experience" class="experience-section" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 · Experience</span>
+          <h2 id="experience-title">Where I've made an impact</h2>
+        </div>
+
+        <ol class="timeline">
+          <!-- Goods&Services -->
+          <li class="job reveal">
+            <article class="card job-card">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Senior Mobile &amp; Web QA Automation Engineer (SDET)</h3>
+                  <p class="job-company">Goods&amp;Services</p>
+                </div>
+                <p class="job-date"><time datetime="2023-09">Sep 2023</time> – Present</p>
+              </header>
+              <p class="job-summary">I own end-to-end quality for native iOS and Android apps, web applications and the APIs behind them, from test strategy through release.</p>
+
+              <div class="job-areas">
+                <div class="card area">
+                  <h4><svg aria-hidden="true"><use href="#i-phone"/></svg>Mobile: Appium &amp; Cucumber BDD</h4>
+                  <ul class="job-bullets">
+                    <li>Built a scalable Appium framework in Java for iOS and Android, using Page Object Model and step definitions shared across both platforms.</li>
+                    <li>Runs suites in parallel with TestNG on physical devices and emulators/simulators, both locally and on BrowserStack and Sauce Labs.</li>
+                    <li>Automates high-risk edge cases: permissions, backgrounding, calls, push notifications, offline mode and session expiry.</li>
+                  </ul>
+                </div>
+                <div class="card area">
+                  <h4><svg aria-hidden="true"><use href="#i-browser"/></svg>Web: Selenium → Playwright BDD</h4>
+                  <ul class="job-bullets">
+                    <li>Migrated the Selenium suites to Playwright BDD and kept the existing Cucumber/Gherkin scenarios, so the tests can be developed and maintained with Cursor AI agents.</li>
+                    <li>Uses AI agents to analyze failure logs and find coverage gaps, which cut script maintenance time by about 30%.</li>
+                    <li>Defined the web regression strategy in the CI/CD pipelines.</li>
+                  </ul>
+                </div>
+                <div class="card area">
+                  <h4><svg aria-hidden="true"><use href="#i-api"/></svg>API automation &amp; load testing</h4>
+                  <ul class="job-bullets">
+                    <li>Automates RestAssured validation of status codes, payloads, schemas, contracts and data integrity across microservices.</li>
+                    <li>Runs JMeter load and stress tests to benchmark throughput, response times and capacity under peak load.</li>
+                    <li>Tests Kafka event flows end to end, plus payment, OAuth/SSO and ticketing/booking integrations.</li>
+                  </ul>
+                </div>
+                <div class="card area">
+                  <h4><svg aria-hidden="true"><use href="#i-pipeline"/></svg>GitLab CI/CD &amp; release readiness</h4>
+                  <ul class="job-bullets">
+                    <li>Built GitLab pipelines that run the mobile, web and API suites on every merge request and build, and on nightly schedules.</li>
+                    <li>Set up quality gates that block promotion of builds with failing critical scenarios.</li>
+                    <li>Publishes Allure reports with screenshots and device logs, defines entry/exit criteria and runs production smoke tests.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <details class="more">
+                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <ul class="job-bullets">
+                  <li>Implemented BDD with Cucumber/Gherkin for the mobile and web suites, so product, development and QA teams can review and agree on acceptance criteria in plain language.</li>
+                  <li>Validates behavior across iOS and Android OS versions, device models and screen sizes to catch fragmentation and layout issues before release.</li>
+                  <li>Runs manual exploratory and regression testing on real devices to find gesture and device-specific issues, then turns recurring findings into automated checks.</li>
+                  <li>Designs negative and boundary API tests for 4xx/5xx handling, invalid payloads, timeouts, dependency outages and poor connectivity.</li>
+                  <li>Configured pipeline stages for smoke, regression, API and performance runs, with parallel jobs and retained artifacts (Allure reports, logs, screenshots).</li>
+                  <li>Reviews teammates' pull requests against a quality checklist covering code standards, coverage and test design.</li>
+                </ul>
+              </details>
+
+              <ul class="chips job-stack" aria-label="Tech stack">
+                <li class="chip">Appium</li><li class="chip">Cucumber</li><li class="chip">TestNG</li><li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">Playwright BDD</li><li class="chip">Cursor</li><li class="chip">RestAssured</li><li class="chip">JMeter</li><li class="chip">GitLab CI/CD</li><li class="chip">Allure</li><li class="chip">Kafka</li><li class="chip">Grafana</li><li class="chip">Datadog</li><li class="chip">Docker</li><li class="chip">AWS</li><li class="chip">Azure</li>
+              </ul>
+            </article>
+          </li>
+
+          <!-- Wizeline -->
+          <li class="job reveal">
+            <article class="card job-card">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Senior Lead Automation Engineer</h3>
+                  <p class="job-company">Wizeline</p>
+                </div>
+                <p class="job-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2024-02">Feb 2024</time></p>
+              </header>
+              <p class="job-summary">Led the overhaul of the testing strategy for a high-load, multi-tenant web application.</p>
+              <ul class="job-bullets">
+                <li>Designed a new Cypress framework from scratch that covers desktop and mobile browser flows in one codebase.</li>
+                <li>Reached <strong>90% UI coverage</strong> of critical user journeys, with each suite running in under 5 minutes. Automated the mobile app with Appium.</li>
+                <li>Built Python API suites (pytest + requests) with contract and schema validation, which caught breaking changes between services early.</li>
+                <li>Embedded UI and API tests in GitHub Actions. Parallel runners and sharding <strong>cut pipeline time by 60%</strong>.</li>
+              </ul>
+              <details class="more">
+                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <ul class="job-bullets">
+                  <li>Covered happy paths, edge cases, security checks and performance thresholds for microservices.</li>
+                  <li>Automated data setup/teardown and environment-aware configuration for repeatable runs across CI, QA and staging.</li>
+                  <li>Automated failure reporting and artifact retention (screenshots, logs) for faster diagnosis.</li>
+                  <li>Set coding standards, linting and branching strategy. Mentored junior engineers and maintained Confluence guides.</li>
+                </ul>
+              </details>
+              <ul class="chips job-stack" aria-label="Tech stack">
+                <li class="chip">Cypress</li><li class="chip">Appium</li><li class="chip">Python</li><li class="chip">pytest</li><li class="chip">JMeter</li><li class="chip">Postman</li><li class="chip">Selenium</li><li class="chip">Java</li><li class="chip">GitHub Actions</li><li class="chip">AWS</li>
+              </ul>
+            </article>
+          </li>
+
+          <!-- TCS -->
+          <li class="job reveal">
+            <article class="card job-card">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Senior Lead Automation Engineer in Test</h3>
+                  <p class="job-company">TATA Consultancy Services</p>
+                </div>
+                <p class="job-date"><time datetime="2018-02">Feb 2018</time> – <time datetime="2022-04">Apr 2022</time></p>
+              </header>
+              <ul class="job-bullets">
+                <li>Led QA engineers in San Antonio, Texas, and Chennai, India, upgrading the automation framework to meet client requirements.</li>
+                <li>Built a new Java + Selenium framework from scratch with design patterns to replace the legacy framework and improve reliability.</li>
+                <li>Moved execution to Sauce Labs cloud browsers, which reduced local resource use and raised the business team's confidence.</li>
+                <li>Presented progress, demos and automation reports to the client's business team, and trained the team on Selenium and Java best practices.</li>
+              </ul>
+              <ul class="chips job-stack" aria-label="Tech stack">
+                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">Jenkins</li><li class="chip">GitLab</li><li class="chip">Sauce Labs</li><li class="chip">SQL</li><li class="chip">qTest</li>
+              </ul>
+            </article>
+          </li>
+
+          <!-- Sales Up -->
+          <li class="job reveal">
+            <article class="card job-card">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Quality Assurance Test Engineer</h3>
+                  <p class="job-company">Sales Up by Upnify</p>
+                </div>
+                <p class="job-date"><time datetime="2013-09">Sep 2013</time> – <time datetime="2018-02">Feb 2018</time></p>
+              </header>
+              <ul class="job-bullets">
+                <li>Verified the functionality and security of a CRM web application.</li>
+                <li>Applied TDD and in-depth debugging, and wrote code to validate application output.</li>
+                <li>Maintained test environments and infrastructure.</li>
+              </ul>
+              <ul class="chips job-stack" aria-label="Tech stack">
+                <li class="chip">JavaScript</li><li class="chip">Postman</li><li class="chip">SQL</li><li class="chip">Git</li><li class="chip">GitHub</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= Skills ================= -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">04 · Skills</span>
+          <h2 id="skills-title">Tech stack</h2>
+          <p>Tools I use to ship quality across mobile, web, APIs and infrastructure.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-group reveal">
+            <h3>Mobile testing</h3>
+            <ul class="chips"><li class="chip">Appium (iOS &amp; Android)</li><li class="chip">Real devices</li><li class="chip">Emulators / Simulators</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li><li class="chip">Exploratory testing</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>Web</h3>
+            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Cypress &amp; Cypress Cloud</li><li class="chip">Selenium WebDriver</li><li class="chip">WebdriverIO</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>BDD &amp; frameworks</h3>
+            <ul class="chips"><li class="chip">Cucumber / Gherkin</li><li class="chip">TestNG</li><li class="chip">pytest</li><li class="chip">Page Object Model</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>API &amp; integration</h3>
+            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Postman</li><li class="chip">Python requests</li><li class="chip">Contract &amp; schema validation</li><li class="chip">Microservices</li><li class="chip">Kafka</li><li class="chip">OAuth / SSO</li><li class="chip">Payment gateways</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>Performance &amp; observability</h3>
+            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Allure</li><li class="chip">Grafana</li><li class="chip">Prometheus</li><li class="chip">Datadog</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>CI/CD &amp; cloud</h3>
+            <ul class="chips"><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">CircleCI</li><li class="chip">Jenkins</li><li class="chip">Docker</li><li class="chip">Kubernetes</li><li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">Google Cloud</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>Languages</h3>
+            <ul class="chips"><li class="chip">Java</li><li class="chip">TypeScript / JavaScript</li><li class="chip">Python</li><li class="chip">C#</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>Databases</h3>
+            <ul class="chips"><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Oracle DB</li><li class="chip">MongoDB</li><li class="chip">SQL</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>Test management &amp; release</h3>
+            <ul class="chips"><li class="chip">Jira</li><li class="chip">TestRail</li><li class="chip">qTest</li><li class="chip">Azure DevOps</li><li class="chip">Quality gates</li><li class="chip">Smoke testing</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Education ================= -->
+    <section id="education" aria-labelledby="education-title" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">05 · Education</span>
+          <h2 id="education-title">Education &amp; certifications</h2>
+        </div>
+        <div class="edu-grid">
+          <article class="card edu reveal">
+            <span class="badge">Degree</span>
+            <h3>B.Eng. in Artificial Intelligence and Data Science</h3>
+            <p>Universidad del Valle de México (UVM)</p>
+          </article>
+          <article class="card edu reveal">
+            <span class="badge progress">In progress</span>
+            <h3>ISTQB Certified Tester</h3>
+            <p>International Software Testing Qualifications Board</p>
+          </article>
+          <article class="card edu reveal">
+            <span class="badge progress">In progress</span>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>Amazon Web Services</p>
+          </article>
+        </div>
+        <div class="card languages reveal">
+          <strong>Languages</strong>
+          <span>Spanish: native</span>
+          <span>English: professional working proficiency</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section id="contact" aria-labelledby="contact-title" style="padding-top:0">
+      <div class="container">
+        <div class="contact-card reveal">
+          <span class="eyebrow">06 · Contact</span>
+          <h2 id="contact-title" style="margin-top:12px">Let's ship with confidence</h2>
+          <p>Need a mobile automation framework built from scratch, a Selenium suite migrated to Playwright, or quality gates in your CI/CD pipeline? Let's talk.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:rodrigoau91@gmail.com">
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>rodrigoau91@gmail.com
             </a>
-            <a href="https://github.com/rodrigoayalau" target="_blank" rel="noreferrer" class="flex items-center gap-2 bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-full font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm">
-              View GitHub
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="visually-hidden"> (opens in a new tab)</span>
             </a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2026 Trending Skills Highlight -->
-    <section id="expertise" class="mx-auto max-w-7xl px-6">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">2026 Market Expertise</h2>
-        <p class="mt-2 text-slate-600">Leading the intersection of DevOps, AI, and Quality Engineering.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- AI Agents Card -->
-        <div class="bento-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-accent-50 rounded-bl-full -z-10"></div>
-          <div class="w-12 h-12 bg-accent-100 text-accent-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">AI-Assisted Workflows</h3>
-          <p class="text-slate-600 leading-relaxed">Leveraging AI agents and tools like <b>Cursor</b> to accelerate test script generation, refactor legacy code, and build smarter automation pipelines.</p>
-        </div>
-
-        <!-- Cloud Native Card -->
-        <div class="bento-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -z-10"></div>
-          <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Cloud-Native Infrastructure</h3>
-          <p class="text-slate-600 leading-relaxed">Designing scalable test environments using <b>Docker, Kubernetes, AWS</b>, and Infrastructure as Code (<b>Terraform</b>) for zero-downtime deployments.</p>
-        </div>
-
-        <!-- CI/CD & Observability Card -->
-        <div class="bento-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-bl-full -z-10"></div>
-          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">CI/CD & Observability</h3>
-          <p class="text-slate-600 leading-relaxed">Architecting continuous delivery pipelines with <b>GitHub Actions, Jenkins, CircleCI, GitLab CI</b>, and deep system monitoring via <b>Datadog</b>.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Tech Stack (Grid) -->
-    <section id="skills" class="py-20 bg-white border-y border-slate-200/60">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="text-center mb-16 max-w-2xl mx-auto">
-          <h2 class="text-3xl font-bold text-slate-900">Comprehensive Tech Stack</h2>
-          <p class="mt-4 text-slate-600">The tools I use to guarantee pristine quality across E2E frontend, UI automation, and backend API ecosystems.</p>
-        </div>
-        
-        <!-- Grid layout updated for modern aesthetic -->
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          <!-- Cypress -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/cypress/17202c" alt="Cypress" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Cypress</span>
-          </div>
-          <!-- Playwright -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/playwright/2EAD33" alt="Playwright" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Playwright</span>
-          </div>
-          <!-- Selenium -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/selenium/43b02a" alt="Selenium" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Selenium</span>
-          </div>
-          <!-- Appium -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/appium/4dc0b5" alt="Appium" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Appium</span>
-          </div>
-          <!-- RestAssured -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <div class="w-10 h-10 bg-slate-800 rounded flex items-center justify-center text-white font-bold mb-3 text-xs">REST</div>
-            <span class="text-sm font-semibold text-slate-700">RestAssured</span>
-          </div>
-          <!-- Kubernetes -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Kubernetes</span>
-          </div>
-          <!-- Docker -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Docker</span>
-          </div>
-          <!-- Terraform -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/terraform/844FBA" alt="Terraform" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Terraform</span>
-          </div>
-          <!-- AWS -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="AWS" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">AWS</span>
-          </div>
-          <!-- Datadog -->
-          <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-            <img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog" class="w-10 h-10 mb-3">
-            <span class="text-sm font-semibold text-slate-700">Datadog</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section id="contact" class="px-6">
-      <div class="mx-auto max-w-5xl bg-slate-900 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
-        <!-- Glow effect behind text -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent-500/30 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <h2 class="relative z-10 text-4xl font-bold text-white mb-6">Ready to scale your software quality?</h2>
-        <p class="relative z-10 text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-          Whether you need to integrate AI into your testing lifecycle, refactor legacy frameworks, or build robust CI/CD pipelines, let's talk.
-        </p>
-        
-        <div class="relative z-10 flex flex-col sm:flex-row justify-center gap-4">
-          <a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noreferrer" class="bg-brand-500 text-white px-8 py-4 rounded-full font-bold hover:bg-brand-400 transition-colors">
-            Start a Conversation
-          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white py-12 border-t border-slate-200">
-    <div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-500 font-medium">
-      <p>&copy; 2026 Rodrigo Ayala. All rights reserved.</p>
-      <div class="flex space-x-6">
-        <a href="https://github.com/rodrigoayalau" class="hover:text-slate-900 transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/rodrigoayalau/" class="hover:text-slate-900 transition-colors">LinkedIn</a>
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Rodrigo Ayala · Guadalajara, Mexico</p>
+      <ul class="footer-links">
+        <li><a href="mailto:rodrigoau91@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
     </div>
   </footer>
 
   <script>
-    // Simple Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    (function () {
+      var root = document.documentElement;
+
+      // Footer year
+      var year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      // Theme toggle
+      var themeBtn = document.getElementById('theme-toggle');
+      var mql = window.matchMedia('(prefers-color-scheme: dark)');
+      function isDark() {
+        var t = root.getAttribute('data-theme');
+        return t ? t === 'dark' : mql.matches;
+      }
+      function syncThemeLabel() {
+        themeBtn.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      themeBtn.addEventListener('click', function () {
+        var next = isDark() ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+        syncThemeLabel();
+      });
+      syncThemeLabel();
+
+      // Mobile menu
+      var menuBtn = document.getElementById('menu-btn');
+      var navList = document.getElementById('nav-list');
+      function setMenu(open) {
+        navList.setAttribute('data-open', String(open));
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      menuBtn.addEventListener('click', function () {
+        setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+      });
+      navList.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setMenu(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          menuBtn.focus();
+        }
+      });
+
+      // Header border on scroll
+      var header = document.querySelector('.site-header');
+      function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+        document.getElementById('terminal').classList.add('is-played');
+        return;
+      }
+
+      // Reveal on scroll
+      var revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+
+      // Play terminal animation once visible
+      var terminal = document.getElementById('terminal');
+      var termObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          terminal.classList.add('is-played');
+          termObs.disconnect();
+        }
+      }, { threshold: 0.3 });
+      termObs.observe(terminal);
+
+      // Highlight the nav link of the section in view
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-list a'));
+      var sectionObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function (a) {
+            if (a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach(function (a) {
+        var s = document.querySelector(a.getAttribute('href'));
+        if (s) sectionObs.observe(s);
+      });
+    })();
   </script>
 </body>
 </html>
