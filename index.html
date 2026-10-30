@@ -10,8 +10,8 @@
   <meta name="author" content="Rodrigo Ayala">
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://rodrigoau.github.io/">
 
   <!-- Open Graph / social sharing -->
@@ -24,11 +24,11 @@
   <meta property="profile:last_name" content="Ayala">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 33l9 9 19-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230ca30c'/%3E%3Cpath d='M18 33l9 9 19-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 
   <!-- Structured data for search engines -->
   <script type="application/ld+json">
@@ -60,71 +60,96 @@
   </script>
 
   <style>
-    /* ---------- Design tokens ---------- */
+    /* ---------- Design tokens ----------
+       Chart series and status colors come from a CVD-validated palette:
+       series 1-3 pass all-pairs checks in both modes; status colors always ship with an icon + label. */
     :root {
-      --bg: #f7f8fb;
-      --surface: #ffffff;
-      --surface-2: #f1f3f9;
-      --text: #0f172a;
-      --muted: #4b5568;
-      --border: #e3e7ef;
-      --accent: #4f46e5;
-      --accent-strong: #4338ca;
-      --accent-soft: #eef0ff;
-      --teal: #0f766e;
-      --teal-soft: #e6f7f5;
-      --pass: #15803d;
-      --shadow: 0 1px 2px rgb(15 23 42 / .04), 0 8px 24px -12px rgb(15 23 42 / .12);
-      --shadow-lg: 0 24px 48px -20px rgb(15 23 42 / .25);
-      --term-bg: #0f1530;
-      --term-text: #dbe1f5;
-      --term-muted: #7d88ad;
+      color-scheme: light;
+      --page: #f5f5f2;
+      --surface: #fcfcfb;
+      --surface-2: #f0efec;
+      --text: #0b0b0b;
+      --text-2: #52514e;
+      --muted: #898781;
+      --grid: #e1e0d9;
+      --baseline: #c3c2b7;
+      --border: rgb(11 11 11 / .10);
+      --accent: #2a78d6;
+      --accent-text: #1c5cab;
+      --accent-soft: #e4eefb;
+      --s1: #2a78d6;
+      --s2: #eb6834;
+      --s3: #1baf7a;
+      --good: #0ca30c;
+      --good-text: #006300;
+      --good-soft: #e3f4e3;
+      --warn: #fab219;
+      --warn-text: #6b4800;
+      --warn-soft: #fff3d6;
+      --term-bg: #141413;
+      --term-text: #f0efec;
+      --term-muted: #9a9890;
+      --shadow: 0 1px 2px rgb(11 11 11 / .04), 0 10px 30px -18px rgb(11 11 11 / .18);
 
       --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
-      --radius: 18px;
-      --radius-sm: 10px;
-      --container: 1120px;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --container: 1180px;
       --gutter: clamp(16px, 4vw, 32px);
-      --header-h: 64px;
+      --header-h: 60px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bg: #0b1020;
-        --surface: #121933;
-        --surface-2: #19224a;
-        --text: #e7eaf4;
-        --muted: #a2abc6;
-        --border: #263056;
-        --accent: #8b93ff;
-        --accent-strong: #a5abff;
-        --accent-soft: #1d2457;
-        --teal: #2dd4bf;
-        --teal-soft: #11303a;
-        --pass: #4ade80;
-        --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .5);
-        --shadow-lg: 0 24px 48px -20px rgb(0 0 0 / .7);
-        --term-bg: #080c1a;
+        color-scheme: dark;
+        --page: #0d0d0d;
+        --surface: #1a1a19;
+        --surface-2: #242422;
+        --text: #f0efec;
+        --text-2: #c3c2b7;
+        --muted: #898781;
+        --grid: #2c2c2a;
+        --baseline: #383835;
+        --border: rgb(255 255 255 / .10);
+        --accent: #3987e5;
+        --accent-text: #6da7ec;
+        --accent-soft: #16263b;
+        --s1: #3987e5;
+        --s2: #d95926;
+        --s3: #199e70;
+        --good-text: #0ca30c;
+        --good-soft: #122812;
+        --warn-text: #fab219;
+        --warn-soft: #2d2410;
+        --term-bg: #0a0a0a;
+        --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 30px -18px rgb(0 0 0 / .7);
       }
     }
 
     :root[data-theme="dark"] {
-      --bg: #0b1020;
-      --surface: #121933;
-      --surface-2: #19224a;
-      --text: #e7eaf4;
-      --muted: #a2abc6;
-      --border: #263056;
-      --accent: #8b93ff;
-      --accent-strong: #a5abff;
-      --accent-soft: #1d2457;
-      --teal: #2dd4bf;
-      --teal-soft: #11303a;
-      --pass: #4ade80;
-      --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .5);
-      --shadow-lg: 0 24px 48px -20px rgb(0 0 0 / .7);
-      --term-bg: #080c1a;
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --surface-2: #242422;
+      --text: #f0efec;
+      --text-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgb(255 255 255 / .10);
+      --accent: #3987e5;
+      --accent-text: #6da7ec;
+      --accent-soft: #16263b;
+      --s1: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --good-text: #0ca30c;
+      --good-soft: #122812;
+      --warn-text: #fab219;
+      --warn-soft: #2d2410;
+      --term-bg: #0a0a0a;
+      --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 30px -18px rgb(0 0 0 / .7);
     }
 
     /* ---------- Base ---------- */
@@ -138,20 +163,21 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: var(--page);
       color: var(--text);
       font-family: var(--font-sans);
       font-size: 1rem;
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
     h1, h2, h3, h4 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
     p { margin: 0; }
-    ul { margin: 0; padding: 0; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
+    dl, dd { margin: 0; }
     a { color: inherit; }
-    img, svg { display: block; max-width: 100%; }
+    svg { display: block; }
 
     :focus-visible {
       outline: 3px solid var(--accent);
@@ -187,18 +213,26 @@
     }
     .skip-link:focus { top: 12px; }
 
-    /* ---------- Header ---------- */
+    .mono { font-family: var(--font-mono); }
+    .icon { width: 1em; height: 1em; flex-shrink: 0; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ---------- Header (report toolbar) ---------- */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      background: color-mix(in srgb, var(--page) 85%, transparent);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .2s ease;
+      border-bottom: 1px solid var(--border);
     }
-    .site-header.is-scrolled { border-bottom-color: var(--border); }
 
     .header-inner {
       height: var(--header-h);
@@ -209,50 +243,52 @@
     }
 
     .brand {
-      font-weight: 800;
-      font-size: 1.15rem;
-      text-decoration: none;
-      letter-spacing: -0.02em;
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: .9rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
     .brand-mark {
-      width: 32px; height: 32px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--teal));
-      display: grid; place-items: center;
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: var(--good);
       color: #fff;
+      display: grid; place-items: center;
     }
-    .brand span { color: var(--accent); }
+    .brand-mark svg { width: 16px; height: 16px; }
+    .brand-path { color: var(--muted); font-weight: 600; }
 
-    .nav { display: flex; align-items: center; gap: 4px; }
-    .nav-list { display: flex; list-style: none; gap: 2px; }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav-list { display: flex; gap: 2px; }
     .nav-list a {
       display: block;
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-radius: 8px;
-      font-size: .925rem;
+      font-size: .9rem;
       font-weight: 600;
-      color: var(--muted);
+      color: var(--text-2);
       text-decoration: none;
       transition: color .15s ease, background-color .15s ease;
     }
-    .nav-list a:hover,
-    .nav-list a[aria-current="true"] { color: var(--text); background: var(--surface-2); }
+    .nav-list a:hover { color: var(--text); background: var(--surface-2); }
+    .nav-list a[aria-current="true"] { color: var(--accent-text); background: var(--accent-soft); }
 
     .icon-btn {
-      width: 40px; height: 40px;
+      width: 38px; height: 38px;
       display: inline-grid; place-items: center;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: var(--surface);
       color: var(--text);
       cursor: pointer;
-      transition: background-color .15s ease, border-color .15s ease;
+      transition: background-color .15s ease;
     }
     .icon-btn:hover { background: var(--surface-2); }
-    .icon-btn svg { width: 20px; height: 20px; }
+    .icon-btn svg { width: 19px; height: 19px; }
 
     .theme-toggle .icon-sun { display: none; }
     :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
@@ -264,7 +300,7 @@
 
     .menu-btn { display: none; }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .menu-btn { display: inline-grid; }
       .nav-list {
         position: absolute;
@@ -273,442 +309,591 @@
         flex-direction: column;
         gap: 4px;
         padding: 12px var(--gutter) 20px;
-        background: var(--bg);
+        background: var(--page);
         border-bottom: 1px solid var(--border);
         box-shadow: var(--shadow);
       }
       .js .nav-list[data-open="false"] { display: none; }
       .nav-list a { padding: 12px; font-size: 1rem; }
     }
+    @media (max-width: 480px) { .brand-path { display: none; } }
 
-    /* ---------- Buttons & chips ---------- */
+    /* ---------- Shared bits ---------- */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 48px;
-      padding: 12px 22px;
-      border-radius: 999px;
+      min-height: 46px;
+      padding: 11px 20px;
+      border-radius: 10px;
       font-weight: 700;
       font-size: .95rem;
       text-decoration: none;
       border: 1px solid transparent;
-      transition: transform .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+      transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
     }
     .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 24px -10px var(--accent); }
-    :root[data-theme="dark"] .btn-primary { color: #0b1020; }
-    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { color: #0b1020; } }
-    .btn-primary:hover { background: var(--accent-strong); }
+    .btn-primary { background: var(--accent-text); color: #fff; }
+    .btn-primary:hover { background: var(--accent); }
+    :root[data-theme="dark"] .btn-primary { background: var(--accent); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { background: var(--accent); } }
     .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
     .btn-ghost:hover { border-color: var(--muted); }
 
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
-    .chip {
-      display: inline-block;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .eyebrow {
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 999px;
       font-family: var(--font-mono);
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .06em;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .04em;
       text-transform: uppercase;
-      color: var(--teal);
+      white-space: nowrap;
+      border: 1px solid transparent;
     }
+    .pill svg { width: 13px; height: 13px; }
+    .pill-pass { background: var(--good-soft); color: var(--good-text); border-color: color-mix(in srgb, var(--good) 30%, transparent); }
+    .pill-run { background: var(--accent-soft); color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+    .pill-pending { background: var(--warn-soft); color: var(--warn-text); border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+    .pill-neutral { background: var(--surface-2); color: var(--text-2); border-color: var(--border); }
+
+    .live-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 55%, transparent); }
+      70% { box-shadow: 0 0 0 7px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: .74rem;
+      font-weight: 600;
+      color: var(--text-2);
+      white-space: nowrap;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
     /* ---------- Sections ---------- */
-    section { padding-block: clamp(64px, 10vw, 112px); }
+    section { padding-block: clamp(48px, 7vw, 88px); }
     section.section-flush { padding-top: 0; }
-
-    .section-head { max-width: 680px; margin-bottom: clamp(32px, 5vw, 56px); }
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin-bottom: clamp(24px, 4vw, 36px);
+    }
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
     .section-head h2 {
-      margin-top: 10px;
-      font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+      margin-top: 6px;
+      font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
       font-weight: 800;
     }
-    .section-head p { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
+    .section-head p { margin-top: 8px; color: var(--text-2); max-width: 62ch; }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .card-title {
+      font-family: var(--font-mono);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-2);
     }
 
-    /* ---------- Hero ---------- */
-    .hero { position: relative; padding-top: clamp(40px, 8vw, 88px); padding-bottom: clamp(24px, 4vw, 48px); isolation: isolate; }
+    /* ---------- Hero / Overview ---------- */
+    .hero { position: relative; padding-top: clamp(32px, 6vw, 64px); isolation: isolate; }
     .hero::before {
       content: "";
       position: absolute;
-      inset: -20% -10% auto auto;
-      width: min(640px, 90vw);
-      aspect-ratio: 1;
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%);
+      inset: 0 0 auto 0;
+      height: 560px;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+      opacity: .6;
       z-index: -1;
       pointer-events: none;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: clamp(40px, 6vw, 64px);
-      align-items: center;
-    }
-    @media (min-width: 960px) {
-      .hero-grid { grid-template-columns: 1.15fr .85fr; }
-    }
+    .hero-grid { display: grid; gap: 24px; align-items: stretch; }
+    @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.35fr 1fr; } }
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--teal-soft);
-      color: var(--teal);
-      font-size: .85rem;
-      font-weight: 700;
-    }
-    .status-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 0 0 currentColor;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); }
-      70% { box-shadow: 0 0 0 8px transparent; }
-      100% { box-shadow: 0 0 0 0 transparent; }
-    }
+    .report-head { padding: clamp(22px, 3.5vw, 36px); }
+    .breadcrumb { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); }
+    .breadcrumb b { color: var(--text-2); font-weight: 600; }
+    .head-status { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
 
     .hero h1 {
-      margin-top: 20px;
-      font-size: clamp(2.4rem, 1.4rem + 4.5vw, 4.25rem);
+      margin-top: 14px;
+      font-size: clamp(2.3rem, 1.5rem + 3.6vw, 3.75rem);
       font-weight: 800;
       letter-spacing: -0.035em;
       line-height: 1.05;
     }
-    .gradient-text {
-      background: linear-gradient(120deg, var(--accent) 10%, var(--teal) 90%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-role {
+    .hero-role { margin-top: 10px; font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem); font-weight: 700; color: var(--text-2); }
+    .tagline {
       margin-top: 18px;
-      font-size: clamp(1.1rem, 1rem + .5vw, 1.3rem);
-      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: .95rem;
+      color: var(--text-2);
     }
-    .hero-lead {
+    .tagline .kw { color: var(--accent-text); font-weight: 700; }
+    .tagline .str { color: var(--good-text); font-weight: 600; }
+    .hero-lead { margin-top: 14px; color: var(--text-2); max-width: 62ch; }
+
+    .run-meta {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    @media (min-width: 640px) { .run-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .run-meta div { padding: 10px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 0 -1px -1px 0; }
+    .run-meta dt { font-family: var(--font-mono); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .run-meta dd { margin-top: 2px; font-size: .92rem; font-weight: 700; }
+
+    .hero-actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+    @media (max-width: 480px) { .hero-actions .btn { flex: 1 1 100%; } }
+
+    /* Donut */
+    .donut-card { margin: 0; padding: clamp(20px, 3vw, 28px); display: flex; flex-direction: column; }
+    .donut-card .card-sub { margin-top: 4px; color: var(--text-2); font-size: .9rem; }
+    .donut-wrap {
+      margin-top: 20px;
+      display: grid;
+      gap: 20px;
+      align-items: center;
+      grid-template-columns: minmax(0, 200px) 1fr;
+    }
+    @media (max-width: 420px) { .donut-wrap { grid-template-columns: 1fr; justify-items: center; } }
+    .donut { position: relative; width: 100%; max-width: 200px; aspect-ratio: 1; }
+    .donut svg { width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+    .donut-track { fill: none; stroke: var(--surface-2); stroke-width: 12; }
+    .donut-seg {
+      fill: none;
+      stroke-width: 12;
+      stroke-dasharray: var(--dash) 264;
+      stroke-dashoffset: var(--off);
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+    .js .donut:not(.is-played) .donut-seg { stroke-dasharray: 0 264; }
+    .js .donut.is-played .donut-seg { transition: stroke-dasharray 1s cubic-bezier(.2, .7, .2, 1), opacity .2s ease; }
+    .seg-web { stroke: var(--s1); }
+    .seg-mobile { stroke: var(--s2); }
+    .seg-api { stroke: var(--s3); }
+    .is-dim { opacity: .25; }
+    .donut-center {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      pointer-events: none;
+    }
+    .donut-center strong { font-size: clamp(1.6rem, 1.3rem + 1vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+    .donut-center span { margin-top: 4px; font-size: .78rem; color: var(--text-2); }
+
+    .legend { display: grid; gap: 6px; }
+    .legend li {
+      display: grid;
+      grid-template-columns: 12px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      cursor: default;
+      transition: background-color .15s ease, opacity .2s ease;
+    }
+    .legend li:hover { background: var(--surface-2); }
+    .legend .sw { width: 12px; height: 12px; border-radius: 3px; }
+    .legend .name { font-weight: 600; font-size: .92rem; line-height: 1.3; }
+    .legend .name small { display: block; font-weight: 500; color: var(--text-2); font-size: .78rem; }
+    .legend .val { font-family: var(--font-mono); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .sw-web { background: var(--s1); }
+    .sw-mobile { background: var(--s2); }
+    .sw-api { background: var(--s3); }
+
+    .donut-foot {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: .82rem;
+      color: var(--text-2);
+    }
+    .donut-card .legend { margin-bottom: 18px; }
+
+    /* KPI tiles */
+    .kpis {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (min-width: 820px) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .kpi { padding: 18px 18px 16px; position: relative; overflow: hidden; }
+    .kpi::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--good);
+    }
+    .kpi-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .kpi-label .card-title { font-size: .7rem; }
+    .kpi-label svg { width: 16px; height: 16px; color: var(--good); }
+    .kpi-value {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .kpi-caption { display: block; margin-top: 6px; color: var(--text-2); font-size: .85rem; line-height: 1.4; }
+
+    /* ---------- Run summary bar ---------- */
+    .summary-bar { padding: 18px 20px; margin-bottom: 20px; }
+    .summary-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 20px; }
+    .summary-counts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .9rem; }
+    .summary-counts li { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--text-2); }
+    .summary-counts b { color: var(--text); font-variant-numeric: tabular-nums; }
+    .summary-counts svg { width: 16px; height: 16px; }
+    .c-pass svg { color: var(--good); }
+    .c-fail svg { color: var(--muted); }
+    .c-pending svg { color: var(--warn); }
+    .stack {
       margin-top: 14px;
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: clamp(1rem, .95rem + .3vw, 1.125rem);
-    }
-    .hero-meta {
-      margin-top: 18px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px 20px;
+      gap: 2px;
+      height: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .stack span { display: block; height: 100%; }
+    .stack .st-pass { background: var(--good); }
+    .stack .st-pending { background: var(--warn); }
+    .js .stack span { transform-origin: left; transform: scaleX(0); transition: transform 1s cubic-bezier(.2, .7, .2, 1); }
+    .js .stack.is-played span { transform: none; }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text-2);
+      font: 600 .82rem var(--font-sans);
+      cursor: pointer;
+    }
+    .btn-link:hover { color: var(--text); background: var(--surface-2); }
+
+    /* ---------- Suites ---------- */
+    .suites { display: grid; gap: 10px; }
+    .suite { overflow: hidden; }
+    .suite > summary {
+      display: grid;
+      grid-template-columns: 18px 22px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      cursor: pointer;
       list-style: none;
+    }
+    .suite > summary::-webkit-details-marker { display: none; }
+    .suite > summary:hover { background: var(--surface-2); }
+    .chev { width: 18px; height: 18px; color: var(--muted); transition: transform .2s ease; }
+    .suite[open] .chev, .spec[open] .chev { transform: rotate(90deg); }
+    .status-icon { width: 20px; height: 20px; color: var(--good); }
+    .suite-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; min-width: 0; font-size: 1.05rem; font-weight: 700; }
+    .suite-name .file { font-family: var(--font-mono); font-size: .78rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+    .suite-meta { display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 600px) {
+      .suite > summary { grid-template-columns: 18px 22px 1fr; }
+      .suite-meta { grid-column: 3; }
+    }
+
+    .cases { border-top: 1px solid var(--border); }
+    .case {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 12px;
+      align-items: start;
+      padding: 11px 18px 11px 58px;
+      border-bottom: 1px solid var(--border);
+      font-size: .93rem;
+    }
+    .case:last-child { border-bottom: 0; }
+    .case svg { width: 18px; height: 18px; color: var(--good); margin-top: 2px; }
+    .case-meta { justify-self: end; }
+    @media (max-width: 600px) {
+      .case { grid-template-columns: 18px 1fr; padding-left: 18px; }
+      .case-meta { grid-column: 2; justify-self: start; }
+    }
+    .case-group {
+      padding: 10px 18px 8px 58px;
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--accent-text);
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    @media (max-width: 600px) { .case-group { padding-left: 18px; } }
+
+    .suite-featured { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+
+    /* ---------- Timeline (Gantt) ---------- */
+    .experience-section { background: var(--surface); border-block: 1px solid var(--border); }
+    .gantt-card { margin: 0; padding: clamp(18px, 3vw, 28px); background: var(--page); }
+    .gantt { --label-w: 230px; position: relative; margin-top: 18px; }
+    .gantt-grid {
+      position: absolute;
+      top: 0; bottom: 28px;
+      left: var(--label-w); right: 0;
+      pointer-events: none;
+    }
+    .gantt-grid span {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--grid);
+    }
+    .gantt-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: var(--label-w) 1fr;
+      align-items: center;
+      min-height: 52px;
+      border-bottom: 1px solid var(--grid);
+    }
+    .gantt-label { padding-right: 16px; line-height: 1.3; }
+    .gantt-label strong { display: block; font-size: .92rem; }
+    .gantt-label span { font-size: .8rem; color: var(--text-2); }
+    .gantt-track { position: relative; height: 28px; }
+    .gantt-bar {
+      position: absolute;
+      top: 6px;
+      height: 16px;
+      left: var(--l);
+      width: var(--w);
+      min-width: 6px;
+      border-radius: 4px;
+      background: var(--s1);
+      transition: filter .15s ease, transform .15s ease;
+    }
+    .gantt-bar:hover, .gantt-bar:focus-visible { filter: brightness(1.12); transform: scaleY(1.2); }
+    .js .gantt:not(.is-played) .gantt-bar { transform: scaleX(0); }
+    .js .gantt .gantt-bar { transform-origin: left; transition: transform .8s cubic-bezier(.2, .7, .2, 1), filter .15s ease; }
+    .gantt-bar.is-running {
+      background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / .22) 0 6px, transparent 6px 12px);
+      background-size: 17px 17px;
+      animation: stripes 1.2s linear infinite;
+    }
+    @keyframes stripes { to { background-position: 17px 0; } }
+    .gantt-axis {
+      position: relative;
+      margin-left: var(--label-w);
+      height: 28px;
+      font-family: var(--font-mono);
+      font-size: .72rem;
       color: var(--muted);
-      font-size: .925rem;
-      font-weight: 500;
+      font-variant-numeric: tabular-nums;
     }
-    .hero-meta li { display: inline-flex; align-items: center; gap: 8px; }
-    .hero-meta svg { width: 16px; height: 16px; color: var(--teal); }
-    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
-
-    @media (max-width: 480px) {
-      .hero-actions .btn { flex: 1 1 100%; }
+    .gantt-axis span { position: absolute; top: 8px; transform: translateX(-50%); }
+    @media (max-width: 640px) {
+      .gantt { --label-w: 0px; }
+      .gantt-row { grid-template-columns: 1fr; padding-top: 10px; }
+      .gantt-label { padding: 0; }
     }
 
-    /* Terminal illustration */
+    .table-toggle { margin-top: 16px; }
+    .table-toggle summary { cursor: pointer; font-weight: 600; font-size: .88rem; color: var(--accent-text); }
+    .data-table { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: .88rem; }
+    .data-table th, .data-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    .data-table th { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); }
+    .data-table td { font-variant-numeric: tabular-nums; }
+
+    /* Spec files (jobs) */
+    .specs { margin-top: 24px; display: grid; gap: 12px; }
+    .spec { background: var(--page); overflow: hidden; }
+    .spec > summary {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 6px 12px;
+      align-items: start;
+      padding: 18px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .spec > summary::-webkit-details-marker { display: none; }
+    .spec > summary:hover { background: var(--surface-2); }
+    .spec .chev { margin-top: 4px; }
+    .spec-file { display: block; margin-bottom: 4px; font-family: var(--font-mono); font-size: .78rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+    .spec-title { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); font-weight: 800; }
+    .spec-company { display: block; margin-top: 2px; font-weight: 700; color: var(--accent-text); font-size: .95rem; letter-spacing: 0; }
+    .spec-side { display: grid; justify-items: end; gap: 6px; text-align: right; }
+    .spec-date { font-family: var(--font-mono); font-size: .78rem; color: var(--text-2); white-space: nowrap; }
+    @media (max-width: 640px) {
+      .spec > summary { grid-template-columns: 18px 1fr; }
+      .spec-side { grid-column: 2; justify-items: start; text-align: left; }
+    }
+    .spec-body { border-top: 1px solid var(--border); background: var(--surface); }
+    .spec-summary { padding: 14px 20px 14px 50px; color: var(--text-2); font-size: .93rem; border-bottom: 1px solid var(--border); }
+    .spec .case { padding-left: 50px; }
+    .spec .case-group { padding-left: 50px; }
+    .spec-stack { padding: 14px 20px 16px 50px; border-top: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .spec-summary, .spec .case, .spec .case-group, .spec-stack { padding-left: 18px; }
+    }
+
+    /* ---------- Environment ---------- */
+    .env-grid { display: grid; gap: 16px; }
+    @media (min-width: 980px) { .env-grid { grid-template-columns: 1.6fr 1fr; align-items: start; } }
+    .env-card { overflow: hidden; }
+    .env-card > header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .env-table { width: 100%; border-collapse: collapse; }
+    .env-table th, .env-table td { padding: 12px 20px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .env-table tr:last-child th, .env-table tr:last-child td { border-bottom: 0; }
+    .env-table th {
+      width: 34%;
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--text-2);
+      padding-top: 15px;
+    }
+    @media (max-width: 600px) {
+      .env-table tr { display: block; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+      .env-table th, .env-table td { display: block; width: auto; padding: 0; border: 0; }
+      .env-table td { margin-top: 8px; }
+    }
+    .side-stack { display: grid; gap: 16px; }
+    .check-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      padding: 13px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .check-list li:last-child { border-bottom: 0; }
+    .check-list svg { width: 18px; height: 18px; margin-top: 3px; }
+    .check-list .ok { color: var(--good); }
+    .check-list .wait { color: var(--warn); }
+    .check-list strong { display: block; font-size: .95rem; line-height: 1.35; }
+    .check-list span { font-size: .85rem; color: var(--text-2); }
+    .check-list .pill { margin-top: 6px; }
+
+    /* ---------- Contact (terminal) ---------- */
     .terminal {
       margin: 0;
       background: var(--term-bg);
       color: var(--term-text);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgb(255 255 255 / .06);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid rgb(255 255 255 / .08);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      font-family: var(--font-mono);
-      font-size: clamp(.75rem, .7rem + .2vw, .85rem);
-      line-height: 1.75;
     }
     .terminal-bar {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 12px 16px;
-      border-bottom: 1px solid rgb(255 255 255 / .06);
+      border-bottom: 1px solid rgb(255 255 255 / .08);
       color: var(--term-muted);
+      font-family: var(--font-mono);
       font-size: .78rem;
     }
-    .terminal-bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a4266; }
+    .terminal-bar i { width: 11px; height: 11px; border-radius: 50%; }
     .terminal-bar i:nth-child(1) { background: #ff5f57; }
     .terminal-bar i:nth-child(2) { background: #febc2e; }
     .terminal-bar i:nth-child(3) { background: #28c840; }
     .terminal-bar span { margin-left: 8px; }
     .terminal pre {
       margin: 0;
-      padding: 18px 20px 20px;
+      padding: 20px 22px 4px;
       overflow-x: auto;
-      white-space: pre;
+      font-family: var(--font-mono);
+      font-size: clamp(.75rem, .7rem + .2vw, .88rem);
+      line-height: 1.8;
     }
-    .t-kw { color: #a5abff; font-weight: 600; }
-    .t-step { color: #7ee2d5; }
-    .t-str { color: #ffd38a; }
     .t-muted { color: var(--term-muted); }
-    .t-pass { color: #4ade80; font-weight: 600; }
-
+    .t-pass { color: #0ca30c; font-weight: 700; }
+    .t-kw { color: #86b6ef; font-weight: 600; }
+    .t-str { color: #fab219; }
     .js .terminal .line { opacity: 0; }
-    .js .terminal.is-played .line { animation: lineIn .35s ease forwards; animation-delay: calc(var(--i) * 140ms); }
+    .js .terminal.is-played .line { animation: lineIn .35s ease forwards; animation-delay: calc(var(--i) * 160ms); }
     @keyframes lineIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
-    /* ---------- Stats ---------- */
-    .stats {
-      margin-top: clamp(48px, 8vw, 80px);
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      list-style: none;
-    }
-    @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-    .stat { padding: 22px 20px; }
-    .stat-value {
-      display: block;
-      font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: var(--accent);
-    }
-    .stat-label { display: block; margin-top: 6px; color: var(--muted); font-size: .9rem; line-height: 1.45; }
-
-    /* ---------- About ---------- */
-    .about-grid { display: grid; gap: 24px; }
-    @media (min-width: 900px) { .about-grid { grid-template-columns: 1.2fr .8fr; gap: 40px; } }
-    .about-text p { color: var(--muted); font-size: 1.05rem; }
-    .about-text p + p { margin-top: 16px; }
-    .about-text strong { color: var(--text); }
-    .highlights { padding: 24px; list-style: none; display: grid; gap: 16px; align-content: start; }
-    .highlights li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; font-size: .95rem; }
-    .highlights svg { width: 22px; height: 22px; color: var(--pass); margin-top: 2px; }
-
-    /* ---------- Expertise ---------- */
-    .expertise-grid { display: grid; gap: 16px; }
-    @media (min-width: 640px) { .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 1024px) { .expertise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
-    .feature {
-      padding: 28px;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .feature:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: var(--shadow-lg); }
-    .feature-icon {
-      width: 48px; height: 48px;
-      border-radius: 14px;
-      display: grid; place-items: center;
-      background: var(--accent-soft);
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .feature:nth-child(even) .feature-icon { background: var(--teal-soft); color: var(--teal); }
-    .feature-icon svg { width: 24px; height: 24px; }
-    .feature h3 { font-size: 1.15rem; font-weight: 700; }
-    .feature p { margin-top: 10px; color: var(--muted); font-size: .95rem; }
-    .feature .chips { margin-top: 18px; }
-
-    /* Featured card: gradient border via padding-box/border-box backgrounds */
-    .feature-wide {
-      grid-column: 1 / -1;
-      border-color: transparent;
-      background:
-        linear-gradient(var(--surface), var(--surface)) padding-box,
-        linear-gradient(120deg, var(--accent), var(--teal)) border-box;
-    }
-    .feature-wide:hover { border-color: transparent; }
-    .feature-wide p { max-width: 80ch; }
-    @media (min-width: 760px) {
-      .feature-wide { display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; }
-      .feature-wide .feature-icon { margin-bottom: 0; }
-    }
-
-    /* ---------- Experience ---------- */
-    .experience-section { background: var(--surface); border-block: 1px solid var(--border); }
-
-    .timeline { list-style: none; position: relative; display: grid; gap: 28px; }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 7px; top: 12px; bottom: 12px;
-      width: 2px;
-      background: linear-gradient(var(--accent), var(--teal), var(--border));
-      border-radius: 2px;
-    }
-    .job { position: relative; padding-left: 40px; }
-    .job::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 8px;
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 3px solid var(--accent);
-    }
-    .job-card { padding: clamp(20px, 3vw, 32px); background: var(--bg); }
-    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
-    .job-title { font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); font-weight: 800; }
-    .job-company { margin-top: 4px; color: var(--accent); font-weight: 700; }
-    .job-date {
-      font-family: var(--font-mono);
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--muted);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .job-summary { margin-top: 14px; color: var(--muted); }
-
-    .job-bullets { margin-top: 14px; padding-left: 0; list-style: none; display: grid; gap: 8px; }
-    .job-bullets li { position: relative; padding-left: 22px; font-size: .95rem; }
-    .job-bullets li::before {
-      content: "";
-      position: absolute;
-      left: 4px; top: .62em;
-      width: 7px; height: 7px;
-      border-radius: 2px;
-      background: var(--teal);
-      transform: rotate(45deg);
-    }
-
-    .job-areas { margin-top: 20px; display: grid; gap: 14px; }
-    @media (min-width: 760px) { .job-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    .area { padding: 20px; background: var(--surface); }
-    .area h4 { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    .area h4 svg { width: 18px; height: 18px; color: var(--accent); }
-    .area .job-bullets { margin-top: 10px; }
-    .area .job-bullets li { font-size: .9rem; }
-
-    .job-stack { margin-top: 20px; }
-    .job-stack .chip { background: var(--surface); font-size: .78rem; }
-
-    /* Progressive disclosure for long entries */
-    .more { margin-top: 16px; }
-    .more summary {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: .9rem;
-      color: var(--accent);
-      list-style: none;
-      padding: 6px 0;
-    }
-    .more summary::-webkit-details-marker { display: none; }
-    .more summary svg { width: 16px; height: 16px; transition: transform .2s ease; }
-    .more[open] summary svg { transform: rotate(180deg); }
-    .more .when-open { display: none; }
-    .more[open] .when-open { display: inline; }
-    .more[open] .when-closed { display: none; }
-
-    /* ---------- Skills ---------- */
-    .skills-grid { display: grid; gap: 16px; }
-    @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    .skill-group { padding: 22px; }
-    .skill-group h3 {
-      font-size: .8rem;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    /* ---------- Education ---------- */
-    .edu-grid { display: grid; gap: 16px; }
-    @media (min-width: 760px) { .edu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    .edu { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .edu h3 { font-size: 1.05rem; font-weight: 700; }
-    .edu p { color: var(--muted); font-size: .92rem; }
-    .badge {
-      align-self: flex-start;
-      font-size: .75rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--teal-soft);
-      color: var(--teal);
-    }
-    .badge.progress { background: var(--accent-soft); color: var(--accent); }
-
-    .languages { margin-top: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
-    .languages strong { font-size: .95rem; }
-    .languages span { color: var(--muted); font-size: .95rem; }
-
-    /* ---------- Contact ---------- */
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-      padding: clamp(32px, 6vw, 72px);
-      border-radius: calc(var(--radius) + 10px);
-      background: var(--term-bg);
-      color: #eef1fb;
-      text-align: center;
-      box-shadow: var(--shadow-lg);
-    }
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -20% -60% -20%;
-      height: 120%;
-      background: radial-gradient(ellipse at center, rgb(99 102 241 / .45), transparent 60%);
-      z-index: -1;
-    }
-    .contact-card h2 { margin-top: 12px; font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); font-weight: 800; }
-    .contact-card p { margin: 16px auto 0; max-width: 56ch; color: #b9c1dc; font-size: 1.05rem; }
-    .contact-actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .contact-card .btn-primary { background: #8b93ff; color: #0b1020; box-shadow: none; }
-    .contact-card .btn-primary:hover { background: #a5abff; }
-    .contact-card .btn-ghost { background: rgb(255 255 255 / .06); color: #eef1fb; border-color: rgb(255 255 255 / .16); }
-    .contact-card .btn-ghost:hover { border-color: rgb(255 255 255 / .4); }
-    .contact-card :focus-visible { outline-color: #a5abff; }
-
-    @media (max-width: 480px) {
-      .contact-actions .btn { flex: 1 1 100%; }
-    }
+    .contact-body { padding: 8px 22px clamp(24px, 4vw, 36px); }
+    .contact-body h2 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem); font-weight: 800; }
+    .contact-body p { margin-top: 10px; color: #c3c2b7; max-width: 62ch; }
+    .contact-actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .terminal .btn-primary { background: #3987e5; color: #fff; }
+    .terminal .btn-primary:hover { background: #5598e7; }
+    .terminal .btn-ghost { background: rgb(255 255 255 / .06); color: #f0efec; border-color: rgb(255 255 255 / .16); }
+    .terminal .btn-ghost:hover { border-color: rgb(255 255 255 / .4); }
+    .terminal :focus-visible { outline-color: #86b6ef; }
+    @media (max-width: 480px) { .contact-actions .btn { flex: 1 1 100%; } }
 
     /* ---------- Footer ---------- */
-    .site-footer { padding-block: 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+    .site-footer { padding-block: 28px; border-top: 1px solid var(--border); color: var(--text-2); font-size: .88rem; }
     .footer-inner { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
-    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-inner p { font-family: var(--font-mono); font-size: .8rem; }
+    .footer-links { display: flex; gap: 20px; }
     .footer-links a { text-decoration: none; font-weight: 600; }
     .footer-links a:hover { color: var(--text); }
 
+    /* ---------- Tooltip ---------- */
+    .tooltip {
+      position: fixed;
+      z-index: 200;
+      max-width: 280px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: var(--text);
+      color: var(--page);
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 1.4;
+      pointer-events: none;
+      box-shadow: var(--shadow);
+      white-space: pre-line;
+    }
+    .tooltip[hidden] { display: none; }
+
     /* ---------- Scroll reveal (progressive enhancement) ---------- */
-    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
     .js .reveal.is-visible { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -721,11 +906,15 @@
       .js .reveal, .js .terminal .line { opacity: 1; transform: none; }
     }
 
+    @media (forced-colors: active) {
+      .donut-seg, .gantt-bar, .stack span, .legend .sw { forced-color-adjust: none; }
+    }
+
     @media print {
-      .site-header, .hero::before, .terminal, .contact-actions, .more summary { display: none !important; }
-      .js .reveal { opacity: 1; transform: none; }
-      .more:not([open]) > :not(summary) { display: block; }
-      body { background: #fff; color: #000; }
+      .site-header, .hero::before, .hero-actions, .contact-actions, .btn-link { display: none !important; }
+      .js .reveal, .js .terminal .line { opacity: 1; transform: none; }
+      details > *:not(summary) { display: block !important; }
+      body { background: #fff; }
     }
   </style>
 </head>
@@ -735,38 +924,29 @@
 
   <!-- SVG icon sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></g></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-pass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m7.5 12.2 3 3 6-6.4"/></symbol>
+    <symbol id="i-fail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></g></symbol>
+    <symbol id="i-pending" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path fill="none" stroke="#0b0b0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 6.5V12l3.5 2"/></symbol>
+    <symbol id="i-chevron-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></g></symbol>
-    <symbol id="i-browser" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></g></symbol>
-    <symbol id="i-api" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></g></symbol>
-    <symbol id="i-gauge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></g></symbol>
-    <symbol id="i-pipeline" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></g></symbol>
-    <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></g></symbol>
-    <symbol id="i-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4zM9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g></symbol>
-    <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></g></symbol>
   </svg>
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Rodrigo Ayala, back to top">
-        <span class="brand-mark" aria-hidden="true"><svg width="18" height="18"><use href="#i-check"/></svg></span>
-        Rodrigo<span>Ayala</span>
+      <a class="brand" href="#top" aria-label="Rodrigo Ayala test report, back to top">
+        <span class="brand-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+        rodrigo-ayala<span class="brand-path">/career-report</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" aria-label="Report sections">
         <ul class="nav-list" id="nav-list" data-open="false">
-          <li><a href="#about">About</a></li>
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#suites">Suites</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#environment">Environment</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="icon-btn theme-toggle" type="button" id="theme-toggle" aria-label="Toggle dark mode">
@@ -782,23 +962,34 @@
 
   <main id="main">
 
-    <!-- ================= Hero ================= -->
-    <section class="hero" aria-labelledby="hero-title">
+    <!-- ================= Overview ================= -->
+    <section class="hero" id="overview" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-grid">
-          <div>
-            <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to new opportunities</p>
-            <h1 id="hero-title">Hi, I'm Rodrigo.<br><span class="gradient-text">I make releases boring.</span></h1>
+          <div class="card report-head">
+            <p class="breadcrumb">reports / <b>career</b> / run <b>#14y</b> · branch <b>main</b></p>
+            <div class="head-status">
+              <span class="pill pill-pass"><svg aria-hidden="true"><use href="#i-check"/></svg>Passed</span>
+              <span class="pill pill-run"><span class="live-dot" aria-hidden="true"></span>Open to new opportunities</span>
+            </div>
+            <h1 id="hero-title">Rodrigo Ayala</h1>
             <p class="hero-role">Test Automation Lead · Senior SDET · Mobile, Web &amp; API</p>
+            <p class="tagline"><span class="kw">expect</span>(release).<span class="kw">toBe</span>(<span class="str">"boring"</span>)</p>
             <p class="hero-lead">
-              14+ years building automation frameworks from scratch for native iOS and Android apps, web and APIs.
-              Playwright, Appium and RestAssured suites wired into CI/CD with quality gates that stop risky releases,
-              plus quality engineering for AI/ML features.
+              14+ years building automation frameworks from scratch for native iOS and Android apps, web and APIs for
+              enterprise clients. Playwright, Appium and RestAssured suites wired into CI/CD with quality gates that stop
+              risky releases, plus quality engineering for AI/ML features.
             </p>
-            <ul class="hero-meta">
-              <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Guadalajara, Mexico</li>
-              <li><svg aria-hidden="true"><use href="#i-globe"/></svg>Spanish (native) · English (C1)</li>
-            </ul>
+
+            <dl class="run-meta">
+              <div><dt>Started</dt><dd><time datetime="2013-09">Sep 2013</time></dd></div>
+              <div><dt>Duration</dt><dd>14+ years</dd></div>
+              <div><dt>Current build</dt><dd>Incedo Inc.</dd></div>
+              <div><dt>Environment</dt><dd>Guadalajara, MX</dd></div>
+              <div><dt>Locale</dt><dd>ES native · EN C1</dd></div>
+              <div><dt>Executor</dt><dd>Senior SDET</dd></div>
+            </dl>
+
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">
                 <svg aria-hidden="true"><use href="#i-mail"/></svg>Get in touch
@@ -809,399 +1000,482 @@
             </div>
           </div>
 
-          <figure class="terminal" id="terminal" aria-label="Example CI pipeline run: web, mobile, API, load and AI/ML suites pass the release quality gate">
-            <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>release-gate · pipeline</span></div>
-<pre aria-hidden="true"><span class="line" style="--i:0"><span class="t-muted">$ run release-gate --parallel --shards=4</span></span>
-<span class="line" style="--i:1"></span>
-<span class="line" style="--i:2"><span class="t-pass">✓</span> <span class="t-kw">web   </span>  Playwright + TS       <span class="t-pass">500+ passed</span></span>
-<span class="line" style="--i:3"><span class="t-pass">✓</span> <span class="t-kw">mobile</span>  Appium · 50+ devices  <span class="t-pass">300+ passed</span></span>
-<span class="line" style="--i:4"><span class="t-pass">✓</span> <span class="t-kw">api   </span>  RestAssured · schema  <span class="t-pass">300+ passed</span></span>
-<span class="line" style="--i:5"><span class="t-pass">✓</span> <span class="t-kw">load  </span>  JMeter · 500 users    <span class="t-step">p95 in SLO</span></span>
-<span class="line" style="--i:6"><span class="t-pass">✓</span> <span class="t-kw">ai/ml </span>  RAGAS · DeepEval      <span class="t-step">scores ≥ gate</span></span>
-<span class="line" style="--i:7"><span class="t-pass">✓</span> <span class="t-kw">llm   </span>  promptfoo · injection <span class="t-step">0 leaks</span></span>
-<span class="line" style="--i:8"></span>
-<span class="line" style="--i:9"><span class="t-muted">Quality gate:</span> <span class="t-pass">PROMOTE ▸</span></span></pre>
+          <!-- Donut: automated tests by platform -->
+          <figure class="card donut-card" id="donut-card" aria-labelledby="donut-title">
+            <h2 class="card-title" id="donut-title">Automated tests by platform</h2>
+            <p class="card-sub">Suites I built and maintained, all running in CI/CD.</p>
+            <div class="donut-wrap">
+              <div class="donut" id="donut">
+                <!-- r=42 → circumference ≈ 263.9; 3-unit gaps between segments -->
+                <svg viewBox="0 0 100 100" role="img" aria-label="Over 1,100 automated tests: Web 500+, Mobile 300+, API 300+">
+                  <circle class="donut-track" cx="50" cy="50" r="42"/>
+                  <circle class="donut-seg seg-web" data-key="web" cx="50" cy="50" r="42" style="--dash:116.95;--off:0" data-tip="Web · 500+ tests&#10;Playwright + TypeScript, Cucumber BDD"/>
+                  <circle class="donut-seg seg-mobile" data-key="mobile" cx="50" cy="50" r="42" style="--dash:68.97;--off:-119.95" data-tip="Mobile · 300+ tests&#10;Appium on 50+ real iOS &amp; Android devices"/>
+                  <circle class="donut-seg seg-api" data-key="api" cx="50" cy="50" r="42" style="--dash:68.97;--off:-191.92" data-tip="API · 300+ tests&#10;RestAssured with contract &amp; schema validation"/>
+                </svg>
+                <div class="donut-center" aria-hidden="true"><strong>1,000+</strong><span>automated tests</span></div>
+              </div>
+              <ul class="legend" aria-label="Legend">
+                <li data-key="web"><span class="sw sw-web" aria-hidden="true"></span><span class="name">Web<small>Playwright + TS</small></span><span class="val">500+</span></li>
+                <li data-key="mobile"><span class="sw sw-mobile" aria-hidden="true"></span><span class="name">Mobile<small>Appium iOS/Android</small></span><span class="val">300+</span></li>
+                <li data-key="api"><span class="sw sw-api" aria-hidden="true"></span><span class="name">API<small>RestAssured</small></span><span class="val">300+</span></li>
+              </ul>
+            </div>
+            <figcaption class="donut-foot">
+              Plus <strong>200+</strong> backend endpoints load-tested with JMeter at <strong>500</strong> concurrent users.
+            </figcaption>
           </figure>
         </div>
 
-        <ul class="stats" aria-label="Career highlights">
-          <li class="card stat reveal"><span class="stat-value">14+</span><span class="stat-label">years in QA &amp; test automation</span></li>
-          <li class="card stat reveal"><span class="stat-value">1,000+</span><span class="stat-label">automated tests across mobile, web &amp; API</span></li>
-          <li class="card stat reveal"><span class="stat-value">40%</span><span class="stat-label">faster regression after Selenium → Playwright</span></li>
-          <li class="card stat reveal"><span class="stat-value">12</span><span class="stat-label">QA engineers led across the US, India &amp; Mexico</span></li>
+        <!-- KPI tiles -->
+        <ul class="kpis" aria-label="Key metrics">
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Experience</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="14" data-suffix="+">14+</span>
+            <span class="kpi-caption">years in QA &amp; test automation</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Automated tests</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="1000" data-suffix="+">1,000+</span>
+            <span class="kpi-caption">across mobile, web &amp; API</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Regression runtime</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="40" data-prefix="−" data-suffix="%">−40%</span>
+            <span class="kpi-caption">after Selenium → Playwright migration</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Pipeline time</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="60" data-prefix="−" data-suffix="%">−60%</span>
+            <span class="kpi-caption">with parallel runners &amp; sharding</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Maintenance</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="30" data-prefix="−" data-suffix="%">−30%</span>
+            <span class="kpi-caption">test upkeep with AI agents, human-reviewed</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">UI coverage</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="90" data-suffix="%">90%</span>
+            <span class="kpi-caption">of critical user journeys</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Real devices</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="50" data-suffix="+">50+</span>
+            <span class="kpi-caption">iOS &amp; Android in BrowserStack</span>
+          </li>
+          <li class="card kpi reveal">
+            <span class="kpi-label"><span class="card-title">Team led</span><svg aria-hidden="true"><use href="#i-pass"/></svg></span>
+            <span class="kpi-value" data-count="12">12</span>
+            <span class="kpi-caption">QA engineers in the US, India &amp; Mexico</span>
+          </li>
         </ul>
       </div>
     </section>
 
-    <!-- ================= About ================= -->
-    <section id="about" aria-labelledby="about-title">
+    <!-- ================= Suites ================= -->
+    <section id="suites" aria-labelledby="suites-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">01 · About</span>
-          <h2 id="about-title">Quality from test strategy to release</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>
-              I'm a <strong>Senior SDET and Test Automation Lead</strong> who builds automation frameworks from scratch for
-              native iOS and Android apps, web and APIs for enterprise clients. Today I build <strong>Playwright + TypeScript</strong>
-              UI and API automation at <strong>Incedo</strong>, running in Bitbucket Pipelines with parallel execution and sharding.
-            </p>
-            <p>
-              Before that I built and maintained <strong>1,000+ automated tests</strong>: 300+ Appium tests on 50+ real devices in
-              BrowserStack, 500+ Playwright tests in TypeScript with Cucumber BDD, and 300+ RestAssured API tests with contract and
-              schema validation. I built the original 200+ test web suite in Java + Selenium and migrated it to Playwright,
-              <strong>cutting regression runtime by up to 40%</strong>.
-            </p>
-            <p>
-              I've led QA teams of up to <strong>12 engineers across the US, India and Mexico</strong> and presented results directly
-              to client stakeholders. I also test AI features (RAG evaluation, LLM-as-a-judge, prompt-injection testing) and use
-              AI agents to generate scenarios and analyze failures, with a human review on every change.
-            </p>
+          <div>
+            <span class="section-kicker">// 01 · test suites</span>
+            <h2 id="suites-title">What I do best</h2>
+            <p>Each suite is an area of expertise. Expand one to see the checks behind it.</p>
           </div>
-          <ul class="card highlights reveal" aria-label="What I bring">
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Frameworks built from scratch in Java, TypeScript and Python</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Native iOS &amp; Android on 50+ real devices in BrowserStack and Sauce Labs</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Quality gates in Bitbucket Pipelines, GitLab CI and GitHub Actions</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>AI/ML QE: golden datasets, RAGAS, DeepEval and promptfoo</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>About 30% less test maintenance with AI agents, human-reviewed</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Team leadership, hiring and mentoring across three countries</span></li>
-          </ul>
+        </div>
+
+        <div class="card summary-bar reveal">
+          <div class="summary-top">
+            <ul class="summary-counts" aria-label="Run summary">
+              <li class="c-pass"><svg aria-hidden="true"><use href="#i-pass"/></svg><b id="count-pass">36</b> passed</li>
+              <li class="c-fail"><svg aria-hidden="true"><use href="#i-fail"/></svg><b>0</b> failed</li>
+              <li class="c-fail"><svg aria-hidden="true"><use href="#i-fail"/></svg><b>0</b> flaky</li>
+              <li class="c-pending"><svg aria-hidden="true"><use href="#i-pending"/></svg><b id="count-pending">2</b> pending <span class="visually-hidden">(certifications in progress)</span></li>
+            </ul>
+            <button class="btn-link" type="button" id="toggle-suites" aria-controls="suite-list">Expand all</button>
+          </div>
+          <div class="stack" id="stack" aria-hidden="true">
+            <span class="st-pass" id="stack-pass" style="flex:36"></span>
+            <span class="st-pending" id="stack-pending" style="flex:2"></span>
+          </div>
+        </div>
+
+        <div class="suites" id="suite-list">
+          <details class="card suite reveal" open>
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">Mobile automation <span class="file">mobile/appium.spec.java</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>5 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Runs 300+ Appium tests on native iOS and Android with Page Object Model and shared step definitions</span><span class="tag case-meta">Java · BDD</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Executes smoke and regression in parallel on 50+ real devices and emulators/simulators</span><span class="tag case-meta">BrowserStack · Sauce Labs</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Survives revoked permissions, backgrounding and incoming calls</span><span class="tag case-meta">edge cases</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Recovers from offline mode, push notifications and expired sessions or tokens</span><span class="tag case-meta">edge cases</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Catches fragmentation across OS versions, device models and screen sizes</span><span class="tag case-meta">device matrix</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">Web automation &amp; BDD <span class="file">web/playwright.spec.ts</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>5 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Builds Playwright + TypeScript frameworks with Page Object Model, fixtures and environment-based config</span><span class="tag case-meta">Playwright</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Migrates a 200+ test Selenium suite to Playwright, keeping the Cucumber BDD layer intact</span><span class="tag case-meta">−40% runtime</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Grows the Playwright suite to 500+ tests for new features and untested flows</span><span class="tag case-meta">500+ tests</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Eliminates flaky tests with auto-waiting, stable locators, isolation and controlled test data</span><span class="tag case-meta">stability</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Rebuilds a Cypress framework covering desktop and responsive mobile flows in one codebase</span><span class="tag case-meta">90% coverage</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">API &amp; integrations <span class="file">api/contracts.spec.java</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>5 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Validates status codes, payloads, response schemas and data integrity across microservices</span><span class="tag case-meta">RestAssured · Playwright API</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Catches breaking JSON contract changes between services before they reach the apps</span><span class="tag case-meta">contracts</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Handles 4xx/5xx, invalid payloads, timeouts, dependency outages and poor connectivity</span><span class="tag case-meta">negative · boundary</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Verifies Kafka event flows end to end</span><span class="tag case-meta">Kafka</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Covers payment gateways, OAuth/SSO providers and ticketing/booking APIs</span><span class="tag case-meta">integrations</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite suite-featured reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">AI/ML quality engineering <span class="file">ai/rag-eval.spec.py</span></h3>
+              <span class="suite-meta"><span class="pill pill-run">Featured</span><span class="pill pill-pass" data-cases>5 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Runs golden datasets of real user questions as regression on every model or prompt change</span><span class="tag case-meta">regression</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Scores RAG faithfulness, answer relevancy and context precision/recall</span><span class="tag case-meta">RAGAS · DeepEval</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Gates releases on LLM-as-a-judge score thresholds in the CI/CD pipeline</span><span class="tag case-meta">quality gate</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Resists hallucinations, jailbreak attempts, prompt injection and out-of-scope questions</span><span class="tag case-meta">promptfoo</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Validates TensorFlow Serving model versions, prediction schemas, latency, throughput and cost per request</span><span class="tag case-meta">REST · gRPC</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">CI/CD &amp; quality gates <span class="file">ci/pipeline.spec.yml</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>5 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Runs suites on every pull request and merge, plus nightly regression</span><span class="tag case-meta">Bitbucket · GitLab · GitHub</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Cuts pipeline time with parallel runners and sharding</span><span class="tag case-meta">−60% time</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Blocks risky releases with quality gates</span><span class="tag case-meta">release gates</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Supports blue-green deployments by catching bugs before traffic switches</span><span class="tag case-meta">DevOps</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Publishes Allure reports with failure details, screenshots and trends</span><span class="tag case-meta">Allure</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">Performance &amp; observability <span class="file">perf/load.jmx</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>3 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Load-tests 200+ backend endpoints with 500 concurrent users</span><span class="tag case-meta">JMeter</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Sustains 2-hour stress runs to find each endpoint's safe capacity</span><span class="tag case-meta">2 h runs</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Flags latency spikes and errors before peak traffic reaches production</span><span class="tag case-meta">Datadog · Grafana · Prometheus</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">AI-assisted testing <span class="file">ai/agents.spec.ts</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>4 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Generates scenarios and edge cases from requirements</span><span class="tag case-meta">Cursor Agents · Claude</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Analyzes failure logs, finds coverage gaps and refactors framework code</span><span class="tag case-meta">MCPs · n8n</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Reduces test maintenance time by about 30%</span><span class="tag case-meta">−30% upkeep</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Requires a human review on every generated change before merge</span><span class="tag case-meta">human in the loop</span></li>
+            </ul>
+          </details>
+
+          <details class="card suite reveal">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <svg class="status-icon" aria-hidden="true"><use href="#i-pass"/></svg>
+              <h3 class="suite-name">Leadership <span class="file">team/lead.spec.md</span></h3>
+              <span class="suite-meta"><span class="pill pill-pass" data-cases>4 passed</span></span>
+            </summary>
+            <ul class="cases">
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Leads QA teams of up to 12 engineers across three countries</span><span class="tag case-meta">US · IN · MX</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Interviews candidates on framework design, coding and testing skills</span><span class="tag case-meta">hiring</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Presents progress, demos and automation reports directly to client stakeholders</span><span class="tag case-meta">stakeholders</span></li>
+              <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Sets coding standards and branching strategy, and mentors engineers</span><span class="tag case-meta">mentoring</span></li>
+            </ul>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ================= Expertise ================= -->
-    <section id="expertise" class="section-flush" aria-labelledby="expertise-title">
+    <!-- ================= Timeline ================= -->
+    <section id="timeline" class="experience-section" aria-labelledby="timeline-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">02 · Expertise</span>
-          <h2 id="expertise-title">What I do best</h2>
-          <p>End-to-end coverage across the stack, from the device in your hand to the services and models behind it.</p>
+          <div>
+            <span class="section-kicker">// 02 · execution timeline</span>
+            <h2 id="timeline-title">Experience</h2>
+            <p>14+ years of runs, one spec file per company. Select a bar to jump to its details.</p>
+          </div>
         </div>
 
-        <div class="expertise-grid">
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-phone"/></svg></div>
-            <h3>Mobile automation</h3>
-            <p>Appium frameworks in Java for native iOS and Android, with step definitions shared across both platforms. I cover the risky edge cases too: revoked permissions, backgrounding, incoming calls, push notifications, offline mode and expired sessions.</p>
-            <ul class="chips"><li class="chip">Appium</li><li class="chip">TestNG</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li></ul>
-          </article>
-
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-browser"/></svg></div>
-            <h3>Web automation &amp; BDD</h3>
-            <p>Playwright + TypeScript frameworks with Page Object Model, reusable fixtures and environment-based config. I migrated a 200+ test Selenium suite to Playwright, kept the Cucumber layer and grew it to 500+ tests.</p>
-            <ul class="chips"><li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Selenium</li><li class="chip">Cypress</li><li class="chip">Cucumber</li></ul>
-          </article>
-
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-api"/></svg></div>
-            <h3>API &amp; integrations</h3>
-            <p>RestAssured and Playwright API suites that validate status codes, payloads, JSON contracts and data integrity across microservices. Negative and boundary tests, Kafka event flows, and payment, OAuth/SSO and booking integrations.</p>
-            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Playwright API</li><li class="chip">Postman</li><li class="chip">Kafka</li></ul>
-          </article>
-
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-gauge"/></svg></div>
-            <h3>Performance &amp; observability</h3>
-            <p>JMeter load and stress tests across 200+ endpoints with 500 concurrent users over 2-hour runs. I track them in Datadog, Grafana and Prometheus and flag latency spikes before peak traffic reaches production.</p>
-            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Datadog</li><li class="chip">Grafana</li><li class="chip">Prometheus</li></ul>
-          </article>
-
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-pipeline"/></svg></div>
-            <h3>CI/CD &amp; quality gates</h3>
-            <p>Suites run on every pull request and merge, plus nightly regression. Parallel runners and sharding keep feedback fast, Allure reports make results easy to read, and quality gates block risky releases.</p>
-            <ul class="chips"><li class="chip">Bitbucket Pipelines</li><li class="chip">GitLab CI</li><li class="chip">GitHub Actions</li><li class="chip">Allure</li></ul>
-          </article>
-
-          <article class="card feature reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-spark"/></svg></div>
-            <h3>AI-assisted testing</h3>
-            <p>Cursor agents connected through MCPs, and Claude, generate scenarios from requirements, analyze failure logs and refactor framework code. That cut test maintenance by about 30%, with a human review before every merge.</p>
-            <ul class="chips"><li class="chip">Cursor Agents</li><li class="chip">Claude</li><li class="chip">MCPs</li><li class="chip">n8n</li></ul>
-          </article>
-
-          <article class="card feature feature-wide reveal">
-            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-brain"/></svg></div>
-            <div>
-              <h3>AI/ML quality engineering</h3>
-              <p>I test AI features like any other critical system. Golden datasets of real user questions run as regression on every model or prompt change. RAGAS and DeepEval score RAG quality, and LLM-as-a-judge thresholds act as CI quality gates. promptfoo covers hallucinations, jailbreaks and prompt injection, and I validate TensorFlow Serving endpoints for model versions, prediction schemas, latency, throughput and cost per request.</p>
-              <ul class="chips"><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">LLM-as-a-judge</li><li class="chip">Golden datasets</li><li class="chip">TensorFlow Serving</li></ul>
+        <!-- Gantt: one bar per role; positions are computed in JS from data-start/data-end (static values are the no-JS fallback) -->
+        <figure class="card gantt-card reveal" aria-labelledby="gantt-title">
+          <h3 class="card-title" id="gantt-title">Career timeline · 2013 – present</h3>
+          <div class="gantt" id="gantt">
+            <div class="gantt-grid" id="gantt-grid" aria-hidden="true"></div>
+            <ol aria-label="Roles in chronological order">
+              <li class="gantt-row">
+                <span class="gantt-label"><strong>SalesUp! by Upnify</strong><span>QA Test Engineer</span></span>
+                <span class="gantt-track"><a class="gantt-bar" href="#job-salesup" data-start="2013-09" data-end="2018-02" style="--l:4.76%;--w:31.55%" data-tip="SalesUp! by Upnify&#10;QA Test Engineer&#10;Sep 2013 – Feb 2018" aria-label="SalesUp! by Upnify, QA Test Engineer, Sep 2013 to Feb 2018"></a></span>
+              </li>
+              <li class="gantt-row">
+                <span class="gantt-label"><strong>TATA Consultancy Services</strong><span>Senior Lead Automation Eng.</span></span>
+                <span class="gantt-track"><a class="gantt-bar" href="#job-tcs" data-start="2018-02" data-end="2022-04" style="--l:36.31%;--w:29.76%" data-tip="TATA Consultancy Services&#10;Senior Lead Automation Engineer in Test&#10;Feb 2018 – Apr 2022" aria-label="TATA Consultancy Services, Senior Lead Automation Engineer in Test, Feb 2018 to Apr 2022"></a></span>
+              </li>
+              <li class="gantt-row">
+                <span class="gantt-label"><strong>Wizeline</strong><span>Senior Lead Automation Eng.</span></span>
+                <span class="gantt-track"><a class="gantt-bar" href="#job-wizeline" data-start="2022-04" data-end="2023-09" style="--l:66.07%;--w:10.12%" data-tip="Wizeline&#10;Senior Lead Automation Engineer&#10;Apr 2022 – Sep 2023" aria-label="Wizeline, Senior Lead Automation Engineer, Apr 2022 to Sep 2023"></a></span>
+              </li>
+              <li class="gantt-row">
+                <span class="gantt-label"><strong>Klauders</strong><span>Lead Senior Mobile &amp; Web QA</span></span>
+                <span class="gantt-track"><a class="gantt-bar" href="#job-klauders" data-start="2023-09" data-end="2025-05" style="--l:76.19%;--w:11.90%" data-tip="Klauders&#10;Lead Senior Mobile &amp; Web QA Automation Engineer&#10;Sep 2023 – May 2025" aria-label="Klauders, Lead Senior Mobile and Web QA Automation Engineer, Sep 2023 to May 2025"></a></span>
+              </li>
+              <li class="gantt-row">
+                <span class="gantt-label"><strong>Incedo Inc.</strong><span>Senior QA Engineer · running</span></span>
+                <span class="gantt-track"><a class="gantt-bar is-running" href="#job-incedo" data-start="2025-05" style="--l:88.10%;--w:10.71%" data-tip="Incedo Inc.&#10;Senior QA Engineer&#10;May 2025 – Present" aria-label="Incedo Inc., Senior QA Engineer, May 2025 to present"></a></span>
+              </li>
+            </ol>
+            <div class="gantt-axis" id="gantt-axis" aria-hidden="true">
+              <span style="left:7.14%">2014</span><span style="left:21.43%">2016</span><span style="left:35.71%">2018</span><span style="left:50%">2020</span><span style="left:64.29%">2022</span><span style="left:78.57%">2024</span><span style="left:92.86%">2026</span>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          </div>
+          <details class="table-toggle">
+            <summary>View as table</summary>
+            <table class="data-table">
+              <thead><tr><th scope="col">Company</th><th scope="col">Role</th><th scope="col">Start</th><th scope="col">End</th></tr></thead>
+              <tbody>
+                <tr><td>Incedo Inc.</td><td>Senior QA Engineer</td><td>May 2025</td><td>Present</td></tr>
+                <tr><td>Klauders</td><td>Lead Senior Mobile &amp; Web QA Automation Engineer</td><td>Sep 2023</td><td>May 2025</td></tr>
+                <tr><td>Wizeline</td><td>Senior Lead Automation Engineer</td><td>Apr 2022</td><td>Sep 2023</td></tr>
+                <tr><td>TATA Consultancy Services</td><td>Senior Lead Automation Engineer in Test</td><td>Feb 2018</td><td>Apr 2022</td></tr>
+                <tr><td>SalesUp! by Upnify</td><td>Quality Assurance Test Engineer</td><td>Sep 2013</td><td>Feb 2018</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
 
-    <!-- ================= Experience ================= -->
-    <section id="experience" class="experience-section" aria-labelledby="experience-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">03 · Experience</span>
-          <h2 id="experience-title">Where I've made an impact</h2>
-        </div>
-
-        <ol class="timeline">
+        <div class="specs">
           <!-- Incedo -->
-          <li class="job reveal">
-            <article class="card job-card">
-              <header class="job-head">
-                <div>
-                  <h3 class="job-title">Senior QA Engineer</h3>
-                  <p class="job-company">Incedo Inc.</p>
-                </div>
-                <p class="job-date"><time datetime="2025-05">May 2025</time> – Present</p>
-              </header>
-              <p class="job-summary">I build scalable test automation for web applications and APIs with Playwright and TypeScript, fully integrated into Bitbucket Pipelines.</p>
-              <ul class="job-bullets">
-                <li>Designed and maintain a Playwright + TypeScript framework for end-to-end UI and API testing, built on Page Object Model with reusable fixtures, helpers and environment-based configuration.</li>
-                <li>Automate REST API testing with Playwright's request context, validating status codes, response schemas, business rules and data integrity across services.</li>
-                <li>Integrated the suites into Bitbucket Pipelines on pull requests, merges and scheduled jobs, with <strong>parallel execution and sharding</strong> for shorter feedback cycles.</li>
-                <li>Reduced flaky tests through auto-waiting, stable locators, test isolation and controlled test data.</li>
+          <details class="card spec reveal" id="job-incedo" open>
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <h3 class="spec-title"><span class="spec-file">incedo.spec.ts</span>Senior QA Engineer <span class="spec-company">Incedo Inc.</span></h3>
+              <span class="spec-side">
+                <span class="pill pill-run"><span class="live-dot" aria-hidden="true"></span>Running</span>
+                <span class="spec-date"><time datetime="2025-05">May 2025</time> – Present</span>
+              </span>
+            </summary>
+            <div class="spec-body">
+              <p class="spec-summary">Scalable test automation for web applications and APIs with Playwright and TypeScript, fully integrated into Bitbucket Pipelines.</p>
+              <ul>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Designed and maintain a Playwright + TypeScript framework for end-to-end UI and API testing, built on Page Object Model with reusable fixtures, helpers and environment-based configuration</span><span class="tag case-meta">framework</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Automate REST API testing with Playwright's request context: status codes, response schemas, business rules and data integrity</span><span class="tag case-meta">API</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Run suites in Bitbucket Pipelines on pull requests, merges and scheduled jobs, with parallel execution and sharding</span><span class="tag case-meta">CI/CD</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Reduced flaky tests through auto-waiting, stable locators, test isolation and controlled test data</span><span class="tag case-meta">stability</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Define acceptance criteria, test strategy and quality gates with developers, product owners and DevOps</span><span class="tag case-meta">Agile/Scrum</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Use AI-assisted tools for scenarios, refactors, locators, test data and root-cause analysis, with a human review on every change</span><span class="tag case-meta">AI-assisted</span></li>
               </ul>
-              <details class="more">
-                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-                <ul class="job-bullets">
-                  <li>Work with developers, product owners and DevOps in Agile/Scrum teams to define acceptance criteria, test strategy and release quality gates.</li>
-                  <li>Use AI-assisted tools to generate scenarios and edge cases from requirements, refactor scripts, improve locators, create test data and speed up root-cause analysis, with a human review on every change.</li>
-                </ul>
-              </details>
-              <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Playwright API</li><li class="chip">Bitbucket Pipelines</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile/Scrum</li>
-              </ul>
-            </article>
-          </li>
+              <div class="spec-stack tags" aria-label="Tech stack">
+                <span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Playwright API</span><span class="tag">Bitbucket Pipelines</span><span class="tag">Git</span><span class="tag">Jira</span>
+              </div>
+            </div>
+          </details>
 
           <!-- Klauders -->
-          <li class="job reveal">
-            <article class="card job-card">
-              <header class="job-head">
-                <div>
-                  <h3 class="job-title">Lead Senior Mobile &amp; Web QA Automation Engineer</h3>
-                  <p class="job-company">Klauders</p>
-                </div>
-                <p class="job-date"><time datetime="2023-09">Sep 2023</time> – <time datetime="2025-05">May 2025</time></p>
-              </header>
-              <p class="job-summary">I owned end-to-end test automation for web, mobile, API and AI/ML features, from framework design to release, for a client in the communications technology sector. Every suite ran in GitLab CI/CD as a release quality gate.</p>
-
-              <div class="job-areas">
-                <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-browser"/></svg>Web: Selenium → Playwright</h4>
-                  <ul class="job-bullets">
-                    <li>Built a Java + Selenium + Cucumber framework with 200+ end-to-end tests for critical user flows.</li>
-                    <li>Migrated it to Playwright + TypeScript, kept the BDD layer and <strong>cut regression runtime by up to 40%</strong>, then grew it to 500+ tests.</li>
-                    <li>Smoke tests on every merge, full regression nightly, and Allure reports with screenshots and trends.</li>
-                  </ul>
-                </div>
-                <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-phone"/></svg>Mobile: Appium &amp; BDD</h4>
-                  <ul class="job-bullets">
-                    <li>Designed an Appium framework in Java for native iOS and Android, with 300+ tests on Page Object Model and step definitions shared across both platforms.</li>
-                    <li>Ran suites in parallel with TestNG on real devices and emulators/simulators, locally and on BrowserStack and Sauce Labs.</li>
-                    <li>Automated permissions, backgrounding, calls, push notifications, offline mode and expired tokens.</li>
-                  </ul>
-                </div>
-                <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-api"/></svg>API automation &amp; load testing</h4>
-                  <ul class="job-bullets">
-                    <li>Built RestAssured smoke and regression suites with JSON contract validation, which caught breaking changes between services before they reached the apps.</li>
-                    <li>Ran JMeter load tests across 200+ endpoints with 500 concurrent users over 2-hour runs, monitored in Datadog, Grafana and Prometheus.</li>
-                    <li>Tested Kafka event flows end to end, plus payment, OAuth/SSO and ticketing/booking integrations.</li>
-                  </ul>
-                </div>
-                <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-brain"/></svg>AI/ML testing</h4>
-                  <ul class="job-bullets">
-                    <li>Built a Java + RestAssured framework to validate the client's AI-powered tool end to end.</li>
-                    <li>Ran golden datasets as regression on every model or prompt change. RAGAS, DeepEval and LLM-as-a-judge thresholds served as CI quality gates.</li>
-                    <li>Tested hallucinations and prompt injection with promptfoo, and validated TensorFlow Serving endpoints and inference performance.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <details class="more">
-                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-                <ul class="job-bullets">
-                  <li>Used Cursor AI agents, connected through MCPs, to review test cases, generate Playwright BDD scenarios from requirements and refactor framework code. That cut test maintenance time by about 30%, and every change was reviewed before merge.</li>
-                  <li>Validated behavior across iOS and Android versions, device models and screen sizes to catch fragmentation and layout issues before release.</li>
-                  <li>Designed negative and boundary tests for 4xx/5xx handling, invalid payloads, timeouts, dependency outages and poor connectivity.</li>
-                  <li>Measured inference latency, throughput and cost per request, and flagged regressions between model versions.</li>
-                  <li>Ran manual and exploratory sessions on real devices, validated data with SQL against backend databases and tracked defects in Jira through resolution.</li>
-                </ul>
-              </details>
-
-              <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Selenium</li><li class="chip">Java</li><li class="chip">Cucumber</li><li class="chip">Appium</li><li class="chip">TestNG</li><li class="chip">RestAssured</li><li class="chip">JMeter</li><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">SQL</li><li class="chip">GitLab CI/CD</li><li class="chip">Allure</li><li class="chip">Jira</li>
+          <details class="card spec reveal" id="job-klauders" open>
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <h3 class="spec-title"><span class="spec-file">klauders.spec.ts</span>Lead Senior Mobile &amp; Web QA Automation Engineer <span class="spec-company">Klauders</span></h3>
+              <span class="spec-side">
+                <span class="pill pill-pass"><svg aria-hidden="true"><use href="#i-check"/></svg>Passed</span>
+                <span class="spec-date"><time datetime="2023-09">Sep 2023</time> – <time datetime="2025-05">May 2025</time></span>
+              </span>
+            </summary>
+            <div class="spec-body">
+              <p class="spec-summary">End-to-end test automation for web, mobile, API and AI/ML features for a client in the communications technology sector. Every suite ran in GitLab CI/CD as a release quality gate.</p>
+              <ul>
+                <li class="case-group">describe('Web automation')</li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Built a Java + Selenium + Cucumber framework with 200+ end-to-end tests for critical flows</span><span class="tag case-meta">200+ tests</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Migrated it to Playwright + TypeScript keeping the BDD layer, then grew it to 500+ tests</span><span class="tag case-meta">−40% runtime</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Smoke on every merge, full regression nightly, Allure reports with screenshots and trends</span><span class="tag case-meta">GitLab CI</span></li>
+                <li class="case-group">describe('Mobile automation')</li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Designed an Appium framework in Java with 300+ tests shared across iOS and Android</span><span class="tag case-meta">300+ tests</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Ran suites in parallel with TestNG on real devices, emulators and simulators</span><span class="tag case-meta">BrowserStack</span></li>
+                <li class="case-group">describe('API &amp; load testing')</li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Built RestAssured smoke and regression suites with JSON contract validation</span><span class="tag case-meta">300+ tests</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Ran JMeter load tests across 200+ endpoints with 500 concurrent users over 2-hour runs</span><span class="tag case-meta">JMeter</span></li>
+                <li class="case-group">describe('AI/ML testing')</li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Built a Java + RestAssured framework to validate the client's AI-powered tool end to end</span><span class="tag case-meta">contracts</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Evaluated RAG quality with RAGAS, DeepEval and LLM-as-a-judge as CI quality gates</span><span class="tag case-meta">RAG eval</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Tested hallucinations and prompt injection with promptfoo</span><span class="tag case-meta">security</span></li>
               </ul>
-            </article>
-          </li>
+              <div class="spec-stack tags" aria-label="Tech stack">
+                <span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Selenium</span><span class="tag">Java</span><span class="tag">Cucumber</span><span class="tag">Appium</span><span class="tag">TestNG</span><span class="tag">RestAssured</span><span class="tag">JMeter</span><span class="tag">RAGAS</span><span class="tag">DeepEval</span><span class="tag">promptfoo</span><span class="tag">SQL</span><span class="tag">GitLab CI/CD</span>
+              </div>
+            </div>
+          </details>
 
           <!-- Wizeline -->
-          <li class="job reveal">
-            <article class="card job-card">
-              <header class="job-head">
-                <div>
-                  <h3 class="job-title">Senior Lead Automation Engineer</h3>
-                  <p class="job-company">Wizeline</p>
-                </div>
-                <p class="job-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2023-09">Sep 2023</time></p>
-              </header>
-              <ul class="job-bullets">
-                <li>Rebuilt the automation framework from scratch in Cypress, covering desktop and responsive mobile flows in one codebase with Page Object and a modular design.</li>
-                <li>Migrated 100% of the legacy test cases and cleared the automation bottleneck for new development tickets.</li>
-                <li>Reached <strong>90% UI coverage</strong> of critical user journeys while keeping each suite under 60 minutes.</li>
-                <li>Wired UI and API tests into GitHub Actions and <strong>cut pipeline time by 60%</strong> with parallel runners and sharding.</li>
+          <details class="card spec reveal" id="job-wizeline">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <h3 class="spec-title"><span class="spec-file">wizeline.cy.ts</span>Senior Lead Automation Engineer <span class="spec-company">Wizeline</span></h3>
+              <span class="spec-side">
+                <span class="pill pill-pass"><svg aria-hidden="true"><use href="#i-check"/></svg>Passed</span>
+                <span class="spec-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2023-09">Sep 2023</time></span>
+              </span>
+            </summary>
+            <div class="spec-body">
+              <ul>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Rebuilt the automation framework from scratch in Cypress for desktop and responsive mobile flows</span><span class="tag case-meta">Cypress</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Migrated 100% of legacy test cases and cleared the automation bottleneck</span><span class="tag case-meta">100% migrated</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Reached 90% UI coverage of critical journeys with each suite under 60 minutes</span><span class="tag case-meta">90% coverage</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Wired UI and API tests into GitHub Actions with parallel runners and sharding</span><span class="tag case-meta">−60% time</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Partnered with DevOps on blue-green deployments, mentored engineers and set coding standards</span><span class="tag case-meta">leadership</span></li>
               </ul>
-              <details class="more">
-                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-                <ul class="job-bullets">
-                  <li>Partnered with DevOps on blue-green deployments, using the automated suite to catch bugs before switching traffic.</li>
-                  <li>Automated test data setup and teardown, environment-aware configuration across CI, QA and staging, and failure reporting with screenshots and logs.</li>
-                  <li>Set coding standards, linting and branching strategy, mentored junior engineers and kept the Confluence guides up to date.</li>
-                </ul>
-              </details>
-              <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Cypress</li><li class="chip">AWS</li><li class="chip">GitHub Actions</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile</li>
-              </ul>
-            </article>
-          </li>
+              <div class="spec-stack tags" aria-label="Tech stack">
+                <span class="tag">Cypress</span><span class="tag">AWS</span><span class="tag">GitHub Actions</span><span class="tag">Git</span><span class="tag">Jira</span>
+              </div>
+            </div>
+          </details>
 
           <!-- TCS -->
-          <li class="job reveal">
-            <article class="card job-card">
-              <header class="job-head">
-                <div>
-                  <h3 class="job-title">Senior Lead Automation Engineer in Test</h3>
-                  <p class="job-company">TATA Consultancy Services</p>
-                </div>
-                <p class="job-date"><time datetime="2018-02">Feb 2018</time> – <time datetime="2022-04">Apr 2022</time></p>
-              </header>
-              <ul class="job-bullets">
-                <li>Grew from Senior QA Automation Engineer to leading QA teams in San Antonio (Texas), Chennai (India) and Guadalajara (Mexico) on a regulated financial platform for a major US bank.</li>
-                <li>Rebuilt the Java + Selenium framework from scratch with proper design patterns, replacing a fragile legacy setup.</li>
-                <li>Cut the automation backlog by <strong>about 50–60% per sprint</strong> by streamlining test cases.</li>
-                <li>Interviewed QA automation candidates and helped grow the team to <strong>12 engineers across three countries</strong>.</li>
+          <details class="card spec reveal" id="job-tcs">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <h3 class="spec-title"><span class="spec-file">tcs.spec.java</span>Senior Lead Automation Engineer in Test <span class="spec-company">TATA Consultancy Services</span></h3>
+              <span class="spec-side">
+                <span class="pill pill-pass"><svg aria-hidden="true"><use href="#i-check"/></svg>Passed</span>
+                <span class="spec-date"><time datetime="2018-02">Feb 2018</time> – <time datetime="2022-04">Apr 2022</time></span>
+              </span>
+            </summary>
+            <div class="spec-body">
+              <ul>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Led QA teams in San Antonio, Chennai and Guadalajara on a regulated financial platform for a major US bank</span><span class="tag case-meta">12 engineers</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Rebuilt the Java + Selenium framework from scratch with proper design patterns</span><span class="tag case-meta">Selenium</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Cut the automation backlog by about 50–60% per sprint by streamlining test cases</span><span class="tag case-meta">−50–60% backlog</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Moved execution to Sauce Labs and set up nightly regression with clear reporting</span><span class="tag case-meta">Sauce Labs</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Presented demos and reports to the client's business team, interviewed candidates and trained the team</span><span class="tag case-meta">stakeholders</span></li>
               </ul>
-              <details class="more">
-                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-                <ul class="job-bullets">
-                  <li>Designed the regression strategy and nightly runs with clear reporting, so the team started each day with fresh results.</li>
-                  <li>Moved test execution to Sauce Labs cloud browsers, which freed local resources and gave the business team more trust in the results.</li>
-                  <li>Presented progress, demos and automation reports directly to the client's business team in San Antonio.</li>
-                  <li>Trained the team on Selenium WebDriver, Java best practices and new testing strategies.</li>
-                </ul>
-              </details>
-              <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">SQL</li><li class="chip">Bitbucket</li><li class="chip">Sauce Labs</li><li class="chip">Git</li><li class="chip">Jira</li>
-              </ul>
-            </article>
-          </li>
+              <div class="spec-stack tags" aria-label="Tech stack">
+                <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">SQL</span><span class="tag">Bitbucket</span><span class="tag">Sauce Labs</span><span class="tag">Jira</span>
+              </div>
+            </div>
+          </details>
 
           <!-- SalesUp! -->
-          <li class="job reveal">
-            <article class="card job-card">
-              <header class="job-head">
-                <div>
-                  <h3 class="job-title">Quality Assurance Test Engineer</h3>
-                  <p class="job-company">SalesUp! by Upnify</p>
-                </div>
-                <p class="job-date"><time datetime="2013-09">Sep 2013</time> – <time datetime="2018-02">Feb 2018</time></p>
-              </header>
-              <ul class="job-bullets">
-                <li>Tested a CRM web application end to end for functionality and security, which reduced the issues reaching production.</li>
-                <li>Built a Java + Selenium automation framework from the ground up for fast, reliable feedback on every build.</li>
-                <li>Worked test-first (TDD) and wrote validation code to confirm the application behaved as expected.</li>
-                <li>Kept test environments stable and helped the team move to more frequent, safer releases.</li>
+          <details class="card spec reveal" id="job-salesup">
+            <summary>
+              <svg class="chev" aria-hidden="true"><use href="#i-chevron-r"/></svg>
+              <h3 class="spec-title"><span class="spec-file">salesup.spec.java</span>Quality Assurance Test Engineer <span class="spec-company">SalesUp! by Upnify</span></h3>
+              <span class="spec-side">
+                <span class="pill pill-pass"><svg aria-hidden="true"><use href="#i-check"/></svg>Passed</span>
+                <span class="spec-date"><time datetime="2013-09">Sep 2013</time> – <time datetime="2018-02">Feb 2018</time></span>
+              </span>
+            </summary>
+            <div class="spec-body">
+              <ul>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Tested a CRM web application end to end for functionality and security</span><span class="tag case-meta">CRM</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Built a Java + Selenium automation framework from the ground up</span><span class="tag case-meta">Selenium</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Worked test-first (TDD) and wrote validation code to confirm expected behavior</span><span class="tag case-meta">TDD</span></li>
+                <li class="case"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Kept test environments stable and helped the team move to more frequent, safer releases</span><span class="tag case-meta">releases</span></li>
               </ul>
-              <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">SQL</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile</li>
-              </ul>
-            </article>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ================= Skills ================= -->
-    <section id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">04 · Skills</span>
-          <h2 id="skills-title">Tech stack</h2>
-          <p>Tools I use to ship quality across mobile, web, APIs, AI/ML and infrastructure.</p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="card skill-group reveal">
-            <h3>Mobile testing</h3>
-            <ul class="chips"><li class="chip">Appium (iOS &amp; Android)</li><li class="chip">TestNG</li><li class="chip">Real devices</li><li class="chip">Emulators / Simulators</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>Web &amp; BDD</h3>
-            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Cypress</li><li class="chip">Selenium WebDriver</li><li class="chip">Cucumber / Gherkin</li><li class="chip">Page Object Model</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>API &amp; integrations</h3>
-            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Playwright API</li><li class="chip">Postman</li><li class="chip">Python requests</li><li class="chip">Contract &amp; schema validation</li><li class="chip">Microservices</li><li class="chip">Kafka</li><li class="chip">OAuth / SSO</li><li class="chip">Payment gateways</li><li class="chip">Ticketing / booking APIs</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>AI/ML testing</h3>
-            <ul class="chips"><li class="chip">RAG evaluation</li><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">LLM-as-a-judge</li><li class="chip">Golden datasets</li><li class="chip">Prompt-injection testing</li><li class="chip">TensorFlow Serving</li><li class="chip">Inference performance</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>AI-assisted testing</h3>
-            <ul class="chips"><li class="chip">Cursor Agents</li><li class="chip">Claude</li><li class="chip">MCPs</li><li class="chip">n8n</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>Performance &amp; observability</h3>
-            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Allure</li><li class="chip">Datadog</li><li class="chip">Grafana</li><li class="chip">Prometheus</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>CI/CD &amp; cloud</h3>
-            <ul class="chips"><li class="chip">Bitbucket Pipelines</li><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">CircleCI</li><li class="chip">Jenkins</li><li class="chip">Docker</li><li class="chip">Kubernetes</li><li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">Google Cloud</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>Languages &amp; databases</h3>
-            <ul class="chips"><li class="chip">Java</li><li class="chip">TypeScript / JavaScript</li><li class="chip">Python</li><li class="chip">C# / .NET</li><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Oracle DB</li><li class="chip">MongoDB</li><li class="chip">SQL</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>Test management</h3>
-            <ul class="chips"><li class="chip">Jira</li><li class="chip">TestRail</li><li class="chip">qTest</li><li class="chip">Azure DevOps</li><li class="chip">Microsoft Test Manager</li></ul>
-          </div>
+              <div class="spec-stack tags" aria-label="Tech stack">
+                <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">Jira</span>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ================= Education ================= -->
-    <section id="education" class="section-flush" aria-labelledby="education-title">
+    <!-- ================= Environment ================= -->
+    <section id="environment" aria-labelledby="env-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">05 · Education</span>
-          <h2 id="education-title">Education &amp; certifications</h2>
+          <div>
+            <span class="section-kicker">// 03 · environment</span>
+            <h2 id="env-title">Tech stack &amp; background</h2>
+            <p>The environment this report ran on.</p>
+          </div>
         </div>
-        <div class="edu-grid">
-          <article class="card edu reveal">
-            <span class="badge">Degree</span>
-            <h3>B.Eng. in Artificial Intelligence and Data Science</h3>
-            <p>Universidad del Valle de México (UVM)</p>
-          </article>
-          <article class="card edu reveal">
-            <span class="badge progress">In progress</span>
-            <h3>ISTQB Certified Tester</h3>
-            <p>International Software Testing Qualifications Board</p>
-          </article>
-          <article class="card edu reveal">
-            <span class="badge progress">In progress</span>
-            <h3>AWS Certified Cloud Practitioner</h3>
-            <p>Amazon Web Services</p>
-          </article>
-        </div>
-        <div class="card languages reveal">
-          <strong>Languages</strong>
-          <span>Spanish: native</span>
-          <span>English: advanced (C1)</span>
+
+        <div class="env-grid">
+          <div class="card env-card reveal">
+            <header><h3 class="card-title">environment.properties</h3><span class="pill pill-neutral">9 keys</span></header>
+            <table class="env-table">
+              <caption class="visually-hidden">Skills by category</caption>
+              <tbody>
+                <tr><th scope="row">mobile</th><td class="tags"><span class="tag">Appium (iOS &amp; Android)</span><span class="tag">TestNG</span><span class="tag">BrowserStack</span><span class="tag">Sauce Labs</span><span class="tag">Real devices</span></td></tr>
+                <tr><th scope="row">web</th><td class="tags"><span class="tag">Playwright</span><span class="tag">Cypress</span><span class="tag">Selenium</span><span class="tag">Cucumber / Gherkin</span><span class="tag">Page Object Model</span></td></tr>
+                <tr><th scope="row">api</th><td class="tags"><span class="tag">RestAssured</span><span class="tag">Playwright API</span><span class="tag">Postman</span><span class="tag">Python requests</span><span class="tag">Contract &amp; schema validation</span><span class="tag">Kafka</span><span class="tag">OAuth / SSO</span><span class="tag">Payment gateways</span></td></tr>
+                <tr><th scope="row">ai_ml</th><td class="tags"><span class="tag">RAGAS</span><span class="tag">DeepEval</span><span class="tag">promptfoo</span><span class="tag">LLM-as-a-judge</span><span class="tag">Golden datasets</span><span class="tag">TensorFlow Serving</span></td></tr>
+                <tr><th scope="row">ai_assisted</th><td class="tags"><span class="tag">Cursor Agents</span><span class="tag">Claude</span><span class="tag">MCPs</span><span class="tag">n8n</span></td></tr>
+                <tr><th scope="row">performance</th><td class="tags"><span class="tag">JMeter</span><span class="tag">Allure</span><span class="tag">Datadog</span><span class="tag">Grafana</span><span class="tag">Prometheus</span></td></tr>
+                <tr><th scope="row">ci_cd_cloud</th><td class="tags"><span class="tag">Bitbucket Pipelines</span><span class="tag">GitLab CI/CD</span><span class="tag">GitHub Actions</span><span class="tag">CircleCI</span><span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Google Cloud</span></td></tr>
+                <tr><th scope="row">languages_db</th><td class="tags"><span class="tag">Java</span><span class="tag">TypeScript / JavaScript</span><span class="tag">Python</span><span class="tag">C# / .NET</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">Oracle DB</span><span class="tag">MongoDB</span></td></tr>
+                <tr><th scope="row">test_management</th><td class="tags"><span class="tag">Jira</span><span class="tag">TestRail</span><span class="tag">qTest</span><span class="tag">Azure DevOps</span><span class="tag">Microsoft Test Manager</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="side-stack">
+            <div class="card env-card reveal">
+              <header><h3 class="card-title">Education &amp; certifications</h3></header>
+              <ul class="check-list">
+                <li>
+                  <svg class="ok" aria-hidden="true"><use href="#i-pass"/></svg>
+                  <div><strong>B.Eng. in Artificial Intelligence and Data Science</strong><span>Universidad del Valle de México (UVM)</span></div>
+                </li>
+                <li>
+                  <svg class="wait" aria-hidden="true"><use href="#i-pending"/></svg>
+                  <div><strong>ISTQB Certified Tester</strong><span>International Software Testing Qualifications Board</span><br><span class="pill pill-pending">Pending · in progress</span></div>
+                </li>
+                <li>
+                  <svg class="wait" aria-hidden="true"><use href="#i-pending"/></svg>
+                  <div><strong>AWS Certified Cloud Practitioner</strong><span>Amazon Web Services</span><br><span class="pill pill-pending">Pending · in progress</span></div>
+                </li>
+              </ul>
+            </div>
+            <div class="card env-card reveal">
+              <header><h3 class="card-title">Locale</h3></header>
+              <ul class="check-list">
+                <li><svg class="ok" aria-hidden="true"><use href="#i-pass"/></svg><div><strong>Spanish</strong><span>Native</span></div></li>
+                <li><svg class="ok" aria-hidden="true"><use href="#i-pass"/></svg><div><strong>English</strong><span>Advanced (C1)</span></div></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1209,20 +1483,27 @@
     <!-- ================= Contact ================= -->
     <section id="contact" class="section-flush" aria-labelledby="contact-title">
       <div class="container">
-        <div class="contact-card reveal">
-          <span class="eyebrow">06 · Contact</span>
-          <h2 id="contact-title">Let's ship with confidence</h2>
-          <p>Need a Playwright or Appium framework built from scratch, a legacy suite migrated, quality gates in your CI/CD pipeline, or a way to test your AI features? Let's talk.</p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:rodrigoau91@gmail.com">
-              <svg aria-hidden="true"><use href="#i-mail"/></svg>Email me
-            </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="visually-hidden"> (opens in a new tab)</span>
-            </a>
+        <div class="terminal reveal" id="terminal">
+          <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>~/next-release</span></div>
+<pre aria-hidden="true"><span class="line" style="--i:0"><span class="t-muted">$</span> npx hire rodrigo-ayala <span class="t-kw">--role</span> <span class="t-str">"Senior SDET"</span></span>
+<span class="line" style="--i:1"><span class="t-pass">✓</span> frameworks from scratch      <span class="t-muted">Playwright · Appium · RestAssured</span></span>
+<span class="line" style="--i:2"><span class="t-pass">✓</span> CI/CD quality gates          <span class="t-muted">Bitbucket · GitLab · GitHub</span></span>
+<span class="line" style="--i:3"><span class="t-pass">✓</span> AI/ML quality engineering    <span class="t-muted">RAGAS · DeepEval · promptfoo</span></span>
+<span class="line" style="--i:4"><span class="t-muted">Quality gate:</span> <span class="t-pass">PROMOTE ▸ your team</span></span></pre>
+          <div class="contact-body">
+            <h2 id="contact-title">Let's ship with confidence</h2>
+            <p>Need a Playwright or Appium framework built from scratch, a legacy suite migrated, quality gates in your CI/CD pipeline, or a way to test your AI features? Let's talk.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:rodrigoau91@gmail.com">
+                <svg aria-hidden="true"><use href="#i-mail"/></svg>Email me
+              </a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1231,7 +1512,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Rodrigo Ayala · Guadalajara, Mexico</p>
+      <p>Report generated <time id="generated" datetime="2026-10">Oct 2026</time> · © <span id="year">2026</span> Rodrigo Ayala</p>
       <ul class="footer-links">
         <li><a href="mailto:rodrigoau91@gmail.com">Email</a></li>
         <li><a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
@@ -1240,13 +1521,19 @@
     </div>
   </footer>
 
+  <div class="tooltip" id="tooltip" aria-hidden="true" hidden></div>
+
   <script>
     (function () {
       var root = document.documentElement;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var now = new Date();
 
-      // Footer year
-      var year = document.getElementById('year');
-      if (year) year.textContent = new Date().getFullYear();
+      // Footer: year and report date
+      document.getElementById('year').textContent = now.getFullYear();
+      var gen = document.getElementById('generated');
+      gen.textContent = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      gen.setAttribute('datetime', now.toISOString().slice(0, 10));
 
       // Theme toggle
       var themeBtn = document.getElementById('theme-toggle');
@@ -1281,44 +1568,157 @@
         if (e.target.closest('a')) setMenu(false);
       });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
-          setMenu(false);
-          menuBtn.focus();
+        if (e.key === 'Escape') {
+          hideTip();
+          if (menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
         }
       });
 
-      // Header border on scroll
-      var header = document.querySelector('.site-header');
-      function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+      // Run summary: count passed checks from the suites so the numbers never drift
+      var cases = document.querySelectorAll('#suite-list .case');
+      var pending = document.querySelectorAll('.check-list .wait').length;
+      document.getElementById('count-pass').textContent = cases.length;
+      document.getElementById('count-pending').textContent = pending;
+      document.getElementById('stack-pass').style.flex = cases.length;
+      document.getElementById('stack-pending').style.flex = pending;
+      document.querySelectorAll('#suite-list .suite').forEach(function (s) {
+        s.querySelector('[data-cases]').textContent = s.querySelectorAll('.case').length + ' passed';
+      });
+
+      // Expand / collapse all suites
+      var toggleBtn = document.getElementById('toggle-suites');
+      var suites = document.querySelectorAll('#suite-list .suite');
+      function syncToggle() {
+        var allOpen = Array.prototype.every.call(suites, function (s) { return s.open; });
+        toggleBtn.textContent = allOpen ? 'Collapse all' : 'Expand all';
+        return allOpen;
+      }
+      toggleBtn.addEventListener('click', function () {
+        var open = !syncToggle();
+        suites.forEach(function (s) { s.open = open; });
+        syncToggle();
+      });
+      suites.forEach(function (s) { s.addEventListener('toggle', syncToggle); });
+
+      // Gantt layout: domain runs from Jan 2013 to the end of next year
+      var START = 2013;
+      var END = Math.max(2027, now.getFullYear() + 1);
+      var SPAN = END - START;
+      function toYears(ym) {
+        if (!ym) return now.getFullYear() + now.getMonth() / 12;
+        var p = ym.split('-');
+        return +p[0] + (+p[1] - 1) / 12;
+      }
+      function pct(y) { return ((y - START) / SPAN * 100).toFixed(2) + '%'; }
+      document.querySelectorAll('.gantt-bar').forEach(function (bar) {
+        var s = toYears(bar.getAttribute('data-start'));
+        var e = toYears(bar.getAttribute('data-end'));
+        bar.style.setProperty('--l', pct(s));
+        bar.style.setProperty('--w', ((e - s) / SPAN * 100).toFixed(2) + '%');
+      });
+      var axis = document.getElementById('gantt-axis');
+      var grid = document.getElementById('gantt-grid');
+      axis.innerHTML = '';
+      for (var y = START + 1; y < END; y += 2) {
+        var label = document.createElement('span');
+        label.style.left = pct(y);
+        label.textContent = y;
+        axis.appendChild(label);
+        var line = document.createElement('span');
+        line.style.left = pct(y);
+        grid.appendChild(line);
+      }
+
+      // Tooltip: shared by donut segments and Gantt bars, on hover and keyboard focus
+      var tip = document.getElementById('tooltip');
+      function placeTip(x, y) {
+        var w = tip.offsetWidth, h = tip.offsetHeight;
+        var left = Math.min(Math.max(8, x - w / 2), window.innerWidth - w - 8);
+        var top = y - h - 12;
+        if (top < 8) top = y + 16;
+        tip.style.left = left + 'px';
+        tip.style.top = top + 'px';
+      }
+      function showTip(el, x, y) {
+        tip.textContent = el.getAttribute('data-tip');
+        tip.hidden = false;
+        if (x === undefined) {
+          var r = el.getBoundingClientRect();
+          x = r.left + r.width / 2; y = r.top;
+        }
+        placeTip(x, y);
+      }
+      function hideTip() { tip.hidden = true; }
+      document.addEventListener('pointermove', function (e) {
+        var el = e.target.closest && e.target.closest('[data-tip]');
+        if (el) showTip(el, e.clientX, e.clientY); else hideTip();
+      });
+      document.addEventListener('focusin', function (e) {
+        var el = e.target.closest && e.target.closest('[data-tip]');
+        if (el) showTip(el); else hideTip();
+      });
+      document.addEventListener('focusout', hideTip);
+      window.addEventListener('scroll', hideTip, { passive: true });
+
+      // Donut ↔ legend emphasis
+      var donutCard = document.getElementById('donut-card');
+      var keyed = donutCard.querySelectorAll('[data-key]');
+      function emphasize(key) {
+        keyed.forEach(function (el) { el.classList.toggle('is-dim', !!key && el.getAttribute('data-key') !== key); });
+      }
+      keyed.forEach(function (el) {
+        var key = el.getAttribute('data-key');
+        el.addEventListener('pointerenter', function () { emphasize(key); });
+        el.addEventListener('pointerleave', function () { emphasize(null); });
+        el.addEventListener('focus', function () { emphasize(key); });
+        el.addEventListener('blur', function () { emphasize(null); });
+      });
+
+      // KPI count-up
+      function countUp(el) {
+        var target = +el.getAttribute('data-count');
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        var t0 = null, dur = 1100;
+        function frame(t) {
+          if (!t0) t0 = t;
+          var p = Math.min(1, (t - t0) / dur);
+          var v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          el.textContent = prefix + v.toLocaleString('en-US') + suffix;
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      var played = ['donut', 'stack', 'gantt', 'terminal'].map(function (id) { return document.getElementById(id); });
 
       if (!('IntersectionObserver' in window)) {
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
-        document.getElementById('terminal').classList.add('is-played');
+        played.forEach(function (el) { el.classList.add('is-played'); });
         return;
       }
 
       // Reveal on scroll
       var revealObs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObs.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          var kpi = entry.target.querySelector('[data-count]');
+          if (kpi && !reduceMotion) countUp(kpi);
+          revealObs.unobserve(entry.target);
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-      // Play terminal animation once visible
-      var terminal = document.getElementById('terminal');
-      var termObs = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) {
-          terminal.classList.add('is-played');
-          termObs.disconnect();
-        }
+      // Play chart animations once visible
+      var playObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-played');
+          playObs.unobserve(entry.target);
+        });
       }, { threshold: 0.3 });
-      termObs.observe(terminal);
+      played.forEach(function (el) { playObs.observe(el); });
 
       // Highlight the nav link of the section in view
       var links = Array.prototype.slice.call(document.querySelectorAll('.nav-list a'));
