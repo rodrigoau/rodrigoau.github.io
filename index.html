@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Rodrigo Ayala | Senior Mobile &amp; Web QA Engineer / SDET</title>
-  <meta name="description" content="Rodrigo Ayala, Senior Mobile & Web QA Engineer / SDET with 13+ years of experience building automation frameworks for native iOS, Android, web and APIs with Appium, Selenium, Playwright, Cypress, Cucumber BDD, RestAssured, JMeter and CI/CD.">
+  <title>Rodrigo Ayala | Senior QA Automation Engineer / SDET (Mobile, Web &amp; API)</title>
+  <meta name="description" content="Rodrigo Ayala, Test Automation Lead and Senior SDET with 14+ years building automation frameworks for native iOS, Android, web and APIs with Playwright, Appium, Selenium, Cypress, RestAssured, CI/CD quality gates and AI/ML testing.">
   <meta name="author" content="Rodrigo Ayala">
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light dark">
@@ -17,8 +17,9 @@
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://rodrigoau.github.io/">
-  <meta property="og:title" content="Rodrigo Ayala | Senior Mobile & Web QA Engineer / SDET">
-  <meta property="og:description" content="13+ years building automation frameworks for native iOS, Android, web and APIs. Appium, Playwright, Cucumber BDD, RestAssured, JMeter, GitLab CI/CD.">
+  <meta property="og:title" content="Rodrigo Ayala | Senior QA Automation Engineer / SDET">
+  <meta property="og:description" content="14+ years building automation frameworks for native iOS, Android, web and APIs. Playwright, Appium, RestAssured, CI/CD quality gates and AI/ML QE.">
+  <meta property="og:locale" content="en_US">
   <meta property="profile:first_name" content="Rodrigo">
   <meta property="profile:last_name" content="Ayala">
   <meta name="twitter:card" content="summary">
@@ -35,12 +36,14 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rodrigo Ayala",
-    "jobTitle": "Senior Mobile & Web QA Engineer / SDET",
+    "jobTitle": "Senior QA Automation Engineer / SDET",
+    "worksFor": { "@type": "Organization", "name": "Incedo Inc." },
     "url": "https://rodrigoau.github.io/",
+    "email": "mailto:rodrigoau91@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Guadalajara", "addressCountry": "MX" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad del Valle de México" },
     "knowsLanguage": ["es", "en"],
-    "knowsAbout": ["Test Automation", "Appium", "Selenium", "Playwright", "Cypress", "Cucumber", "BDD", "RestAssured", "JMeter", "CI/CD", "GitLab CI/CD", "Mobile Testing", "API Testing"],
+    "knowsAbout": ["Test Automation", "Playwright", "TypeScript", "Appium", "Selenium", "Cypress", "Cucumber", "BDD", "RestAssured", "JMeter", "CI/CD", "Bitbucket Pipelines", "GitLab CI/CD", "GitHub Actions", "Mobile Testing", "API Testing", "AI/ML Testing", "RAG Evaluation", "RAGAS", "DeepEval", "promptfoo"],
     "sameAs": ["https://www.linkedin.com/in/rodrigoayalau/", "https://github.com/rodrigoau"]
   }
   </script>
@@ -329,6 +332,7 @@
 
     /* ---------- Sections ---------- */
     section { padding-block: clamp(64px, 10vw, 112px); }
+    section.section-flush { padding-top: 0; }
 
     .section-head { max-width: 680px; margin-bottom: clamp(32px, 5vw, 56px); }
     .section-head h2 {
@@ -436,6 +440,7 @@
 
     /* Terminal illustration */
     .terminal {
+      margin: 0;
       background: var(--term-bg);
       color: var(--term-text);
       border-radius: var(--radius);
@@ -529,6 +534,21 @@
     .feature h3 { font-size: 1.15rem; font-weight: 700; }
     .feature p { margin-top: 10px; color: var(--muted); font-size: .95rem; }
     .feature .chips { margin-top: 18px; }
+
+    /* Featured card: gradient border via padding-box/border-box backgrounds */
+    .feature-wide {
+      grid-column: 1 / -1;
+      border-color: transparent;
+      background:
+        linear-gradient(var(--surface), var(--surface)) padding-box,
+        linear-gradient(120deg, var(--accent), var(--teal)) border-box;
+    }
+    .feature-wide:hover { border-color: transparent; }
+    .feature-wide p { max-width: 80ch; }
+    @media (min-width: 760px) {
+      .feature-wide { display: grid; grid-template-columns: 48px 1fr; gap: 24px; align-items: start; }
+      .feature-wide .feature-icon { margin-bottom: 0; }
+    }
 
     /* ---------- Experience ---------- */
     .experience-section { background: var(--surface); border-block: 1px solid var(--border); }
@@ -667,7 +687,7 @@
       background: radial-gradient(ellipse at center, rgb(99 102 241 / .45), transparent 60%);
       z-index: -1;
     }
-    .contact-card h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); font-weight: 800; }
+    .contact-card h2 { margin-top: 12px; font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); font-weight: 800; }
     .contact-card p { margin: 16px auto 0; max-width: 56ch; color: #b9c1dc; font-size: 1.05rem; }
     .contact-actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .contact-card .btn-primary { background: #8b93ff; color: #0b1020; box-shadow: none; }
@@ -729,6 +749,7 @@
     <symbol id="i-gauge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></g></symbol>
     <symbol id="i-pipeline" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></g></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></g></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4zM9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></g></symbol>
   </svg>
 
@@ -768,14 +789,15 @@
           <div>
             <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to new opportunities</p>
             <h1 id="hero-title">Hi, I'm Rodrigo.<br><span class="gradient-text">I make releases boring.</span></h1>
-            <p class="hero-role">Senior Mobile &amp; Web QA Engineer / SDET · iOS, Android &amp; Web</p>
+            <p class="hero-role">Test Automation Lead · Senior SDET · Mobile, Web &amp; API</p>
             <p class="hero-lead">
-              13+ years building automation frameworks from the ground up for native mobile apps, web and APIs.
-              Appium on real devices, Cucumber BDD, RestAssured, JMeter and CI/CD pipelines that run on every build.
+              14+ years building automation frameworks from scratch for native iOS and Android apps, web and APIs.
+              Playwright, Appium and RestAssured suites wired into CI/CD with quality gates that stop risky releases,
+              plus quality engineering for AI/ML features.
             </p>
             <ul class="hero-meta">
               <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Guadalajara, Mexico</li>
-              <li><svg aria-hidden="true"><use href="#i-globe"/></svg>Spanish &amp; English</li>
+              <li><svg aria-hidden="true"><use href="#i-globe"/></svg>Spanish (native) · English (C1)</li>
             </ul>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">
@@ -787,28 +809,26 @@
             </div>
           </div>
 
-          <figure class="terminal" id="terminal" aria-label="Example Cucumber scenario run with all steps passing" style="margin:0">
-            <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>checkout.feature</span></div>
-<pre aria-hidden="true"><span class="line" style="--i:0"><span class="t-kw">Feature:</span> Mobile checkout resilience</span>
+          <figure class="terminal" id="terminal" aria-label="Example CI pipeline run: web, mobile, API, load and AI/ML suites pass the release quality gate">
+            <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>release-gate · pipeline</span></div>
+<pre aria-hidden="true"><span class="line" style="--i:0"><span class="t-muted">$ run release-gate --parallel --shards=4</span></span>
 <span class="line" style="--i:1"></span>
-<span class="line" style="--i:2">  <span class="t-kw">Scenario:</span> Cart survives an incoming call</span>
-<span class="line" style="--i:3">    <span class="t-step">Given</span> the user is on the <span class="t-str">"Payment"</span> screen</span>
-<span class="line" style="--i:4">    <span class="t-step">When</span> an incoming call interrupts the app</span>
-<span class="line" style="--i:5">    <span class="t-step">And</span> the app is resumed from background</span>
-<span class="line" style="--i:6">    <span class="t-step">Then</span> the cart items are preserved</span>
-<span class="line" style="--i:7"></span>
-<span class="line" style="--i:8"><span class="t-muted">$ run --platform ios,android --parallel</span></span>
-<span class="line" style="--i:9"><span class="t-pass">✓</span> iOS · real device       <span class="t-pass">4/4 passed</span></span>
-<span class="line" style="--i:10"><span class="t-pass">✓</span> Android · emulator     <span class="t-pass">4/4 passed</span></span>
-<span class="line" style="--i:11"><span class="t-muted">Quality gate:</span> <span class="t-pass">PROMOTE ▸</span></span></pre>
+<span class="line" style="--i:2"><span class="t-pass">✓</span> <span class="t-kw">web   </span>  Playwright + TS       <span class="t-pass">500+ passed</span></span>
+<span class="line" style="--i:3"><span class="t-pass">✓</span> <span class="t-kw">mobile</span>  Appium · 50+ devices  <span class="t-pass">300+ passed</span></span>
+<span class="line" style="--i:4"><span class="t-pass">✓</span> <span class="t-kw">api   </span>  RestAssured · schema  <span class="t-pass">300+ passed</span></span>
+<span class="line" style="--i:5"><span class="t-pass">✓</span> <span class="t-kw">load  </span>  JMeter · 500 users    <span class="t-step">p95 in SLO</span></span>
+<span class="line" style="--i:6"><span class="t-pass">✓</span> <span class="t-kw">ai/ml </span>  RAGAS · DeepEval      <span class="t-step">scores ≥ gate</span></span>
+<span class="line" style="--i:7"><span class="t-pass">✓</span> <span class="t-kw">llm   </span>  promptfoo · injection <span class="t-step">0 leaks</span></span>
+<span class="line" style="--i:8"></span>
+<span class="line" style="--i:9"><span class="t-muted">Quality gate:</span> <span class="t-pass">PROMOTE ▸</span></span></pre>
           </figure>
         </div>
 
         <ul class="stats" aria-label="Career highlights">
-          <li class="card stat reveal"><span class="stat-value">13+</span><span class="stat-label">years in QA &amp; test automation</span></li>
-          <li class="card stat reveal"><span class="stat-value">90%</span><span class="stat-label">UI coverage of critical journeys, suites under 5 min</span></li>
-          <li class="card stat reveal"><span class="stat-value">60%</span><span class="stat-label">faster pipelines with parallel runners &amp; sharding</span></li>
-          <li class="card stat reveal"><span class="stat-value">~30%</span><span class="stat-label">less script maintenance with AI agents</span></li>
+          <li class="card stat reveal"><span class="stat-value">14+</span><span class="stat-label">years in QA &amp; test automation</span></li>
+          <li class="card stat reveal"><span class="stat-value">1,000+</span><span class="stat-label">automated tests across mobile, web &amp; API</span></li>
+          <li class="card stat reveal"><span class="stat-value">40%</span><span class="stat-label">faster regression after Selenium → Playwright</span></li>
+          <li class="card stat reveal"><span class="stat-value">12</span><span class="stat-label">QA engineers led across the US, India &amp; Mexico</span></li>
         </ul>
       </div>
     </section>
@@ -823,82 +843,93 @@
         <div class="about-grid">
           <div class="about-text reveal">
             <p>
-              I'm a <strong>Senior SDET</strong> specialized in mobile quality: <strong>Appium</strong> on real devices and
-              emulators/simulators, <strong>BDD with Cucumber/Gherkin</strong>, and test pipelines in <strong>GitLab CI/CD</strong>
-              that run on every build. I also validate the backend that mobile apps depend on with
-              <strong>RestAssured</strong> API automation and <strong>JMeter</strong> load and stress testing.
+              I'm a <strong>Senior SDET and Test Automation Lead</strong> who builds automation frameworks from scratch for
+              native iOS and Android apps, web and APIs for enterprise clients. Today I build <strong>Playwright + TypeScript</strong>
+              UI and API automation at <strong>Incedo</strong>, running in Bitbucket Pipelines with parallel execution and sharding.
             </p>
             <p>
-              I've led multicultural QA teams across the <strong>US, India and Mexico</strong>, setting test strategy, coding
-              standards and release quality gates. I go beyond the happy path with negative, boundary, interruption and
-              failure-mode testing.
+              Before that I built and maintained <strong>1,000+ automated tests</strong>: 300+ Appium tests on 50+ real devices in
+              BrowserStack, 500+ Playwright tests in TypeScript with Cucumber BDD, and 300+ RestAssured API tests with contract and
+              schema validation. I built the original 200+ test web suite in Java + Selenium and migrated it to Playwright,
+              <strong>cutting regression runtime by up to 40%</strong>.
             </p>
             <p>
-              I use AI agents (<strong>Cursor, Claude</strong>) to generate test scenarios, analyze failures and find coverage
-              gaps, and every generated change is reviewed before merge.
+              I've led QA teams of up to <strong>12 engineers across the US, India and Mexico</strong> and presented results directly
+              to client stakeholders. I also test AI features (RAG evaluation, LLM-as-a-judge, prompt-injection testing) and use
+              AI agents to generate scenarios and analyze failures, with a human review on every change.
             </p>
           </div>
           <ul class="card highlights reveal" aria-label="What I bring">
             <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Frameworks built from scratch in Java, TypeScript and Python</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Native iOS &amp; Android on real devices, BrowserStack and Sauce Labs</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Quality gates that block builds with failing critical scenarios</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Team leadership, mentoring and PR reviews against a quality checklist</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>AI-assisted testing with human review of every change</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Native iOS &amp; Android on 50+ real devices in BrowserStack and Sauce Labs</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Quality gates in Bitbucket Pipelines, GitLab CI and GitHub Actions</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>AI/ML QE: golden datasets, RAGAS, DeepEval and promptfoo</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>About 30% less test maintenance with AI agents, human-reviewed</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span>Team leadership, hiring and mentoring across three countries</span></li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- ================= Expertise ================= -->
-    <section id="expertise" aria-labelledby="expertise-title" style="padding-top:0">
+    <section id="expertise" class="section-flush" aria-labelledby="expertise-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">02 · Expertise</span>
           <h2 id="expertise-title">What I do best</h2>
-          <p>End-to-end coverage across the stack, from the device in your hand to the services behind it.</p>
+          <p>End-to-end coverage across the stack, from the device in your hand to the services and models behind it.</p>
         </div>
 
         <div class="expertise-grid">
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-phone"/></svg></div>
             <h3>Mobile automation</h3>
-            <p>Appium frameworks for native iOS and Android with shared step definitions. I also cover the risky edge cases: revoked permissions, backgrounding, calls, push notifications, offline mode and token expiry.</p>
+            <p>Appium frameworks in Java for native iOS and Android, with step definitions shared across both platforms. I cover the risky edge cases too: revoked permissions, backgrounding, incoming calls, push notifications, offline mode and expired sessions.</p>
             <ul class="chips"><li class="chip">Appium</li><li class="chip">TestNG</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li></ul>
           </article>
 
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-browser"/></svg></div>
             <h3>Web automation &amp; BDD</h3>
-            <p>Cucumber/Gherkin scenarios that product, dev and QA agree on. I migrated Selenium suites to Playwright BDD and run them cross-browser in the cloud.</p>
-            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Selenium</li><li class="chip">Cypress</li><li class="chip">Cucumber</li></ul>
+            <p>Playwright + TypeScript frameworks with Page Object Model, reusable fixtures and environment-based config. I migrated a 200+ test Selenium suite to Playwright, kept the Cucumber layer and grew it to 500+ tests.</p>
+            <ul class="chips"><li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Selenium</li><li class="chip">Cypress</li><li class="chip">Cucumber</li></ul>
           </article>
 
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-api"/></svg></div>
-            <h3>API &amp; integration</h3>
-            <p>RestAssured validation of status codes, payloads, schemas and contracts. Negative and boundary tests, Kafka event flows, and payment, OAuth/SSO and booking integrations.</p>
-            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Postman</li><li class="chip">pytest</li><li class="chip">Kafka</li></ul>
+            <h3>API &amp; integrations</h3>
+            <p>RestAssured and Playwright API suites that validate status codes, payloads, JSON contracts and data integrity across microservices. Negative and boundary tests, Kafka event flows, and payment, OAuth/SSO and booking integrations.</p>
+            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Playwright API</li><li class="chip">Postman</li><li class="chip">Kafka</li></ul>
           </article>
 
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-gauge"/></svg></div>
-            <h3>Performance testing</h3>
-            <p>JMeter load, stress and capacity tests that benchmark throughput and response times under peak conditions, monitored with Grafana, Prometheus and Datadog.</p>
-            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Grafana</li><li class="chip">Prometheus</li><li class="chip">Datadog</li></ul>
+            <h3>Performance &amp; observability</h3>
+            <p>JMeter load and stress tests across 200+ endpoints with 500 concurrent users over 2-hour runs. I track them in Datadog, Grafana and Prometheus and flag latency spikes before peak traffic reaches production.</p>
+            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Datadog</li><li class="chip">Grafana</li><li class="chip">Prometheus</li></ul>
           </article>
 
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-pipeline"/></svg></div>
-            <h3>CI/CD &amp; release quality</h3>
-            <p>Pipelines with smoke, regression, API and performance stages on every merge request and on nightly schedules. Allure reports, entry/exit criteria and production smoke tests.</p>
-            <ul class="chips"><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">Jenkins</li><li class="chip">Allure</li></ul>
+            <h3>CI/CD &amp; quality gates</h3>
+            <p>Suites run on every pull request and merge, plus nightly regression. Parallel runners and sharding keep feedback fast, Allure reports make results easy to read, and quality gates block risky releases.</p>
+            <ul class="chips"><li class="chip">Bitbucket Pipelines</li><li class="chip">GitLab CI</li><li class="chip">GitHub Actions</li><li class="chip">Allure</li></ul>
           </article>
 
           <article class="card feature reveal">
             <div class="feature-icon" aria-hidden="true"><svg><use href="#i-spark"/></svg></div>
             <h3>AI-assisted testing</h3>
-            <p>Cursor agents and Claude generate Playwright BDD tests from requirements, analyze failure logs and refactor framework code. Every change gets a human review before merge.</p>
-            <ul class="chips"><li class="chip">Cursor</li><li class="chip">Claude</li><li class="chip">n8n</li><li class="chip">UiPath</li></ul>
+            <p>Cursor agents connected through MCPs, and Claude, generate scenarios from requirements, analyze failure logs and refactor framework code. That cut test maintenance by about 30%, with a human review before every merge.</p>
+            <ul class="chips"><li class="chip">Cursor Agents</li><li class="chip">Claude</li><li class="chip">MCPs</li><li class="chip">n8n</li></ul>
+          </article>
+
+          <article class="card feature feature-wide reveal">
+            <div class="feature-icon" aria-hidden="true"><svg><use href="#i-brain"/></svg></div>
+            <div>
+              <h3>AI/ML quality engineering</h3>
+              <p>I test AI features like any other critical system. Golden datasets of real user questions run as regression on every model or prompt change. RAGAS and DeepEval score RAG quality, and LLM-as-a-judge thresholds act as CI quality gates. promptfoo covers hallucinations, jailbreaks and prompt injection, and I validate TensorFlow Serving endpoints for model versions, prediction schemas, latency, throughput and cost per request.</p>
+              <ul class="chips"><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">LLM-as-a-judge</li><li class="chip">Golden datasets</li><li class="chip">TensorFlow Serving</li></ul>
+            </div>
           </article>
         </div>
       </div>
@@ -913,49 +944,79 @@
         </div>
 
         <ol class="timeline">
-          <!-- Goods&Services -->
+          <!-- Incedo -->
           <li class="job reveal">
             <article class="card job-card">
               <header class="job-head">
                 <div>
-                  <h3 class="job-title">Senior Mobile &amp; Web QA Automation Engineer (SDET)</h3>
-                  <p class="job-company">Goods&amp;Services</p>
+                  <h3 class="job-title">Senior QA Engineer</h3>
+                  <p class="job-company">Incedo Inc.</p>
                 </div>
-                <p class="job-date"><time datetime="2023-09">Sep 2023</time> – Present</p>
+                <p class="job-date"><time datetime="2025-05">May 2025</time> – Present</p>
               </header>
-              <p class="job-summary">I own end-to-end quality for native iOS and Android apps, web applications and the APIs behind them, from test strategy through release.</p>
+              <p class="job-summary">I build scalable test automation for web applications and APIs with Playwright and TypeScript, fully integrated into Bitbucket Pipelines.</p>
+              <ul class="job-bullets">
+                <li>Designed and maintain a Playwright + TypeScript framework for end-to-end UI and API testing, built on Page Object Model with reusable fixtures, helpers and environment-based configuration.</li>
+                <li>Automate REST API testing with Playwright's request context, validating status codes, response schemas, business rules and data integrity across services.</li>
+                <li>Integrated the suites into Bitbucket Pipelines on pull requests, merges and scheduled jobs, with <strong>parallel execution and sharding</strong> for shorter feedback cycles.</li>
+                <li>Reduced flaky tests through auto-waiting, stable locators, test isolation and controlled test data.</li>
+              </ul>
+              <details class="more">
+                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <ul class="job-bullets">
+                  <li>Work with developers, product owners and DevOps in Agile/Scrum teams to define acceptance criteria, test strategy and release quality gates.</li>
+                  <li>Use AI-assisted tools to generate scenarios and edge cases from requirements, refactor scripts, improve locators, create test data and speed up root-cause analysis, with a human review on every change.</li>
+                </ul>
+              </details>
+              <ul class="chips job-stack" aria-label="Tech stack">
+                <li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Playwright API</li><li class="chip">Bitbucket Pipelines</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile/Scrum</li>
+              </ul>
+            </article>
+          </li>
+
+          <!-- Klauders -->
+          <li class="job reveal">
+            <article class="card job-card">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Lead Senior Mobile &amp; Web QA Automation Engineer</h3>
+                  <p class="job-company">Klauders</p>
+                </div>
+                <p class="job-date"><time datetime="2023-09">Sep 2023</time> – <time datetime="2025-05">May 2025</time></p>
+              </header>
+              <p class="job-summary">I owned end-to-end test automation for web, mobile, API and AI/ML features, from framework design to release, for a client in the communications technology sector. Every suite ran in GitLab CI/CD as a release quality gate.</p>
 
               <div class="job-areas">
                 <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-phone"/></svg>Mobile: Appium &amp; Cucumber BDD</h4>
+                  <h4><svg aria-hidden="true"><use href="#i-browser"/></svg>Web: Selenium → Playwright</h4>
                   <ul class="job-bullets">
-                    <li>Built a scalable Appium framework in Java for iOS and Android, using Page Object Model and step definitions shared across both platforms.</li>
-                    <li>Runs suites in parallel with TestNG on physical devices and emulators/simulators, both locally and on BrowserStack and Sauce Labs.</li>
-                    <li>Automates high-risk edge cases: permissions, backgrounding, calls, push notifications, offline mode and session expiry.</li>
+                    <li>Built a Java + Selenium + Cucumber framework with 200+ end-to-end tests for critical user flows.</li>
+                    <li>Migrated it to Playwright + TypeScript, kept the BDD layer and <strong>cut regression runtime by up to 40%</strong>, then grew it to 500+ tests.</li>
+                    <li>Smoke tests on every merge, full regression nightly, and Allure reports with screenshots and trends.</li>
                   </ul>
                 </div>
                 <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-browser"/></svg>Web: Selenium → Playwright BDD</h4>
+                  <h4><svg aria-hidden="true"><use href="#i-phone"/></svg>Mobile: Appium &amp; BDD</h4>
                   <ul class="job-bullets">
-                    <li>Migrated the Selenium suites to Playwright BDD and kept the existing Cucumber/Gherkin scenarios, so the tests can be developed and maintained with Cursor AI agents.</li>
-                    <li>Uses AI agents to analyze failure logs and find coverage gaps, which cut script maintenance time by about 30%.</li>
-                    <li>Defined the web regression strategy in the CI/CD pipelines.</li>
+                    <li>Designed an Appium framework in Java for native iOS and Android, with 300+ tests on Page Object Model and step definitions shared across both platforms.</li>
+                    <li>Ran suites in parallel with TestNG on real devices and emulators/simulators, locally and on BrowserStack and Sauce Labs.</li>
+                    <li>Automated permissions, backgrounding, calls, push notifications, offline mode and expired tokens.</li>
                   </ul>
                 </div>
                 <div class="card area">
                   <h4><svg aria-hidden="true"><use href="#i-api"/></svg>API automation &amp; load testing</h4>
                   <ul class="job-bullets">
-                    <li>Automates RestAssured validation of status codes, payloads, schemas, contracts and data integrity across microservices.</li>
-                    <li>Runs JMeter load and stress tests to benchmark throughput, response times and capacity under peak load.</li>
-                    <li>Tests Kafka event flows end to end, plus payment, OAuth/SSO and ticketing/booking integrations.</li>
+                    <li>Built RestAssured smoke and regression suites with JSON contract validation, which caught breaking changes between services before they reached the apps.</li>
+                    <li>Ran JMeter load tests across 200+ endpoints with 500 concurrent users over 2-hour runs, monitored in Datadog, Grafana and Prometheus.</li>
+                    <li>Tested Kafka event flows end to end, plus payment, OAuth/SSO and ticketing/booking integrations.</li>
                   </ul>
                 </div>
                 <div class="card area">
-                  <h4><svg aria-hidden="true"><use href="#i-pipeline"/></svg>GitLab CI/CD &amp; release readiness</h4>
+                  <h4><svg aria-hidden="true"><use href="#i-brain"/></svg>AI/ML testing</h4>
                   <ul class="job-bullets">
-                    <li>Built GitLab pipelines that run the mobile, web and API suites on every merge request and build, and on nightly schedules.</li>
-                    <li>Set up quality gates that block promotion of builds with failing critical scenarios.</li>
-                    <li>Publishes Allure reports with screenshots and device logs, defines entry/exit criteria and runs production smoke tests.</li>
+                    <li>Built a Java + RestAssured framework to validate the client's AI-powered tool end to end.</li>
+                    <li>Ran golden datasets as regression on every model or prompt change. RAGAS, DeepEval and LLM-as-a-judge thresholds served as CI quality gates.</li>
+                    <li>Tested hallucinations and prompt injection with promptfoo, and validated TensorFlow Serving endpoints and inference performance.</li>
                   </ul>
                 </div>
               </div>
@@ -963,17 +1024,16 @@
               <details class="more">
                 <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
                 <ul class="job-bullets">
-                  <li>Implemented BDD with Cucumber/Gherkin for the mobile and web suites, so product, development and QA teams can review and agree on acceptance criteria in plain language.</li>
-                  <li>Validates behavior across iOS and Android OS versions, device models and screen sizes to catch fragmentation and layout issues before release.</li>
-                  <li>Runs manual exploratory and regression testing on real devices to find gesture and device-specific issues, then turns recurring findings into automated checks.</li>
-                  <li>Designs negative and boundary API tests for 4xx/5xx handling, invalid payloads, timeouts, dependency outages and poor connectivity.</li>
-                  <li>Configured pipeline stages for smoke, regression, API and performance runs, with parallel jobs and retained artifacts (Allure reports, logs, screenshots).</li>
-                  <li>Reviews teammates' pull requests against a quality checklist covering code standards, coverage and test design.</li>
+                  <li>Used Cursor AI agents, connected through MCPs, to review test cases, generate Playwright BDD scenarios from requirements and refactor framework code. That cut test maintenance time by about 30%, and every change was reviewed before merge.</li>
+                  <li>Validated behavior across iOS and Android versions, device models and screen sizes to catch fragmentation and layout issues before release.</li>
+                  <li>Designed negative and boundary tests for 4xx/5xx handling, invalid payloads, timeouts, dependency outages and poor connectivity.</li>
+                  <li>Measured inference latency, throughput and cost per request, and flagged regressions between model versions.</li>
+                  <li>Ran manual and exploratory sessions on real devices, validated data with SQL against backend databases and tracked defects in Jira through resolution.</li>
                 </ul>
               </details>
 
               <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Appium</li><li class="chip">Cucumber</li><li class="chip">TestNG</li><li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">Playwright BDD</li><li class="chip">Cursor</li><li class="chip">RestAssured</li><li class="chip">JMeter</li><li class="chip">GitLab CI/CD</li><li class="chip">Allure</li><li class="chip">Kafka</li><li class="chip">Grafana</li><li class="chip">Datadog</li><li class="chip">Docker</li><li class="chip">AWS</li><li class="chip">Azure</li>
+                <li class="chip">Playwright</li><li class="chip">TypeScript</li><li class="chip">Selenium</li><li class="chip">Java</li><li class="chip">Cucumber</li><li class="chip">Appium</li><li class="chip">TestNG</li><li class="chip">RestAssured</li><li class="chip">JMeter</li><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">SQL</li><li class="chip">GitLab CI/CD</li><li class="chip">Allure</li><li class="chip">Jira</li>
               </ul>
             </article>
           </li>
@@ -986,26 +1046,24 @@
                   <h3 class="job-title">Senior Lead Automation Engineer</h3>
                   <p class="job-company">Wizeline</p>
                 </div>
-                <p class="job-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2024-02">Feb 2024</time></p>
+                <p class="job-date"><time datetime="2022-04">Apr 2022</time> – <time datetime="2023-09">Sep 2023</time></p>
               </header>
-              <p class="job-summary">Led the overhaul of the testing strategy for a high-load, multi-tenant web application.</p>
               <ul class="job-bullets">
-                <li>Designed a new Cypress framework from scratch that covers desktop and mobile browser flows in one codebase.</li>
-                <li>Reached <strong>90% UI coverage</strong> of critical user journeys, with each suite running in under 5 minutes. Automated the mobile app with Appium.</li>
-                <li>Built Python API suites (pytest + requests) with contract and schema validation, which caught breaking changes between services early.</li>
-                <li>Embedded UI and API tests in GitHub Actions. Parallel runners and sharding <strong>cut pipeline time by 60%</strong>.</li>
+                <li>Rebuilt the automation framework from scratch in Cypress, covering desktop and responsive mobile flows in one codebase with Page Object and a modular design.</li>
+                <li>Migrated 100% of the legacy test cases and cleared the automation bottleneck for new development tickets.</li>
+                <li>Reached <strong>90% UI coverage</strong> of critical user journeys while keeping each suite under 60 minutes.</li>
+                <li>Wired UI and API tests into GitHub Actions and <strong>cut pipeline time by 60%</strong> with parallel runners and sharding.</li>
               </ul>
               <details class="more">
                 <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
                 <ul class="job-bullets">
-                  <li>Covered happy paths, edge cases, security checks and performance thresholds for microservices.</li>
-                  <li>Automated data setup/teardown and environment-aware configuration for repeatable runs across CI, QA and staging.</li>
-                  <li>Automated failure reporting and artifact retention (screenshots, logs) for faster diagnosis.</li>
-                  <li>Set coding standards, linting and branching strategy. Mentored junior engineers and maintained Confluence guides.</li>
+                  <li>Partnered with DevOps on blue-green deployments, using the automated suite to catch bugs before switching traffic.</li>
+                  <li>Automated test data setup and teardown, environment-aware configuration across CI, QA and staging, and failure reporting with screenshots and logs.</li>
+                  <li>Set coding standards, linting and branching strategy, mentored junior engineers and kept the Confluence guides up to date.</li>
                 </ul>
               </details>
               <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Cypress</li><li class="chip">Appium</li><li class="chip">Python</li><li class="chip">pytest</li><li class="chip">JMeter</li><li class="chip">Postman</li><li class="chip">Selenium</li><li class="chip">Java</li><li class="chip">GitHub Actions</li><li class="chip">AWS</li>
+                <li class="chip">Cypress</li><li class="chip">AWS</li><li class="chip">GitHub Actions</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile</li>
               </ul>
             </article>
           </li>
@@ -1021,34 +1079,44 @@
                 <p class="job-date"><time datetime="2018-02">Feb 2018</time> – <time datetime="2022-04">Apr 2022</time></p>
               </header>
               <ul class="job-bullets">
-                <li>Led QA engineers in San Antonio, Texas, and Chennai, India, upgrading the automation framework to meet client requirements.</li>
-                <li>Built a new Java + Selenium framework from scratch with design patterns to replace the legacy framework and improve reliability.</li>
-                <li>Moved execution to Sauce Labs cloud browsers, which reduced local resource use and raised the business team's confidence.</li>
-                <li>Presented progress, demos and automation reports to the client's business team, and trained the team on Selenium and Java best practices.</li>
+                <li>Grew from Senior QA Automation Engineer to leading QA teams in San Antonio (Texas), Chennai (India) and Guadalajara (Mexico) on a regulated financial platform for a major US bank.</li>
+                <li>Rebuilt the Java + Selenium framework from scratch with proper design patterns, replacing a fragile legacy setup.</li>
+                <li>Cut the automation backlog by <strong>about 50–60% per sprint</strong> by streamlining test cases.</li>
+                <li>Interviewed QA automation candidates and helped grow the team to <strong>12 engineers across three countries</strong>.</li>
               </ul>
+              <details class="more">
+                <summary><span class="when-closed">Show more details</span><span class="when-open">Show less</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <ul class="job-bullets">
+                  <li>Designed the regression strategy and nightly runs with clear reporting, so the team started each day with fresh results.</li>
+                  <li>Moved test execution to Sauce Labs cloud browsers, which freed local resources and gave the business team more trust in the results.</li>
+                  <li>Presented progress, demos and automation reports directly to the client's business team in San Antonio.</li>
+                  <li>Trained the team on Selenium WebDriver, Java best practices and new testing strategies.</li>
+                </ul>
+              </details>
               <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">Jenkins</li><li class="chip">GitLab</li><li class="chip">Sauce Labs</li><li class="chip">SQL</li><li class="chip">qTest</li>
+                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">SQL</li><li class="chip">Bitbucket</li><li class="chip">Sauce Labs</li><li class="chip">Git</li><li class="chip">Jira</li>
               </ul>
             </article>
           </li>
 
-          <!-- Sales Up -->
+          <!-- SalesUp! -->
           <li class="job reveal">
             <article class="card job-card">
               <header class="job-head">
                 <div>
                   <h3 class="job-title">Quality Assurance Test Engineer</h3>
-                  <p class="job-company">Sales Up by Upnify</p>
+                  <p class="job-company">SalesUp! by Upnify</p>
                 </div>
                 <p class="job-date"><time datetime="2013-09">Sep 2013</time> – <time datetime="2018-02">Feb 2018</time></p>
               </header>
               <ul class="job-bullets">
-                <li>Verified the functionality and security of a CRM web application.</li>
-                <li>Applied TDD and in-depth debugging, and wrote code to validate application output.</li>
-                <li>Maintained test environments and infrastructure.</li>
+                <li>Tested a CRM web application end to end for functionality and security, which reduced the issues reaching production.</li>
+                <li>Built a Java + Selenium automation framework from the ground up for fast, reliable feedback on every build.</li>
+                <li>Worked test-first (TDD) and wrote validation code to confirm the application behaved as expected.</li>
+                <li>Kept test environments stable and helped the team move to more frequent, safer releases.</li>
               </ul>
               <ul class="chips job-stack" aria-label="Tech stack">
-                <li class="chip">JavaScript</li><li class="chip">Postman</li><li class="chip">SQL</li><li class="chip">Git</li><li class="chip">GitHub</li>
+                <li class="chip">Java</li><li class="chip">Selenium</li><li class="chip">SQL</li><li class="chip">Git</li><li class="chip">Jira</li><li class="chip">Agile</li>
               </ul>
             </article>
           </li>
@@ -1062,52 +1130,52 @@
         <div class="section-head reveal">
           <span class="eyebrow">04 · Skills</span>
           <h2 id="skills-title">Tech stack</h2>
-          <p>Tools I use to ship quality across mobile, web, APIs and infrastructure.</p>
+          <p>Tools I use to ship quality across mobile, web, APIs, AI/ML and infrastructure.</p>
         </div>
 
         <div class="skills-grid">
           <div class="card skill-group reveal">
             <h3>Mobile testing</h3>
-            <ul class="chips"><li class="chip">Appium (iOS &amp; Android)</li><li class="chip">Real devices</li><li class="chip">Emulators / Simulators</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li><li class="chip">Exploratory testing</li></ul>
+            <ul class="chips"><li class="chip">Appium (iOS &amp; Android)</li><li class="chip">TestNG</li><li class="chip">Real devices</li><li class="chip">Emulators / Simulators</li><li class="chip">BrowserStack</li><li class="chip">Sauce Labs</li></ul>
           </div>
           <div class="card skill-group reveal">
-            <h3>Web</h3>
-            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Cypress &amp; Cypress Cloud</li><li class="chip">Selenium WebDriver</li><li class="chip">WebdriverIO</li></ul>
+            <h3>Web &amp; BDD</h3>
+            <ul class="chips"><li class="chip">Playwright</li><li class="chip">Cypress</li><li class="chip">Selenium WebDriver</li><li class="chip">Cucumber / Gherkin</li><li class="chip">Page Object Model</li></ul>
           </div>
           <div class="card skill-group reveal">
-            <h3>BDD &amp; frameworks</h3>
-            <ul class="chips"><li class="chip">Cucumber / Gherkin</li><li class="chip">TestNG</li><li class="chip">pytest</li><li class="chip">Page Object Model</li></ul>
+            <h3>API &amp; integrations</h3>
+            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Playwright API</li><li class="chip">Postman</li><li class="chip">Python requests</li><li class="chip">Contract &amp; schema validation</li><li class="chip">Microservices</li><li class="chip">Kafka</li><li class="chip">OAuth / SSO</li><li class="chip">Payment gateways</li><li class="chip">Ticketing / booking APIs</li></ul>
           </div>
           <div class="card skill-group reveal">
-            <h3>API &amp; integration</h3>
-            <ul class="chips"><li class="chip">RestAssured</li><li class="chip">Postman</li><li class="chip">Python requests</li><li class="chip">Contract &amp; schema validation</li><li class="chip">Microservices</li><li class="chip">Kafka</li><li class="chip">OAuth / SSO</li><li class="chip">Payment gateways</li></ul>
+            <h3>AI/ML testing</h3>
+            <ul class="chips"><li class="chip">RAG evaluation</li><li class="chip">RAGAS</li><li class="chip">DeepEval</li><li class="chip">promptfoo</li><li class="chip">LLM-as-a-judge</li><li class="chip">Golden datasets</li><li class="chip">Prompt-injection testing</li><li class="chip">TensorFlow Serving</li><li class="chip">Inference performance</li></ul>
+          </div>
+          <div class="card skill-group reveal">
+            <h3>AI-assisted testing</h3>
+            <ul class="chips"><li class="chip">Cursor Agents</li><li class="chip">Claude</li><li class="chip">MCPs</li><li class="chip">n8n</li></ul>
           </div>
           <div class="card skill-group reveal">
             <h3>Performance &amp; observability</h3>
-            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Allure</li><li class="chip">Grafana</li><li class="chip">Prometheus</li><li class="chip">Datadog</li></ul>
+            <ul class="chips"><li class="chip">JMeter</li><li class="chip">Allure</li><li class="chip">Datadog</li><li class="chip">Grafana</li><li class="chip">Prometheus</li></ul>
           </div>
           <div class="card skill-group reveal">
             <h3>CI/CD &amp; cloud</h3>
-            <ul class="chips"><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">CircleCI</li><li class="chip">Jenkins</li><li class="chip">Docker</li><li class="chip">Kubernetes</li><li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">Google Cloud</li></ul>
+            <ul class="chips"><li class="chip">Bitbucket Pipelines</li><li class="chip">GitLab CI/CD</li><li class="chip">GitHub Actions</li><li class="chip">CircleCI</li><li class="chip">Jenkins</li><li class="chip">Docker</li><li class="chip">Kubernetes</li><li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">Google Cloud</li></ul>
           </div>
           <div class="card skill-group reveal">
-            <h3>Languages</h3>
-            <ul class="chips"><li class="chip">Java</li><li class="chip">TypeScript / JavaScript</li><li class="chip">Python</li><li class="chip">C#</li></ul>
+            <h3>Languages &amp; databases</h3>
+            <ul class="chips"><li class="chip">Java</li><li class="chip">TypeScript / JavaScript</li><li class="chip">Python</li><li class="chip">C# / .NET</li><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Oracle DB</li><li class="chip">MongoDB</li><li class="chip">SQL</li></ul>
           </div>
           <div class="card skill-group reveal">
-            <h3>Databases</h3>
-            <ul class="chips"><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Oracle DB</li><li class="chip">MongoDB</li><li class="chip">SQL</li></ul>
-          </div>
-          <div class="card skill-group reveal">
-            <h3>Test management &amp; release</h3>
-            <ul class="chips"><li class="chip">Jira</li><li class="chip">TestRail</li><li class="chip">qTest</li><li class="chip">Azure DevOps</li><li class="chip">Quality gates</li><li class="chip">Smoke testing</li></ul>
+            <h3>Test management</h3>
+            <ul class="chips"><li class="chip">Jira</li><li class="chip">TestRail</li><li class="chip">qTest</li><li class="chip">Azure DevOps</li><li class="chip">Microsoft Test Manager</li></ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ================= Education ================= -->
-    <section id="education" aria-labelledby="education-title" style="padding-top:0">
+    <section id="education" class="section-flush" aria-labelledby="education-title">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">05 · Education</span>
@@ -1133,21 +1201,24 @@
         <div class="card languages reveal">
           <strong>Languages</strong>
           <span>Spanish: native</span>
-          <span>English: professional working proficiency</span>
+          <span>English: advanced (C1)</span>
         </div>
       </div>
     </section>
 
     <!-- ================= Contact ================= -->
-    <section id="contact" aria-labelledby="contact-title" style="padding-top:0">
+    <section id="contact" class="section-flush" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-card reveal">
           <span class="eyebrow">06 · Contact</span>
-          <h2 id="contact-title" style="margin-top:12px">Let's ship with confidence</h2>
-          <p>Need a mobile automation framework built from scratch, a Selenium suite migrated to Playwright, or quality gates in your CI/CD pipeline? Let's talk.</p>
+          <h2 id="contact-title">Let's ship with confidence</h2>
+          <p>Need a Playwright or Appium framework built from scratch, a legacy suite migrated, quality gates in your CI/CD pipeline, or a way to test your AI features? Let's talk.</p>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
-              <svg aria-hidden="true"><use href="#i-linkedin"/></svg>Message me on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+            <a class="btn btn-primary" href="mailto:rodrigoau91@gmail.com">
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>Email me
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
             </a>
             <a class="btn btn-ghost" href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="visually-hidden"> (opens in a new tab)</span>
@@ -1162,8 +1233,9 @@
     <div class="container footer-inner">
       <p>&copy; <span id="year">2026</span> Rodrigo Ayala · Guadalajara, Mexico</p>
       <ul class="footer-links">
-        <li><a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:rodrigoau91@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/rodrigoayalau/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/rodrigoau" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
       </ul>
     </div>
   </footer>
